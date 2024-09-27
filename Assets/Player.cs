@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Input = UnityEngine.Windows.Input;
 
 public class Player : MonoBehaviour
 {
@@ -9,6 +11,10 @@ public class Player : MonoBehaviour
     public int movespeed = 50;
     public float gravity = -9.81f;
     private Vector3 velocity;
+
+    public float mouseSensitivity = 100f;
+    private float xRotation = 0f;
+    
 
     private void Move()
     {
@@ -28,12 +34,21 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
+       
+    }
+
+    private void FixedUpdate()
+    {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame) 
+        {
+            velocity.y = Mathf.Sqrt(2f * 9.81f * 1.5f);
+        }
     }
 }
