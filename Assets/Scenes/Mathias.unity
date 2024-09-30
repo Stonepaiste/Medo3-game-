@@ -847,7 +847,7 @@ GameObject:
   - component: {fileID: 1402057156}
   - component: {fileID: 1402057162}
   - component: {fileID: 1402057164}
-  - component: {fileID: 1402057163}
+  - component: {fileID: 1402057165}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -912,7 +912,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402057155}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -964,7 +964,7 @@ Transform:
   m_GameObject: {fileID: 1402057155}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.7, y: 61.01, z: 272}
+  m_LocalPosition: {x: 53.7, y: 64.12, z: 272}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1066,7 +1066,23 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!143 &1402057163
+--- !u!114 &1402057164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402057155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558b2efcc7f0049e0956eeb41fc61db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movespeed: 50
+  JumpVelocity: 5
+  _isjumping: 0
+  mouseSensitivity: 100
+--- !u!143 &1402057165
 CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1085,28 +1101,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 0
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.1
+  m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1402057164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402057155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 558b2efcc7f0049e0956eeb41fc61db8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movespeed: 50
-  gravity: 1
-  mouseSensitivity: 100
 --- !u!1 &1501782826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,7 +1196,7 @@ Transform:
   m_GameObject: {fileID: 1501782826}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0099983215, y: 3.5, z: -0.79000854}
+  m_LocalPosition: {x: -0.0099983215, y: 3.5, z: -17.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
