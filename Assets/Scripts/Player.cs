@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,22 +12,24 @@ public class Player : MonoBehaviour
     public int movespeed = 50;
     public float JumpVelocity = 5f;
     public bool _isjumping;
-   // private Vector3 velocity;
-    //public float jumpHeight = 2.4f;
-
+    private Vector3 velocity;
+    public float jumpHeight = 2.4f;
+    public float gravity = 9.81f;
     public float mouseSensitivity = 100f;
     private float xRotation = 0f;
-    private Rigidbody _rb;
-    
 
     private void Move()
     {
-        Vector3 move = new Vector3(_inputs.x, _inputs.y);
-        GetComponent<CharacterController>().Move(transform.TransformDirection(move) * Time.deltaTime * movespeed);
+        Vector3 direction = new Vector3(_inputs.x, 0, _inputs.y);
+        GetComponent<CharacterController>().Move(transform.TransformDirection(direction) * Time.deltaTime * movespeed);
 
-        // Apply gravity
-      //  velocity.y += gravity * Time.deltaTime;
-       // GetComponent<CharacterController>().Move(velocity * Time.deltaTime);
+        if (GetComponent<CharacterController>().isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f; // Small negative value to keep the character grounded
+        }
+
+        velocity.y += gravity * Time.deltaTime;
+        GetComponent<CharacterController>().Move(velocity * Time.deltaTime);
     }
 
     public void Movement(InputAction.CallbackContext context)
@@ -33,41 +37,27 @@ public class Player : MonoBehaviour
         _inputs = context.ReadValue<Vector2>();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        _rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-       // Move();
-        _isjumping |= Input.GetKeyDown(KeyCode.Space);
+        Move();
+        
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
-
     }
 
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
-       // if (Keyboard.current.spaceKey.wasPressedThisFrame) 
-        //{
-         //   velocity.y = Mathf.Sqrt(2f  * 1.5f);
-        //}
-        if (_isjumping)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            _rb.AddForce(Vector3.up * JumpVelocity, ForceMode.Impulse);
-            
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
-
-       
-        _isjumping = false;
+    }*/
     
-    }
-    
-    
-   
 }
