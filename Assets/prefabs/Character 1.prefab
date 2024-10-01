@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 7101661870652738767}
   - component: {fileID: 6719897416334449545}
   - component: {fileID: 2949074697379860777}
+  - component: {fileID: 6742931645342374715}
   - component: {fileID: 3062984322802310281}
   m_Layer: 0
   m_Name: Character 1
@@ -376,6 +377,26 @@ MonoBehaviour:
   jumpHeight: 2.4
   gravity: -9.81
   mouseSensitivity: 100
+--- !u!114 &6742931645342374715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8975956027916519770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a977b449b49c5a24bae454802fbc5dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FPCamera: {fileID: 8595605757773266940}
+  range: 100
+  muzzleFlash: {fileID: 4700608076517108152, guid: c0168bf636ce0854c99e35099ee069b1,
+    type: 3}
+  ImpactVFX: {fileID: 6728409045045434793, guid: 17f8966151b6ef74380cd276b4c4d895,
+    type: 3}
+  timeBetweenShots: 0.5
+  canShoot: 1
 --- !u!143 &3062984322802310281
 CharacterController:
   m_ObjectHideFlags: 0
