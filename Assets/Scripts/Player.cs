@@ -18,8 +18,16 @@ public class Player : MonoBehaviour
     public float mouseSensitivity = 100f;
     private float xRotation = 0f;
 
-    private void Move()
+
+    void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    void OnMove(InputValue value)
+    {
+        _inputs = value.Get<Vector2>();
+
         Vector3 direction = new Vector3(_inputs.x, 0, _inputs.y);
         GetComponent<CharacterController>().Move(transform.TransformDirection(direction) * Time.deltaTime * movespeed);
 
@@ -32,25 +40,39 @@ public class Player : MonoBehaviour
         GetComponent<CharacterController>().Move(velocity * Time.deltaTime);
     }
 
-    public void Movement(InputAction.CallbackContext context)
+    void OnJump()
     {
-        _inputs = context.ReadValue<Vector2>();
+        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
     }
 
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-    }
-
+    /*
     void Update()
     {
-        Move();
         
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
     }
+
+    private void Move()
+{
+    Vector3 direction = new Vector3(_inputs.x, 0, _inputs.y);
+    GetComponent<CharacterController>().Move(transform.TransformDirection(direction) * Time.deltaTime * movespeed);
+
+    if (GetComponent<CharacterController>().isGrounded && velocity.y < 0)
+    {
+        velocity.y = -2f; // Small negative value to keep the character grounded
+    }
+
+    velocity.y += gravity * Time.deltaTime;
+    GetComponent<CharacterController>().Move(velocity * Time.deltaTime);
+}
+
+public void Movement(InputAction.CallbackContext context)
+{
+    _inputs = context.ReadValue<Vector2>();
+}*/
 
     /*private void FixedUpdate()
     {
@@ -59,5 +81,5 @@ public class Player : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
     }*/
-    
+
 }

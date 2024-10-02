@@ -407,6 +407,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6719897416334449545, guid: f35e0c1bcc3e149c0b2542815a247f76,
         type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1761483994}
+    - target: {fileID: 6719897416334449545, guid: f35e0c1bcc3e149c0b2542815a247f76,
+        type: 3}
       propertyPath: m_NotificationBehavior
       value: 0
       objectReference: {fileID: 0}
@@ -538,6 +543,12 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!20 &1761483994 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8595605757773266940, guid: f35e0c1bcc3e149c0b2542815a247f76,
+    type: 3}
+  m_PrefabInstance: {fileID: 239494615}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2137283625
 GameObject:
   m_ObjectHideFlags: 0
