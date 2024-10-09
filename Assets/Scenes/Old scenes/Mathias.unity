@@ -6137,7 +6137,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!1 &1391494473
 GameObject:
@@ -7473,7 +7473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bd75bd434c37457e87d9d1be661a0da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 50
+  movespeed: 100
   jumpHeight: 2.4
   gravity: 9.81
 --- !u!54 &1806353581
@@ -7926,7 +7926,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
@@ -9087,6 +9087,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.173
       objectReference: {fileID: 0}
+    - target: {fileID: 2793382266556792575, guid: f35e0c1bcc3e149c0b2542815a247f76,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2949074697379860777, guid: f35e0c1bcc3e149c0b2542815a247f76,
         type: 3}
       propertyPath: m_Enabled
@@ -9165,6 +9170,11 @@ PrefabInstance:
     - target: {fileID: 6719897416334449545, guid: f35e0c1bcc3e149c0b2542815a247f76,
         type: 3}
       propertyPath: m_NotificationBehavior
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7101661870652738767, guid: f35e0c1bcc3e149c0b2542815a247f76,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8975956027916519770, guid: f35e0c1bcc3e149c0b2542815a247f76,
