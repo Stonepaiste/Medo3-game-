@@ -1,0 +1,72 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using FMOD.Studio;
+using FMODUnity;
+
+public class FmodAudioManager : MonoBehaviour
+{
+    private EventInstance _oceanEventInstance;
+    private List<EventInstance> _eventInstances;
+
+    //Creating a singleton pattern for the FmodAudioManager so that we can access
+    //it from anywhere in the game and check if it already exists making sure we only have one instance of it.
+    //This is done by creating a public static instance of the FmodAudioManager and a private set so that we can only set it in this script.
+    //We then create a private Awake method that checks if the instance is not null and if it is it will log an error message.
+    //If the instance is null it will set the instance to this script and create a new list of EventInstances.
+    //This list will be used to store all the EventInstances that are created during the game.
+    //This is done so that we can stop all the sounds when the game is paused or when the player dies.
+    
+    public static FmodAudioManager instance { get; private set; }
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError("Found more than one FModAudioManager in the scene");
+        }
+
+
+        instance = this;
+        _eventInstances = new List<EventInstance>();
+    }
+
+  
+
+    
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        InitializeOceanSound();
+        
+    }
+    
+    private void InitializeOceanSound()
+    {
+        _oceanEventInstance = RuntimeManager.CreateInstance(FmodEvents.instance.Ocean);
+        _oceanEventInstance.start();
+        _eventInstances.Add(_oceanEventInstance);
+    }
+    
+    
+    //This method is used to play a sound once at a specific position in the world.
+    public void playOneShot(EventReference sound, Vector3 worldPos)
+    {
+        RuntimeManager.PlayOneShot(sound, worldPos);
+        
+    }
+    void OnDestroy()
+    {
+        Cleanup();
+    }
+
+    private void Cleanup()
+    {
+        foreach (EventInstance eventInstance in _eventInstances)
+        {
+            eventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            eventInstance.release();
+        }
+    }
+}
