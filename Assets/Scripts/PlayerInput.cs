@@ -74,7 +74,7 @@ public class PlayerInput : MonoBehaviour
 
     void Look()
     {
-        transform.Rotate(transform.up * lookX * rotationSpeed * Time.deltaTime);
+        transform.Rotate(transform.up * lookX * rotationSpeed * Time.deltaTime); 
         playerVirtualCamera.transform.Rotate(Vector3.right * lookY * rotationSpeed * Time.deltaTime);
         Debug.Log("looking around");
     }
