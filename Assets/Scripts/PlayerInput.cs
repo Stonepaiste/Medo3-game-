@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,34 +7,41 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerInput : MonoBehaviour
 {
-    Transform player;
-    Transform camera; 
-    Vector2 movement;
-    float movementX;
-    float movementY;
-    Rigidbody rb;
     [SerializeField] float walkSpeed = 100f;
     [SerializeField] float runSpeed = 200f;
+    [SerializeField] float rotationSpeed = 20f;
     [SerializeField] float sensitivityX = 100f;
     [SerializeField] float sensitivityY = 100f;
-    [SerializeField] float lookX;
-    [SerializeField] float lookY;
-    bool isRunning = false; 
+
+    Rigidbody rb;
+    Transform player;
+    Camera mainCamera;
+    CinemachineVirtualCamera playerVirtualCamera;
+
+    float movementX;
+    float movementY;
+    float lookX;
+    float lookY;
+    bool isRunning = false;
+    Vector2 movement;
 
 
     void Awake()
     {
+        //Removes hides cursor when playing
         Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
         player = this.transform;
-        camera = Camera.main.transform;
+        mainCamera = Camera.main;
+        playerVirtualCamera = GetComponentInChildren<CinemachineVirtualCamera>();
+        
 
     }
 
     private void FixedUpdate()
     {
         Move();
-        //Look();
+        Look();
     }
 
 
@@ -47,8 +55,9 @@ public class PlayerInput : MonoBehaviour
 
     public void OnLook(InputValue value)
     {
-        lookX += value.Get<Vector2>().x * sensitivityX * player.rotation.y;
-        lookY -= value.Get<Vector2>().y * sensitivityY;
+        Vector2 look = value.Get<Vector2>().normalized;
+        lookX += look.x;
+        lookY -= look.y;
         Debug.Log("looking");
     }
 
@@ -60,14 +69,14 @@ public class PlayerInput : MonoBehaviour
     private void Move()
     {
         Vector3 move = new Vector3(movementX, 0f, movementY);
-        rb.velocity = move * walkSpeed * Time.deltaTime;
+        Vector3 transformMove = transform.TransformVector(move);
+        rb.velocity = transformMove * walkSpeed * Time.deltaTime;
     }
 
-    private void Look()
+    void Look()
     {
-        Debug.Log("Looking around");
-        Vector3 lookXAxis = new Vector3(player.rotation.y + lookX, 0f, 0f);
-        Vector3 lookYAxis = new Vector3(0f, camera.rotation.x + lookY, 0f);
-        //camera.transform.rotation = Quaternion.Euler(camera.transform.rotation.x + lookY, 0, 0);
+        transform.Rotate(transform.up * lookX * rotationSpeed * Time.deltaTime);
+        playerVirtualCamera.transform.Rotate(Vector3.right * lookY * rotationSpeed * Time.deltaTime);
+        Debug.Log("looking around");
     }
 }
