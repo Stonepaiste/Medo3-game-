@@ -56,9 +56,8 @@ public class PlayerInput : MonoBehaviour
     public void OnLook(InputValue value)
     {
         Vector2 look = value.Get<Vector2>().normalized;
-        lookX += look.x;
-        lookY -= look.y;
-        Debug.Log("looking");
+        lookX = look.x;
+        lookY = -look.y;
     }
 
     public void OnInteract(InputValue value)
