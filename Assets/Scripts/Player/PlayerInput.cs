@@ -29,33 +29,39 @@ public class PlayerInput : MonoBehaviour
     bool isRunning = false;
     Vector2 movement;
 
-
     void Awake()
     {
-        //Removes hides cursor when playing
+        //Hides cursor when playing
         Cursor.lockState = CursorLockMode.Locked;
-        rb = GetComponent<Rigidbody>();
-        playerVirtualCamera = GetComponentInChildren<CinemachineVirtualCamera>();
-        walkSpeed = initialWalkSpeed;
-        isRunning = false;
-        
 
+        //Gets the rigidbody from the gameobject where the script is attached
+        rb = GetComponent<Rigidbody>();
+
+        //Gets the cinemachine virtual camera from a child gameobject
+        playerVirtualCamera = GetComponentInChildren<CinemachineVirtualCamera>();
+
+        //sets the walkspeed to initialWalkspeed
+        walkSpeed = initialWalkSpeed;
+
+        //sets the bool isRunning to false
+        isRunning = false;
     }
+
     private void Update()
     {
         Run();
     }
+
     private void FixedUpdate()
     {
         Move();
         Look();
-
     }
 
-
-
+    //InputSystem method for "Move" in inputsystem action asset
     public void OnMove(InputValue value)
     {
+        //Getting the value of button pressed from the inputsystem and storing it in 
         movement = value.Get<Vector2>();
         movementY = movement.y;
         movementX = movement.x;
@@ -64,8 +70,9 @@ public class PlayerInput : MonoBehaviour
     public void OnRun(InputValue value)
     {
         isRunning = value.isPressed;
-        Debug.Log(isRunning + "OnRun is working");
+        Debug.Log(isRunning + " OnRun is working");
     }
+
     public void OnLook(InputValue value)
     {
         Vector2 look = value.Get<Vector2>().normalized;
@@ -85,24 +92,24 @@ public class PlayerInput : MonoBehaviour
         rb.velocity = transformMove * walkSpeed * Time.deltaTime;
     }
 
-    void Look()
-    {
-        transform.Rotate(transform.up * lookX * sensitivityX * Time.deltaTime); 
-        playerVirtualCamera.transform.Rotate(Vector3.right * lookY * sensitivityY * Time.deltaTime);
-        Debug.Log("looking around");
-    }
-
     void Run()
     {
         if (isRunning)
         {
             walkSpeed = runSpeed;
-            Debug.Log(isRunning + "Run and isRunning is working");
+            Debug.Log(isRunning + " Set walkSpeed to runSpeed");
         }
         else
         {
             Debug.Log("Set walkSpeed back to initialWalkSpeed");
             walkSpeed = initialWalkSpeed;
         }
+    }
+
+    void Look()
+    {
+        transform.Rotate(transform.up * lookX * sensitivityX * Time.deltaTime); 
+        playerVirtualCamera.transform.Rotate(Vector3.right * lookY * sensitivityY * Time.deltaTime);
+        Debug.Log("Looking around");
     }
 }
