@@ -40,12 +40,15 @@ public class PlayerInput : MonoBehaviour
         
 
     }
-
+    private void Update()
+    {
+        Run();
+    }
     private void FixedUpdate()
     {
         Move();
         Look();
-        Run();
+
     }
 
 
