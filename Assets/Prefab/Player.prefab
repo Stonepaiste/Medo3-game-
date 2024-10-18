@@ -422,8 +422,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45890ec0358ca7428ce5c1bdd4108be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 300
   initialWalkSpeed: 100
+  runSpeed: 300
   sensitivityX: 200
   sensitivityY: 200
 --- !u!136 &8705147589484375706

@@ -515,16 +515,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8492343330728887711, guid: c2402343a0b54574088d01bcf2abfcb3,
-        type: 3}
-      propertyPath: sensitivityX
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 8492343330728887711, guid: c2402343a0b54574088d01bcf2abfcb3,
-        type: 3}
-      propertyPath: sensitivityY
-      value: 200
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -7,10 +7,16 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerInput : MonoBehaviour
 {
-    [SerializeField] float runSpeed = 200f;
+    [Header("Movement Speed")]
+    [Tooltip("How fast you want to walk.")]
     [SerializeField] float initialWalkSpeed = 100f;
-    [SerializeField] float sensitivityX = 100f;
-    [SerializeField] float sensitivityY = 100f;
+    [Tooltip("How fast you want to run.")]
+    [SerializeField] float runSpeed = 300f;
+    [Header("Camera Sensitivity")]
+    [Tooltip("The sensitivity for the horizontal camera movement.")]
+    [SerializeField] float sensitivityX = 200f;
+    [Tooltip("The sensitivity for the vertical camera movement.")]
+    [SerializeField] float sensitivityY = 200f;
 
     Rigidbody rb;
     CinemachineVirtualCamera playerVirtualCamera;
