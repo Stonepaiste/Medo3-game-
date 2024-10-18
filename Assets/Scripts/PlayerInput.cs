@@ -9,13 +9,10 @@ public class PlayerInput : MonoBehaviour
 {
     [SerializeField] float runSpeed = 200f;
     [SerializeField] float initialWalkSpeed = 100f;
-    [SerializeField] float rotationSpeed = 20f;
     [SerializeField] float sensitivityX = 100f;
     [SerializeField] float sensitivityY = 100f;
 
     Rigidbody rb;
-    Transform player;
-    Camera mainCamera;
     CinemachineVirtualCamera playerVirtualCamera;
 
     float walkSpeed;
@@ -32,8 +29,6 @@ public class PlayerInput : MonoBehaviour
         //Removes hides cursor when playing
         Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
-        player = this.transform;
-        mainCamera = Camera.main;
         playerVirtualCamera = GetComponentInChildren<CinemachineVirtualCamera>();
         walkSpeed = initialWalkSpeed;
         isRunning = false;
@@ -86,8 +81,8 @@ public class PlayerInput : MonoBehaviour
 
     void Look()
     {
-        transform.Rotate(transform.up * lookX * rotationSpeed * Time.deltaTime); 
-        playerVirtualCamera.transform.Rotate(Vector3.right * lookY * rotationSpeed * Time.deltaTime);
+        transform.Rotate(transform.up * lookX * sensitivityX * Time.deltaTime); 
+        playerVirtualCamera.transform.Rotate(Vector3.right * lookY * sensitivityY * Time.deltaTime);
         Debug.Log("looking around");
     }
 
