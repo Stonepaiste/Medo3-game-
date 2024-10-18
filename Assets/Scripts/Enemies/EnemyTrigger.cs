@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EnemyTrigger : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        Debug.Log("collission works");
+        if (other.gameObject.tag == "Player")
         {
-            //Invoke enemy event?? 
+            Debug.Log("this works");
         }
     }
 }
