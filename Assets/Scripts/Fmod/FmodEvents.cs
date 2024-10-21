@@ -13,15 +13,15 @@ public class FmodEvents : MonoBehaviour
     [field: SerializeField] public EventReference Ocean { get; private set; }
     
     //We then create a public static instance of the FmodEvents script so that we can access it from anywhere in the game.
-    public static FmodEvents instance { get; private set; }
+    public static FmodEvents Instance { get; private set; }
    
     private void Awake()
     {
-        if (instance != null)
+        if (Instance != null)
         {
             Debug.LogError("Found more than one FMOD Events scripts in the scene");
         }
        
-        instance = this;
+        Instance = this;
     }
 }

@@ -17,17 +17,17 @@ public class FmodAudioManager : MonoBehaviour
     //This list will be used to store all the EventInstances that are created during the game.
     //This is done so that we can stop all the sounds when the game is paused or when the player dies.
     
-    public static FmodAudioManager instance { get; private set; }
+    public static FmodAudioManager Instance { get; private set; }
 
     private void Awake()
     {
-        if (instance != null)
+        if (Instance != null)
         {
             Debug.LogError("Found more than one FModAudioManager in the scene");
         }
 
 
-        instance = this;
+        Instance = this;
         _eventInstances = new List<EventInstance>();
     }
 
@@ -44,7 +44,7 @@ public class FmodAudioManager : MonoBehaviour
     
     private void InitializeOceanSound()
     {
-        _oceanEventInstance = RuntimeManager.CreateInstance(FmodEvents.instance.Ocean);
+        _oceanEventInstance = RuntimeManager.CreateInstance(FmodEvents.Instance.Ocean);
         _oceanEventInstance.start();
         _eventInstances.Add(_oceanEventInstance);
     }
