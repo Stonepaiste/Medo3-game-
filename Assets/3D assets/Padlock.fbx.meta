@@ -3,7 +3,42 @@ guid: c05d10f16fc124a8eb97600124c7f860
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 79b9c120531144e0382c9c93d3f110ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: f66e0ea3d0e334de9830b5b35e5918a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: 808893de20f84426cbece3c2cdb79799, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rusty_metal_sheet.001
+    second: {fileID: 2100000, guid: 41364df2b69444dc7beaf06524c45c12, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rusty_metal_sheet_diff_4k
+    second: {fileID: 2800000, guid: d58dc9fe15bcc481d83203e7dd42fbc0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rusty_metal_sheet_nor_gl_4k
+    second: {fileID: 2800000, guid: 3abee2778ba13494db6ac1a57e0c37d4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rusty_metal_sheet_rough_4k
+    second: {fileID: 2800000, guid: f2fee70385f824192b78b5cf64f30df3, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
