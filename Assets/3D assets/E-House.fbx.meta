@@ -3,7 +3,57 @@ guid: 62fa6fb20bab54f24b77e68b3394e9f0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: d8ce72fb2222d4cc4896fc261a1e05b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 571cf64beb2524dbb842abe12fc1a7ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: 46dbeae2a23004153b6ef40311a1fc9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chinese_stool.001
+    second: {fileID: 2100000, guid: b3dfe0b33986e49b7a58603411833e2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor
+    second: {fileID: 2100000, guid: 33602fd5484184d53bd48b41cc0325d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: street_lamp_02
+    second: {fileID: 2100000, guid: 7b042b1bdfb6b4fc5832d02471574c16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: street_lamp_02_bulb
+    second: {fileID: 2100000, guid: 0e3a3ed8746174620b6fcdc8f5626fa8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: street_lamp_02_glass
+    second: {fileID: 2100000, guid: 93b49ec4c74dc4ee6b124ca6f1d9c5e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wooden_picnic_table_bottom
+    second: {fileID: 2100000, guid: e36e89930a9584844b9c6ffe3e0b0765, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wooden_picnic_table_table
+    second: {fileID: 2100000, guid: 5daf921364bab4637b3d38837d25b6eb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
