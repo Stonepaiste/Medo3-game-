@@ -92,6 +92,7 @@ public class PlayerInput : MonoBehaviour
     public void OnInteract(InputValue value)
     {
         Interact();
+        
     }
 
     private void Move()

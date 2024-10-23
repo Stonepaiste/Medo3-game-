@@ -7,7 +7,7 @@ public class PlayerInteraction : MonoBehaviour
     public float playerReach = 3f;
     Interaction currentInteraction;
 
-
+    
     void Update()
     {
         CheckInteraction();
