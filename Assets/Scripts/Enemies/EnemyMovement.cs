@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    bool isActive;
-    [SerializeField] float moveSpeed = 50f; 
-    Vector3 playerPosition;
-    Vector3 enemyPosition;
-    Transform enemy; 
+    bool isActive = false;
+    [SerializeField] float moveSpeed = 5f; // Adjusted to a lower value
+    Transform player;
+    Transform enemy;
 
     void Awake()
     {
-        isActive = gameObject.activeSelf;
-        playerPosition = FindObjectOfType<PlayerInput>().transform.position;
+        player = FindObjectOfType<PlayerInput>().transform;  // Assuming PlayerInput is attached to the player
         enemy = this.transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isActive)
@@ -25,10 +22,17 @@ public class EnemyMovement : MonoBehaviour
             MoveTowardsPlayer();
         }
     }
+
     public void MoveTowardsPlayer()
     {
-        enemy.LookAt(playerPosition);
-        enemy.position += transform.forward * moveSpeed * Time.deltaTime;
+        Vector3 playerPosition = player.position;
+        enemy.LookAt(playerPosition);  // Enemy looks at the player
+        enemy.position += transform.forward * moveSpeed * Time.deltaTime;  // Move forward toward the player
+    }
 
+    public void ActivateEnemy()
+    {
+        isActive = true;
     }
 }
+
