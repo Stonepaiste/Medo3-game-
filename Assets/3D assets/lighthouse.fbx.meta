@@ -1,9 +1,44 @@
 fileFormatVersion: 2
-guid: ddb169a33b35846a1aa24922480e094d
+guid: 815b28a0ec71f4da9892deca8c1887e0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: e59f7b3fec65f401597d853b3179f6c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: ad7dfbebe6d924a0a9ecb3621a012033, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dark_wooden_planks
+    second: {fileID: 2100000, guid: ab1e0bad03e7640f5b7010d17053599f, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: dark_wooden_planks_diff_4k
+    second: {fileID: 2800000, guid: 469c7667a900746268332ee48d6e7d8f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: dark_wooden_planks_nor_gl_4k
+    second: {fileID: 2800000, guid: d3b0de3995f224d0cb05608e2bbe6bc0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: dark_wooden_planks_rough_4k
+    second: {fileID: 2800000, guid: e413c051c79964b5f9026df5b4bef843, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "hvid v\xE6g"
+    second: {fileID: 2800000, guid: a461bbcce515f414a9ee1fc32b274ad4, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
