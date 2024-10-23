@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Terrain
   - Interactable
+  - CinemachineTarget
+  - EnemyTrigger
+  - Enemy
   layers:
   - Default
   - TransparentFX

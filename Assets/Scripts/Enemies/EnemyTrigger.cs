@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class EnemyTrigger : MonoBehaviour
 {
+    [SerializeField] private EnemyMovement enemyMovement;
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("collission works");
-        if (other.gameObject.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("this works");
+            Debug.Log("Trigger hit");
+            enemyMovement.ActivateEnemy();
         }
     }
 }
