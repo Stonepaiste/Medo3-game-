@@ -1,6 +1,8 @@
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEditor.Searcher.SearcherWindow.Alignment;
@@ -17,6 +19,9 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] float sensitivityX = 200f;
     [Tooltip("The sensitivity for the vertical camera movement.")]
     [SerializeField] float sensitivityY = 200f;
+    [Header("Pick Up Items")]
+    [Tooltip("How far away the character should be before being able to pick up something")]
+    [SerializeField] float distanceToObject = 100f; 
 
     Rigidbody rb;
     CinemachineVirtualCamera playerVirtualCamera;
@@ -27,7 +32,11 @@ public class PlayerInput : MonoBehaviour
     float lookX;
     float lookY;
     bool isRunning = false;
+    bool isHit = false;
+    int interactable = 1 << 6;
+
     Vector2 movement;
+    RaycastHit hit;
 
     void Awake()
     {
@@ -82,7 +91,7 @@ public class PlayerInput : MonoBehaviour
 
     public void OnInteract(InputValue value)
     {
-
+        Interact();
     }
 
     private void Move()
@@ -111,5 +120,22 @@ public class PlayerInput : MonoBehaviour
         transform.Rotate(transform.up * lookX * sensitivityX * Time.deltaTime); 
         playerVirtualCamera.transform.Rotate(Vector3.right * lookY * sensitivityY * Time.deltaTime);
         Debug.Log("Looking around");
+    }
+
+    void Interact()
+    {
+        
+        isHit = Physics.Raycast(transform.position, transform.forward, out hit, distanceToObject, interactable);
+        if (isHit)
+        {
+            Debug.Log(hit.point);
+            Debug.Log("Pick up");
+        }
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
     }
 }
