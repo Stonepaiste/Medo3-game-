@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Old scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/P3 Project/MemoryScene.unity
+    guid: 7af828834da7c4661bc4fa7f2a5c63ae
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: ebd2456eb7598db4d9b68fdc3752b704,
       type: 2}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Interaction : MonoBehaviour
 {
@@ -30,4 +31,10 @@ public class Interaction : MonoBehaviour
     {
         outline.enabled = true;
     }
+
+    public void LoadMemoryScene(string sceneName)
+    {
+        SceneManager.LoadScene(1);
+    }
+
 }
