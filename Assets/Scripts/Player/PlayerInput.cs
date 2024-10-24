@@ -93,6 +93,7 @@ public class PlayerInput : MonoBehaviour
     public void OnInteract(InputValue value)
     {
         Interact();
+        
     }
 
     private void Move()
@@ -100,6 +101,7 @@ public class PlayerInput : MonoBehaviour
         Vector3 move = new Vector3(movementX, 0f, movementY);
         Vector3 transformMove = transform.TransformVector(move);
         rb.velocity = transformMove * walkSpeed * Time.deltaTime;
+        
     }
 
     void Run()

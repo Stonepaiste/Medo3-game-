@@ -9,7 +9,7 @@ TagManager:
   - CinemachineTarget
   - EnemyTrigger
   - Enemy
-  - MessageText
+  - Book
   layers:
   - Default
   - TransparentFX
