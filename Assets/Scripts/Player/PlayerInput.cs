@@ -41,7 +41,8 @@ public class PlayerInput : MonoBehaviour
     void Awake()
     {
         //Hides cursor when playing
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
 
         //Gets the rigidbody from the gameobject where the script is attached
         rb = GetComponent<Rigidbody>();
@@ -92,6 +93,7 @@ public class PlayerInput : MonoBehaviour
     public void OnInteract(InputValue value)
     {
         Interact();
+        
     }
 
     private void Move()
@@ -99,6 +101,7 @@ public class PlayerInput : MonoBehaviour
         Vector3 move = new Vector3(movementX, 0f, movementY);
         Vector3 transformMove = transform.TransformVector(move);
         rb.velocity = transformMove * walkSpeed * Time.deltaTime;
+        
     }
 
     void Run()
