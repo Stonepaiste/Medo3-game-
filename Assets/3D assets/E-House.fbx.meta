@@ -12,8 +12,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: E-Wall.002
-    second: {fileID: 2100000, guid: 40cdad30499aea740bd0bfe164b4a29d, type: 2}
+      name: E-Wall
+    second: {fileID: 2100000, guid: 2a38abd156634f94387a7678ec391ab5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -27,23 +27,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: floor.001
-    second: {fileID: 2100000, guid: fd803990146e2e845bc445fa597c0b51, type: 2}
+      name: floor.002
+    second: {fileID: 2100000, guid: 1f92733c8c63ce3448590fd78e7a4a0d, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Plank
-    second: {fileID: 2800000, guid: 7c1148645ae493e40bc190bf5dc67928, type: 3}
+    second: {fileID: 2800000, guid: e156dd8d65cc8a6409ec836e75437b7d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: chinese_stool_diff_4k
-    second: {fileID: 2800000, guid: 179daac65092a1d469f9e8cef75f01b6, type: 3}
+    second: {fileID: 2800000, guid: e1942710f81efe64e94edf5734a809c4, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: chinese_stool_nor_gl_4k
-    second: {fileID: 2800000, guid: 67ee0f360bfd3fd4588c8967358edc61, type: 3}
+    second: {fileID: 2800000, guid: 8c4f9e38b8a6b794bb7e48379af29c5c, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
