@@ -8,9 +8,8 @@ public class EnemyTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.tag == "EnemyTrigger")
         {
-            Debug.Log("Trigger hit");
             enemyMovement.ActivateEnemy();
         }
     }

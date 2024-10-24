@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    bool isActive;
-    [SerializeField] float moveSpeed = 50f;
+    bool isActive = false;
+    [SerializeField] float moveSpeed = 5f;
     Transform player;
     Transform enemy;
 
@@ -35,3 +35,4 @@ public class EnemyMovement : MonoBehaviour
         isActive = true;
     }
 }
+
