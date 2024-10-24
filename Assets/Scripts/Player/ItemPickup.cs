@@ -70,6 +70,6 @@ public class ItemPickup : MonoBehaviour
          
      public void startRotation()
          {
-             transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
+             transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
          }
 }
