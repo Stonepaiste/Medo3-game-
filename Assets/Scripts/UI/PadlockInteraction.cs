@@ -18,13 +18,13 @@ public class PadlockInteraction : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-
+            padlockCanvas.SetActive(true);
             // If the ray hits this game object (the padlock), open the canvas
-            if (Physics.Raycast(ray, out hit) && hit.transform == transform)
+            /*if (Physics.Raycast(ray, out hit) && hit.transform == transform)
             {
                 padlockCanvas.SetActive(true);
                 //Time.timeScale = 0f; // Pause the game
-            }
+            }*/
         }
 
         // Optional: Close the canvas with a specific key (e.g., "Escape")
