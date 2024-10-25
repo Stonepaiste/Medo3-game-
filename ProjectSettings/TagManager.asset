@@ -10,6 +10,8 @@ TagManager:
   - EnemyTrigger
   - Enemy
   - Book
+  - MessageText
+  - PowerTrigger
   layers:
   - Default
   - TransparentFX
