@@ -15,6 +15,7 @@ public class Padlock : MonoBehaviour
 
     public void AddDigit(string digit)
     {
+        Debug.Log("Button works!");
         if (enteredCode.Length < maxDigits)
         {
             enteredCode += digit;
