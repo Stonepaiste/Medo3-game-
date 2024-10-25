@@ -9,8 +9,9 @@ TagManager:
   - CinemachineTarget
   - EnemyTrigger
   - Enemy
-  - MessageText
   - Book
+  - MessageText
+  - PowerTrigger
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Water
   - UI
   - Interactable
-  - 
+  - Render Texture
   - 
   - 
   - 
