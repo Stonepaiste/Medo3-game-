@@ -1,37 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PadlockInteraction : MonoBehaviour
 {
     public GameObject padlockCanvas;
+    public Camera mainCamera;
 
     private void Start()
     {
+        Cursor.visible = true;
         padlockCanvas.SetActive(false);
     }
 
     private void Update()
     {
-        // Check for a left mouse click
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            padlockCanvas.SetActive(true);
-            // If the ray hits this game object (the padlock), open the canvas
-            /*if (Physics.Raycast(ray, out hit) && hit.transform == transform)
+
+            if (Physics.Raycast(ray, out hit))
             {
-                padlockCanvas.SetActive(true);
-                //Time.timeScale = 0f; // Pause the game
-            }*/
+                if (hit.collider != null && hit.collider.gameObject == gameObject)
+                {
+                    padlockCanvas.SetActive(true);
+                    //Time.timeScale = 0;
+                }
+            }
         }
 
-        // Optional: Close the canvas with a specific key (e.g., "Escape")
         if (Input.GetKeyDown(KeyCode.Escape) && padlockCanvas.activeSelf)
         {
             padlockCanvas.SetActive(false);
-            //Time.timeScale = 1f; // Resume the game
+            //Time.timeScale = 1;
         }
     }
 }
