@@ -401,6 +401,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8084912289201083290, guid: 23be2fdd9c8d54545b5316a9735390bf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1456758465}
+    - target: {fileID: 8084912289201083290, guid: 23be2fdd9c8d54545b5316a9735390bf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddDigit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -480,6 +490,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 719812691}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1456758465 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4692365816152629618, guid: 23be2fdd9c8d54545b5316a9735390bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 719812691}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456758464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb7e6dba355f44059b7aa2f60e4ffe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1748470055
 GameObject:
   m_ObjectHideFlags: 0
