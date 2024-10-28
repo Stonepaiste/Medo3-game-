@@ -82,7 +82,7 @@ public class ItemPickup : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             bookofknowledge = false;
-            //Canvas.gameObject.SetActive(false);
+            pushF.gameObject.SetActive(false);
 
 
         }
