@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Awake()
     {
-        player = FindObjectOfType<PlayerInput>().transform;
+        player = FindObjectOfType<PlayerInpuController>().transform;
         enemy = this.transform;
     }
 

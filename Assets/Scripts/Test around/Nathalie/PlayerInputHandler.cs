@@ -7,85 +7,102 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    [Header("Input Action Asset")]
-    [SerializeField] private InputActionAsset playerControls;
+   //Input Action
+    //[Header("Input Action Asset")]
+    //[SerializeField] private InputActionAsset playerControls;
 
+   //Movements
     [Header("Movement Speed")]
+    [Tooltip("The walking speed in float")]
     [SerializeField] float walkSpeed;
+
+    [Tooltip("The run speed in float")]
     [SerializeField] float runSpeed;
 
-    [Header("Gravity Value")]
-    [SerializeField] private float gravityValue;
-
     Vector2 movePlayer;
-    bool runPlayer = false;
-    float moveSpeed;
+    float runPlayer;
+    float currentSpeed;
 
-    private CharacterController controller;
+   //Gravity
+    [Header("Gravity Value")]
+    [Tooltip("The gravity of how fast we fall in float")]
+    [SerializeField] float gravityValue;
 
-    private Vector3 playerVelocity;
-    private bool groundedPlayer;
+    bool groundedPlayer;
+    Vector3 playerVelocity;
+    
 
-    private Transform cameraTransform;
+   //Components
+    CharacterController controller;
+    PlayerInput playerInput;
+  
 
+    //Input Actions
+    InputAction moveAction;
+    InputAction runAction;
+    InputAction interactAction;
+  
+   //Camera
+    Transform cameraTransform;
+
+
+    private void Awake()
+    {
+        controller = GetComponent<CharacterController>();
+        playerInput = GetComponent<PlayerInput>();
+        moveAction = playerInput.actions["move"];
+        runAction = playerInput.actions["run"];
+        interactAction = playerInput.actions["interact"];
+    }
 
     private void Start()
     {
-        controller = GetComponent<CharacterController>();
-
         Cursor.lockState = CursorLockMode.Locked;
-
-        moveSpeed = walkSpeed;
-
         cameraTransform = Camera.main.transform;
-
-
     }
+
     private void Update()
     {
-        groundedPlayer = controller.isGrounded;
+      groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
         }
         
-        Vector2 movement = movePlayer;
+      Vector2 movement = movePlayer;
         Vector3 move = new Vector3(movement.x, 0f, movement.y);
         move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
         move.y = 0f;
         move.Normalize();
         controller.Move(move * Time.deltaTime * walkSpeed);
 
-        playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
+       playerVelocity.y += gravityValue * Time.deltaTime;
+       controller.Move(playerVelocity * Time.deltaTime);
+
+
+        OnMove();
+        OnRun();
     }
 
-    void OnMove(InputValue value) 
+    private void OnMove() 
     {
-        movePlayer = value.Get<Vector2>().normalized;
+        movePlayer = moveAction.ReadValue<Vector2>().normalized;
+ //       movePlayer = value.Get<Vector2>().normalized;
     }
 
-    void OnRun(InputValue value)
+    private void OnRun()
     {
-        runPlayer = value.isPressed;
+       runPlayer = runAction.ReadValue<float>();
 
-        Debug.Log("Run is pressed");
-
-      if (runPlayer = value.isPressed)
+        if (runPlayer > 0)
         {
-            runPlayer = true;
-            moveSpeed = runSpeed;
-
-            Debug.Log("I am runniiing");
+            currentSpeed *= runSpeed;
         }
-      else if (runPlayer != value.isPressed)
+        else
         {
-            runPlayer = false;
-
-            Debug.Log("I am walking again");
+            currentSpeed *= walkSpeed;
         }
-     
-  
+   
   
     }
 }
