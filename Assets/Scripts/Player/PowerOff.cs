@@ -9,6 +9,7 @@ public class PowerOff : MonoBehaviour
         if (other.gameObject.tag == "PowerTrigger")
         {
            GetComponent<LampLighthouse>().TurnPowerOff(); //Calling method from LampLighthouse.cs
+           Debug.Log("Power off");
         }
     }
     void Update()
