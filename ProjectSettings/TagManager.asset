@@ -12,6 +12,7 @@ TagManager:
   - Book
   - MessageText
   - PowerTrigger
+  - Monologue
   layers:
   - Default
   - TransparentFX
