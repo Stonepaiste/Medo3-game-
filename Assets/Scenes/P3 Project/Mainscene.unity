@@ -7159,19 +7159,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 438060, guid: ec2aa1014a797c54eb478896b8a82d02, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.71149373
+      value: 0.83156914
       objectReference: {fileID: 0}
     - target: {fileID: 438060, guid: ec2aa1014a797c54eb478896b8a82d02, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 438060, guid: ec2aa1014a797c54eb478896b8a82d02, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.70269245
+      value: -0.5554213
       objectReference: {fileID: 0}
     - target: {fileID: 438060, guid: ec2aa1014a797c54eb478896b8a82d02, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 438060, guid: ec2aa1014a797c54eb478896b8a82d02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7179,7 +7179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 438060, guid: ec2aa1014a797c54eb478896b8a82d02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -67.479
       objectReference: {fileID: 0}
     - target: {fileID: 438060, guid: ec2aa1014a797c54eb478896b8a82d02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -11546,7 +11546,7 @@ PrefabInstance:
     - target: {fileID: 2809123068200688490, guid: c2402343a0b54574088d01bcf2abfcb3,
         type: 3}
       propertyPath: m_Lens.FarClipPlane
-      value: 100
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3410961459531209564, guid: c2402343a0b54574088d01bcf2abfcb3,
         type: 3}
@@ -11636,7 +11636,7 @@ PrefabInstance:
     - target: {fileID: 8688407699173284056, guid: c2402343a0b54574088d01bcf2abfcb3,
         type: 3}
       propertyPath: far clip plane
-      value: 100
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 9188346607206878940, guid: c2402343a0b54574088d01bcf2abfcb3,
         type: 3}
