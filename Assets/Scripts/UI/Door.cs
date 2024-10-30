@@ -5,8 +5,8 @@ public class Door : MonoBehaviour
 {
     private bool isOpen = false;
 
-    public float openAngle = 90f;    // Angle to open the door
-    public float openSpeed = 70f;     // Speed of opening the door
+    public float openAngle = 90f; // Angle to open the door
+    public float openSpeed = 70f; // Speed of opening the door
 
     public Transform doorTransform; // Reference to the door itself
 

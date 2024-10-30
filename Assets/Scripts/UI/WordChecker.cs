@@ -6,7 +6,7 @@ public class WordChecker : MonoBehaviour
     public TMP_InputField inputField;
     public TMP_Text messageText;
 
-    private string[] acceptedWords = { "lonely", "lonley", "alone", "alnoe", "loenly", "alnone", "lonesome", "lone" };
+    private string[] acceptedWords = { "lonely", "lonley", "alone", "alnoe", "alnone", "allone", "loenly", "lonesome", "lone", "ensom", "alene" };
 
     void Start()
     {
