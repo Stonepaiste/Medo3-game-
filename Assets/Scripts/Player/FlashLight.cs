@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Flashlight : MonoBehaviour
 {
+    public GameObject fire;
+    public float moveFire = 5f;
+
+
     [SerializeField] GameObject lightSource;
     private bool FlashlightOn = false;
     public Transform LightPoint;
@@ -38,6 +42,10 @@ public class Flashlight : MonoBehaviour
         {
             Shooting();
         }
+        else
+        {
+            fire.SetActive(false);
+        }
     }
 
     //Shooting method for burning shadowmonsters with raycast
@@ -50,12 +58,22 @@ public class Flashlight : MonoBehaviour
             Debug.DrawRay(LightPoint.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
 
             //Burning shadowmonsters if raycast hits object with tag "Enemy"
-            if (hit.transform.tag == "Enemy")
+            if (hit.transform.tag == "Enemy") 
             {
                 hit.transform.GetComponent<ShadowHealth>().TakeDamage();
-                //Instantiate(``Unity Asset´´, hit.point, Quaternion.identity);
+                fire.SetActive(true);
+                fire.transform.position = Vector3.Lerp(fire.transform.position, hit.point+new Vector3(0,0,-0.1f), moveFire*Time.deltaTime);
+                //Instantiate(fire, hit.point, Quaternion.identity);
                 //AudioLibrary.PlaySound("Burn");
             }
+            else
+            {
+                fire.SetActive(false);
+            }
+        }
+        else
+        {
+            fire.SetActive(false);
         }
     }
 

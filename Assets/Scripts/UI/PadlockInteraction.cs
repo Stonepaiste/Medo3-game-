@@ -4,6 +4,7 @@ public class PadlockInteraction : MonoBehaviour
 {
     public GameObject padlockCanvas;
     public Camera mainCamera;
+    public PlayerInpuController playerInpuController;
 
     private void Start()
     {
@@ -23,6 +24,7 @@ public class PadlockInteraction : MonoBehaviour
                 if (hit.collider != null && hit.collider.gameObject == gameObject)
                 {
                     padlockCanvas.SetActive(true);
+                    playerInpuController.enabled = false;
                     //Time.timeScale = 0;
                 }
             }
@@ -31,6 +33,7 @@ public class PadlockInteraction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && padlockCanvas.activeSelf)
         {
             padlockCanvas.SetActive(false);
+            playerInpuController.enabled = true;
             //Time.timeScale = 1;
         }
     }
