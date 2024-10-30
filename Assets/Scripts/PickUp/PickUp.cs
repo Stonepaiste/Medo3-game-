@@ -18,10 +18,10 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Book"))
         {
             //ShowItemDetails():
-            
+            Debug.Log("touched");
         }
     }
 }
