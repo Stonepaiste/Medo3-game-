@@ -11822,8 +11822,7 @@ PrefabInstance:
         type: 3}
       propertyPath: padlockCanvas
       value: 
-      objectReference: {fileID: 701630667491391143, guid: 23be2fdd9c8d54545b5316a9735390bf,
-        type: 3}
+      objectReference: {fileID: 456408835}
     - target: {fileID: 6120664834552526321, guid: f510520bed859b244ae5ac2f2428c5f3,
         type: 3}
       propertyPath: playerInpuController
