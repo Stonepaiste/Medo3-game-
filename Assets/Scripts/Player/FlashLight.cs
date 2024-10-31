@@ -6,6 +6,7 @@ public class Flashlight : MonoBehaviour
 {
     public GameObject fire;
     public float moveFire = 5f;
+    public float firePosition = -0.1f;
 
 
     [SerializeField] GameObject lightSource;
@@ -60,18 +61,19 @@ public class Flashlight : MonoBehaviour
             //Burning shadowmonsters if raycast hits object with tag "Enemy"
             if (hit.transform.tag == "Enemy") 
             {
-                hit.transform.GetComponent<ShadowHealth>().TakeDamage();
+                hit.transform.GetComponent<ShadowHealth>().TakeDamage(); //calling TakeDamage method from ShadowHealth script
+
+                //Fire effect
                 fire.SetActive(true);
-                fire.transform.position = Vector3.Lerp(fire.transform.position, hit.point+new Vector3(0,0,-0.1f), moveFire*Time.deltaTime);
-                //Instantiate(fire, hit.point, Quaternion.identity);
+                fire.transform.position = Vector3.Lerp(fire.transform.position, hit.point+new Vector3(0,0,firePosition), moveFire*Time.deltaTime);
                 //AudioLibrary.PlaySound("Burn");
             }
-            else
+            else //if raycast hits other objects, fire effect is off
             {
                 fire.SetActive(false);
             }
         }
-        else
+        else //if raycast doesn't hit anything, fire effect is off
         {
             fire.SetActive(false);
         }
