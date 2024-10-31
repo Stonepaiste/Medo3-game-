@@ -6,9 +6,27 @@ using UnityEngine;
 public class MonologueObject : ScriptableObject
 {
     [Header("Monologue")]
-    public List<string> monologueStrings = new List<string>();
+    public List<MonologueSegment> monologueSegments = new List<MonologueSegment>();
 
 
     [Header("Follow on Monologue - Optional")]
     public MonologueObject endMonologue;
+
+
+    [System.Serializable]
+    public struct MonologueSegment
+    {
+        public string monologueText;
+
+        public float monologueDisplaytime;
+
+        public List<MonologueChoice> monologueChoices;
+    }
+
+    [System.Serializable]
+    public struct MonologueChoice
+    {
+        public string monologueChoice;
+        public MonologueObject followMonologue;
+    }
 }
