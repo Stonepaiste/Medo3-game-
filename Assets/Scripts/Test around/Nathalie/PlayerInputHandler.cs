@@ -57,7 +57,10 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
+
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
         cameraTransform = Camera.main.transform;
     }
 

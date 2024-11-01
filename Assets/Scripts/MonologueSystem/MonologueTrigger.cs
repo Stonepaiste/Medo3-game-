@@ -7,7 +7,6 @@ public class MonologueTrigger : MonoBehaviour
 {
     [SerializeField] Canvas monologueCanvas;
     [SerializeField] Text monologueText;
-
     [SerializeField] MonologueObject monologueObject;
 
     public void OnTriggerEnter(Collider other)
@@ -18,14 +17,23 @@ public class MonologueTrigger : MonoBehaviour
         }
     }
 
+    //Method for playing monologue and displaying subtitles
+    /*
+    public void StartMonologue()
+    {
+        StartCoroutine(DisplayMonologue());
+        //Play Monologue Audio
+    }
+    */
+
     IEnumerator DisplayMonologue()
     {
         monologueCanvas.enabled = true;
-        for (int i = 0; i < monologueObject.monologueStrings.Count; i++)
+        foreach (var monologue in monologueObject.monologueSegments)
         {
-            Debug.Log(monologueObject.monologueStrings[i]);
-            monologueText.text = monologueObject.monologueStrings[i];
-            yield return new WaitForSeconds(1f);
+            //Debug.Log(monologueObject.monologueSegments[i]);
+            monologueText.text = monologue.monologueText;
+            yield return new WaitForSeconds(monologue.monologueDisplaytime);
         }
         monologueCanvas.enabled = false;
     }

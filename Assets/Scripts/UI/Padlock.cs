@@ -9,11 +9,14 @@ public class Padlock : MonoBehaviour
     public TextMeshProUGUI displayText;
     public int maxDigits = 4;
     public Door door;
+    public bool enemycanspawn;
+    private bool hasActivatedEnemy = false; // New variable to track activation
 
     private Color originalColor;
 
     private void Start()
     {
+        enemycanspawn = false;
         Cursor.visible = true;
         originalColor = displayText.color;
         UpdateDisplay();
@@ -45,6 +48,13 @@ public class Padlock : MonoBehaviour
         {
             Debug.Log("Incorrect Code!");
             StartCoroutine(DisplayResult(Color.red));
+
+            // Activate enemy movement only on the first incorrect code entry
+            if (!hasActivatedEnemy)
+            {
+                enemycanspawn = true;
+                hasActivatedEnemy = true; // Prevent future activation
+            }
         }
     }
 
