@@ -13694,7 +13694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fire: {fileID: 1313379005}
-  moveFire: 10
+  moveFire: 100
   firePosition: 0
   lightSource: {fileID: 1346575247}
   sphereRadius: 2
