@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 493db0e25fc209648bb1be497a78b5dd, type: 3}
   m_Name: Radio1
   m_EditorClassIdentifier: 
-  monologueStrings:
-  - "\u201CMissing person, mid 20\u2019s last seen 3 days ago leaving a party wearing
-    a yellow raincoat.\u201C"
-  - "\u201CHello\u2026?\u201D"
-  - "\u201CWho\u2019s there?\u201D"
-  - '"...    "'
-  - '"Weird"'
-  endMonologue: {fileID: 0}
+  monologueSegments:
+  - monologueText: 
+    monologueDisplaytime: 0
+    monologueChoices: []
+  - monologueText: 
+    monologueDisplaytime: 0
+    monologueChoices: []
+  - monologueText: 
+    monologueDisplaytime: 0
+    monologueChoices: []
+  endMonologue: {fileID: 11400000, guid: a824f476a50152340a630c3ffd60c570, type: 2}

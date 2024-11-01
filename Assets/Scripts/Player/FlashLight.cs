@@ -10,8 +10,10 @@ public class Flashlight : MonoBehaviour
 
 
     [SerializeField] GameObject lightSource;
+    [SerializeField] float sphereRadius = 0.1f; // Adjust the radius as needed
     private bool FlashlightOn = false;
     public Transform LightPoint;
+
 
     void Start()
     {
@@ -22,8 +24,8 @@ public class Flashlight : MonoBehaviour
 
     void Update()
     {
-        //if statement to turn on and off the flashlight, when f-key is pressed
-        if (Input.GetKeyDown(KeyCode.F))
+        //if statement to turn on and off the flashlight, when space-key is pressed
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (FlashlightOn == false)
             {
@@ -54,9 +56,10 @@ public class Flashlight : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(LightPoint.position, transform.TransformDirection(Vector3.forward), out hit, 100))
+        if (Physics.SphereCast(LightPoint.position, sphereRadius, transform.TransformDirection(Vector3.forward), out hit, 100))
+
         {
-            Debug.DrawRay(LightPoint.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            //Debug.DrawLine(LightPoint.position, hit.point, Color.yellow);  //Debug line for raycast
 
             //Burning shadowmonsters if raycast hits object with tag "Enemy"
             if (hit.transform.tag == "Enemy") 
