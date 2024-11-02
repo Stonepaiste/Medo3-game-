@@ -638,7 +638,7 @@ MonoBehaviour:
     roll: 0
   - position: {x: 13.366572, y: -10.410494, z: 41.561893}
     roll: 0
-  - position: {x: 12.511159, y: -10.591785, z: 34.070244}
+  - position: {x: 12.511159, y: -10.843298, z: 33.94941}
     roll: 0
 --- !u!4 &1334245882
 Transform:
@@ -1063,7 +1063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 1334245881}
-  m_PathPosition: -12.67
+  m_PathPosition: -24.2
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
