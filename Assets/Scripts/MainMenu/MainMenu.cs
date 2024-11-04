@@ -9,12 +9,19 @@ public class MainMenu : MonoBehaviour
     // Function to load the play scene
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
     public void QuitGame()
     {
         Debug.Log("Game is exiting...");  // This is helpful to confirm the button works in the editor
         Application.Quit();
+    }
+     void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
 }

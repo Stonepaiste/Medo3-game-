@@ -34,6 +34,11 @@ public class PauseMenu : MonoBehaviour
             ResumeGame();
         }
 
+        if (isPaused && Input.GetKeyDown(KeyCode.M))
+        {
+            GoToMainMenu();
+        }
+
     }
     
     public void PauseGame()
