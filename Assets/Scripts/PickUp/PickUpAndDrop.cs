@@ -15,6 +15,7 @@ public class PickUpAndDrop : MonoBehaviour
     GameObject itemInRange; // Store the item in the trigger range
     bool isHolding = false;
     bool canInteractToDisappear = false; // Track if player is in specific trigger zone
+    
 
     void Start()
     {
@@ -24,7 +25,7 @@ public class PickUpAndDrop : MonoBehaviour
     void Update()
     {
         if (itemInRange != null && Input.GetKeyDown("e")) Pickup(); // Pick up the item in range
-        if (canInteractToDisappear && Input.GetKeyDown("e")) MakeFuelCanDisappear(); // Press "I" to make can disappear
+        if (canInteractToDisappear && Input.GetKeyDown("i")) MakeFuelCanDisappear(); // Press "I" to make can disappear
         /*if (Input.GetKeyDown("q") && isHolding) Drop();*/
     }
 
@@ -32,6 +33,7 @@ public class PickUpAndDrop : MonoBehaviour
     {
         if (other.CompareTag("item") && !isHolding)
         {
+            Debug.Log("Text Display");
             itemInRange = other.gameObject; // Store the reference of the item in range
             pickUpText.gameObject.SetActive(true); // Show the text when near an item
         }
