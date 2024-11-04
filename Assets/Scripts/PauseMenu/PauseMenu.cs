@@ -26,6 +26,12 @@ public class PauseMenu : MonoBehaviour
             {
                 PauseGame();
             }
+
+        }
+        // Check for "R" key to resume if the game is paused
+        if (isPaused && Input.GetKeyDown(KeyCode.R))
+        {
+            ResumeGame();
         }
 
     }
