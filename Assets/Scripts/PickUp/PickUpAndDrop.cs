@@ -7,12 +7,14 @@ public class PickUpAndDrop : MonoBehaviour
 {
     public GameObject camera;
     public TextMeshProUGUI pickUpText;
+    public TextMeshProUGUI interactText;
     public Transform teleportDestination; // Set this to the new position in the Inspector
     public ScreenFade screenFade; // Reference to the ScreenFade script
     float maxPickupDistance = 5;
     GameObject itemCurrentlyHolding;
     GameObject itemInRange; // Store the item in the trigger range
     bool isHolding = false;
+    bool canInteractToDisappear = false; // Track if player is in specific trigger zone
 
     void Start()
     {
@@ -22,6 +24,7 @@ public class PickUpAndDrop : MonoBehaviour
     void Update()
     {
         if (itemInRange != null && Input.GetKeyDown("e")) Pickup(); // Pick up the item in range
+        if (canInteractToDisappear && Input.GetKeyDown("e")) MakeFuelCanDisappear(); // Press "I" to make can disappear
         /*if (Input.GetKeyDown("q") && isHolding) Drop();*/
     }
 
@@ -32,11 +35,13 @@ public class PickUpAndDrop : MonoBehaviour
             itemInRange = other.gameObject; // Store the reference of the item in range
             pickUpText.gameObject.SetActive(true); // Show the text when near an item
         }
-        
         else if (isHolding && other.CompareTag("Interact")) // Specific collider check
         {
-            MakeFuelCanDisappear();
+            interactText.gameObject.SetActive(true); // Show "Press I to drop" text
+            canInteractToDisappear = true; // Allow player to press "I" to drop
         }
+
+
     }
 
     void OnTriggerExit(Collider other)
@@ -45,6 +50,11 @@ public class PickUpAndDrop : MonoBehaviour
         {
             itemInRange = null; // Clear the reference when leaving the range
             pickUpText.gameObject.SetActive(false); // Hide the text when out of range
+        }
+        else if (isHolding && other.CompareTag("Interact"))
+        {
+            interactText.gameObject.SetActive(false); // Hide the interact text when exiting
+            canInteractToDisappear = false; // Disable interaction when out of range
         }
     }
 
@@ -83,17 +93,20 @@ public class PickUpAndDrop : MonoBehaviour
 
 
     }
-
-        void MakeFuelCanDisappear()
+    void MakeFuelCanDisappear()
+    {
+        if (itemCurrentlyHolding != null)
         {
-            if (itemCurrentlyHolding != null)
-            {
-                Destroy(itemCurrentlyHolding); // Remove the fuel can
-                itemCurrentlyHolding = null;
-                isHolding = false;
-            }
+            Destroy(itemCurrentlyHolding); // Remove the fuel can
+            itemCurrentlyHolding = null;
+            isHolding = false;
+            interactText.gameObject.SetActive(false); // Hide interact text after dropping
+            canInteractToDisappear = false; // Reset interaction flag
         }
-  }
+    }
+
+
+}
     
     /*void Drop()
     {
