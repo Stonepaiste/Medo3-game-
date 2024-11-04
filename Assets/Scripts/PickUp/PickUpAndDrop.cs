@@ -25,7 +25,7 @@ public class PickUpAndDrop : MonoBehaviour
     void Update()
     {
         if (itemInRange != null && Input.GetKeyDown("e")) Pickup(); // Pick up the item in range
-        if (canInteractToDisappear && Input.GetKeyDown("i")) MakeFuelCanDisappear(); // Press "I" to make can disappear
+        if (canInteractToDisappear && Input.GetKeyDown("e")) MakeFuelCanDisappear(); // Press "I" to make can disappear
         /*if (Input.GetKeyDown("q") && isHolding) Drop();*/
     }
 
