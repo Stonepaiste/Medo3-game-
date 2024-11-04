@@ -8,6 +8,7 @@ public class PadlockInteraction : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = true;
         padlockCanvas.SetActive(false);
     }
 
