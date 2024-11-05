@@ -15,7 +15,8 @@ public class PickUpAndDrop : MonoBehaviour
     GameObject itemInRange; // Store the item in the trigger range
     bool isHolding = false;
     bool canInteractToDisappear = false; // Track if player is in specific trigger zone
-    
+
+    public bool FuelCanDropped { get; private set; } = false;
 
     void Start()
     {
@@ -104,6 +105,8 @@ public class PickUpAndDrop : MonoBehaviour
             isHolding = false;
             interactText.gameObject.SetActive(false); // Hide interact text after dropping
             canInteractToDisappear = false; // Reset interaction flag
+
+            FuelCanDropped = true;
         }
     }
 
