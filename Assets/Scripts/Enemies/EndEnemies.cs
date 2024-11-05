@@ -14,12 +14,14 @@ public class EndEnemies : MonoBehaviour
     [SerializeField] private LightSwitch lightSwitch;
     [SerializeField] private PickUpAndDrop pickUpAndDrop;
 
+    [SerializeField] private GameObject lonelyCanvas;
+
     void Awake()
     {
         player = GameObject.Find("Player 2").transform;
         enemyRenderer = GetComponent<Renderer>();
         enemyRenderer.enabled = false;
-
+        lonelyCanvas.SetActive(false);
     }
 
     private void Update()
@@ -51,5 +53,13 @@ public class EndEnemies : MonoBehaviour
     {
         isActive = true;
         enemyRenderer.enabled = true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            lonelyCanvas.SetActive(true);
+        }
     }
 }
