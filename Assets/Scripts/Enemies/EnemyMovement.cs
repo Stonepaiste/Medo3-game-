@@ -52,7 +52,7 @@ public class EnemyMovement : MonoBehaviour
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
     }
 
-    public void ActivateEnemy()
+    private void ActivateEnemy()
     {
         isActive = true;
         enemyRenderer.enabled = true;  // Ensure visibility if activated externally
