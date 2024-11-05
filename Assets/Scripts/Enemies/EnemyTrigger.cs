@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class EnemyTrigger : MonoBehaviour
 {
-    [SerializeField] private EnemyMovement enemyMovement;
+    public EnemyMovement enemyMovement;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "EnemyTrigger")
         {
+            Debug.Log("Has been entered");
             enemyMovement.ActivateEnemy();
+            Destroy(other.gameObject);
         }
     }
 }

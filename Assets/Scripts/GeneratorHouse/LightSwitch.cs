@@ -10,12 +10,16 @@ public class LightSwitch : MonoBehaviour
     private bool playerIsClose = false;
     private bool handleIsDown = false;
 
+    private float handleUpRotation = 0f;
+
     void Start()
     {
         if (pressEText != null)
         {
             pressEText.enabled = false;
         }
+
+        handleUpRotation = handle.localEulerAngles.x;
     }
 
     void Update()
@@ -25,11 +29,18 @@ public class LightSwitch : MonoBehaviour
             handleIsDown = true;
         }
 
+        Quaternion targetRotation;
+
         if (handleIsDown)
         {
-            Quaternion targetRotation = Quaternion.Euler(handleDownRotation, handle.localEulerAngles.y, handle.localEulerAngles.z);
-            handle.localRotation = Quaternion.Lerp(handle.localRotation, targetRotation, Time.deltaTime * rotationSpeed);
+            targetRotation = Quaternion.Euler(handleDownRotation, handle.localEulerAngles.y, handle.localEulerAngles.z);
         }
+        else
+        {
+            targetRotation = Quaternion.Euler(handleUpRotation, handle.localEulerAngles.y, handle.localEulerAngles.z);
+        }
+
+        handle.localRotation = Quaternion.Lerp(handle.localRotation, targetRotation, Time.deltaTime * rotationSpeed);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,6 +61,7 @@ public class LightSwitch : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsClose = false;
+            handleIsDown = false;
             if (pressEText != null)
             {
                 pressEText.enabled = false;
