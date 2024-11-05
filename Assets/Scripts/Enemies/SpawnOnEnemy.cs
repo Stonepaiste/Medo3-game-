@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SpawnOnEnemyDefeat : MonoBehaviour
+public class SpawnOnEnemy : MonoBehaviour
 {
     public GameObject spawnObject; // The object to spawn
     private bool hasSpawned = false; // To ensure the object is spawned only once per enemy
@@ -19,5 +19,6 @@ public class SpawnOnEnemyDefeat : MonoBehaviour
     {
         // Instantiate the object at the enemy's position and rotation
         Instantiate(spawnObject, transform.position, transform.rotation);
+        
     }
 }

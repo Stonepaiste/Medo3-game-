@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class ShadowHealth : MonoBehaviour
 {
-    public int shadowHealth = 1000;
+    public int shadowHealth = 100;
+    private SpawnOnEnemy spawnOnEnemy; // Reference to SpawnOnEnemy script
+
+    private void Start()
+    {
+        // Get the SpawnOnEnemy component attached to the same GameObject
+        spawnOnEnemy = GetComponent<SpawnOnEnemy>();
+    }
 
     public void TakeDamage()
     {
@@ -15,8 +22,17 @@ public class ShadowHealth : MonoBehaviour
     {
         if (shadowHealth <= 0)
         {
-            Destroy(gameObject);
+           // Spawn the object right before destroying the enemy
+            if (spawnOnEnemy != null)
+            {
+                spawnOnEnemy.DefeatEnemy();
+                Destroy(gameObject);
+            }
+
+          
         }
+
+      
     }
 }
 
