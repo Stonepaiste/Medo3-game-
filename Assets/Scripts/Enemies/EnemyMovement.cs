@@ -6,20 +6,22 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     private Transform player;
     private Renderer enemyRenderer;
-    private Padlock padlock;
+    public Padlock padlock;
 
     void Awake()
     {
-        player = GameObject.Find("Player").transform;
+        player = GameObject.Find("Player 2").transform;
         enemyRenderer = GetComponent<Renderer>();
         enemyRenderer.enabled = false;  // Initially invisible
 
-        padlock = GetComponent<Padlock>();
+
+        /*padlock = GetComponent<Padlock>();
 
         if (padlock == null)
         {
             Debug.LogError("Padlock component is not found on the same GameObject.");
         }
+        */
     }
 
     void Update()
