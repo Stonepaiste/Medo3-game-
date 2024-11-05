@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class EnemyTrigger : MonoBehaviour
 {
-    [SerializeField] private GHouseEnemyMovement gHouseEnemyMovement;
+    public EnemyMovement enemyMovement;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "EnemyTrigger")
         {
             Debug.Log("Has been entered");
-            gHouseEnemyMovement.ActivateEnemy();
+            enemyMovement.ActivateEnemy();
             Destroy(other.gameObject);
         }
     }
