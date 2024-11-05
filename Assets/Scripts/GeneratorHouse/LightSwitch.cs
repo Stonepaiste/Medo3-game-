@@ -9,6 +9,7 @@ public class LightSwitch : MonoBehaviour
     public TMP_Text pressEText;
     private bool playerIsClose = false;
     private bool handleIsDown = false;
+    public bool IsHandleDown => handleIsDown;
 
     private float handleUpRotation = 0f;
 
@@ -55,7 +56,7 @@ public class LightSwitch : MonoBehaviour
             }
         }
     }
-
+    
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
