@@ -33,7 +33,10 @@ public class MonologueTrigger : MonoBehaviour
         {
             //Debug.Log(monologueObject.monologueSegments[i]);
             monologueText.text = monologue.monologueText;
-            yield return new WaitForSeconds(monologue.monologueDisplaytime);
+            if (monologue.monologueChoices.Count == 0)
+            {
+                yield return new WaitForSeconds(monologue.monologueDisplaytime);
+            }
         }
         monologueCanvas.enabled = false;
     }
