@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class EnemyTrigger : MonoBehaviour
 {
-    public EnemyMovement enemyMovement;
+    private bool isActive = false;
+    public StartEnemies startEnemies;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "EnemyTrigger")
+        if (other.gameObject.tag == "Player")
         {
             Debug.Log("Has been entered");
-            enemyMovement.ActivateEnemy();
-            Destroy(other.gameObject);
+            startEnemies.ActivateEnemy();
+            isActive = true;
+            //Destroy(other.gameObject);
+        }
+    }
+    private void Update()
+    {
+        if (isActive)
+        {
+            startEnemies.MoveTowardsPlayer();
         }
     }
 }
+
+
+
