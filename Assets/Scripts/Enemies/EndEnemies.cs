@@ -60,6 +60,7 @@ public class EndEnemies : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             lonelyCanvas.SetActive(true);
+            Destroy(gameObject);
         }
     }
 }
