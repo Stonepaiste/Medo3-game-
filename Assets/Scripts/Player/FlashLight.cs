@@ -25,7 +25,7 @@ public class Flashlight : MonoBehaviour
     void Update()
     {
         //if statement to turn on and off the flashlight, when space-key is pressed
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if (FlashlightOn == false)
             {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.794
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.023095254, g: 0.023738679, b: 0.023737943, a: 0.794}
+  m_IndirectSpecularColor: {r: 0.023095258, g: 0.023738679, b: 0.023737947, a: 0.794}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2468,7 +2468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bookofknowledge: 0
   virtualCameraBook: {fileID: 1627869196}
-  pushF: {fileID: 1289672268}
+  pushE: {fileID: 310132959}
   pushEsc: {fileID: 2147308778}
   isRotating: 0
 --- !u!54 &236537812
@@ -3374,6 +3374,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1504055370}
   m_SourcePrefab: {fileID: 100100000, guid: 20a5ac54d6e1b1b44ada8d0a27d958e5, type: 3}
+--- !u!1 &310132959 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 896023883548684812, guid: 62a0445990c7a48a8802d2bbfe1ee96a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1607324485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &318627734
 GameObject:
   m_ObjectHideFlags: 0
@@ -4638,7 +4644,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1607324485}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 310132959}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -7775,12 +7781,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 943f655ecd6df7e4cade4ac4db57c906, type: 3}
---- !u!1 &1289672268 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5648721957437396488, guid: 62a0445990c7a48a8802d2bbfe1ee96a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1607324485}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1293638668 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 599238115162334899, guid: 896f411f9874845ceb53b13c25b24b5a,
@@ -10186,6 +10186,16 @@ PrefabInstance:
       propertyPath: fire
       value: 
       objectReference: {fileID: 1955388491}
+    - target: {fileID: 5648721957437396488, guid: 62a0445990c7a48a8802d2bbfe1ee96a,
+        type: 3}
+      propertyPath: m_Name
+      value: press F  to light up the sky
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860139864166726273, guid: 62a0445990c7a48a8802d2bbfe1ee96a,
+        type: 3}
+      propertyPath: m_text
+      value: Press F to light up the sky
+      objectReference: {fileID: 0}
     - target: {fileID: 6902801577847087348, guid: 62a0445990c7a48a8802d2bbfe1ee96a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11674,6 +11684,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookNoScript
       objectReference: {fileID: 0}
+    - target: {fileID: 5334037119324981776, guid: ec5dd297cd2fa47a0b82bb8f6ed0cbd1,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5495902117074765545, guid: 2f5338504490f4f088da2b3be75369cf,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: ec5dd297cd2fa47a0b82bb8f6ed0cbd1, type: 3}
@@ -13170,7 +13186,7 @@ PrefabInstance:
     - target: {fileID: 599238115162334899, guid: 896f411f9874845ceb53b13c25b24b5a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 826461847166041418, guid: 896f411f9874845ceb53b13c25b24b5a,
         type: 3}
