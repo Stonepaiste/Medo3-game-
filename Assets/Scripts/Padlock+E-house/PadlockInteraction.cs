@@ -5,6 +5,7 @@ public class PadlockInteraction : MonoBehaviour
     public GameObject padlockCanvas;
     public Camera mainCamera;
     public PlayerInputHandler playerInputHandler;
+    GameObject itemInRange; // Store the item in the trigger range
 
     private void Start()
     {
@@ -14,22 +15,12 @@ public class PadlockInteraction : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (hit.collider != null && hit.collider.gameObject == gameObject)
-                {
-                    padlockCanvas.SetActive(true);
+        if (itemInRange != null && Input.GetKeyDown("e"))
+             {
+            padlockCanvas.SetActive(true);
                     playerInputHandler.enabled = false;
                     //Time.timeScale = 0;
-                }
-            }
-        }
-
+             }
         if (Input.GetKeyDown(KeyCode.Escape) && padlockCanvas.activeSelf)
         {
             padlockCanvas.SetActive(false);
@@ -37,4 +28,5 @@ public class PadlockInteraction : MonoBehaviour
             //Time.timeScale = 1;
         }
     }
+        
 }

@@ -12,7 +12,7 @@ public class ItemPickup : MonoBehaviour
     float rotationSpeed = 50;
     public Cinemachine.CinemachineVirtualCamera virtualCameraBook;
    // public GameObject Canvas;
-    public GameObject pushF;
+    public GameObject pushE;
     public GameObject pushEsc;
  
     
@@ -26,7 +26,7 @@ public class ItemPickup : MonoBehaviour
     {
 
         bookofknowledge = false;
-        pushF.gameObject.SetActive(false);
+        pushE.gameObject.SetActive(false);
         pushEsc.gameObject.SetActive(false);
         // Ensure the virtual camera is initially disabled
         if (virtualCameraBook != null)
@@ -54,7 +54,7 @@ public class ItemPickup : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            pushF.gameObject.SetActive(true);
+            pushE.gameObject.SetActive(true);
             bookofknowledge = true;
            // Canvas.gameObject.SetActive(true);
          
@@ -65,12 +65,12 @@ public class ItemPickup : MonoBehaviour
 
     private void BookCanvasEnabled()
     {
-        if (bookofknowledge == true && Input.GetKeyDown(KeyCode.F))
+        if (bookofknowledge == true && Input.GetKeyDown(KeyCode.E))
         {
             isRotating=true;
             TurnOnVirtualCamera();
             //Canvas.gameObject.SetActive(false);
-            pushF.gameObject.SetActive(false);
+            pushE.gameObject.SetActive(false);
             pushEsc.gameObject.SetActive(true);
           
         }
@@ -82,7 +82,7 @@ public class ItemPickup : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             bookofknowledge = false;
-            pushF.gameObject.SetActive(false);
+            pushE.gameObject.SetActive(false);
 
 
         }
