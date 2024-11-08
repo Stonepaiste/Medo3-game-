@@ -5,7 +5,7 @@ public class PadlockInteraction : MonoBehaviour
     public GameObject padlockCanvas;
     public Camera mainCamera;
     public PlayerInputHandler playerInputHandler;
-    GameObject itemInRange; // Store the item in the trigger range
+    private bool isInRange = false; // Track if the player is within the trigger zone
 
     private void Start()
     {
@@ -15,18 +15,31 @@ public class PadlockInteraction : MonoBehaviour
 
     private void Update()
     {
-        if (itemInRange != null && Input.GetKeyDown("e"))
-             {
+        if (isInRange && Input.GetKeyDown(KeyCode.E))
+        {
             padlockCanvas.SetActive(true);
-                    playerInputHandler.enabled = false;
-                    //Time.timeScale = 0;
-             }
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape) && padlockCanvas.activeSelf)
         {
             padlockCanvas.SetActive(false);
-            playerInputHandler.enabled = true;
-            //Time.timeScale = 1;
         }
     }
-        
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player")) // Ensure the player is the one entering
+        {
+            isInRange = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isInRange = false;
+        }
+    }
 }
+
