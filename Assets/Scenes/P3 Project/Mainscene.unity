@@ -6543,6 +6543,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 109484965}
     m_Modifications:
+    - target: {fileID: 1366578116445082458, guid: 68362d8e7f64748d3a557d589548f51e,
+        type: 3}
+      propertyPath: VelocityModule.orbitalZ.scalar
+      value: -0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 2815325906125230866, guid: 68362d8e7f64748d3a557d589548f51e,
         type: 3}
       propertyPath: m_Name
