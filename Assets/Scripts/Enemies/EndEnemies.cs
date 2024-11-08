@@ -19,7 +19,7 @@ public class EndEnemies : MonoBehaviour
     void Awake()
     {
         player = GameObject.Find("Player 2").transform;
-        enemyRenderer = GetComponent<Renderer>();
+        enemyRenderer = GetComponent<SkinnedMeshRenderer>();
         enemyRenderer.enabled = false;
         lonelyCanvas.SetActive(false);
     }
