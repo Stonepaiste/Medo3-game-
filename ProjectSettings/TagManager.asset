@@ -17,6 +17,7 @@ TagManager:
   - item
   - Interact
   - FadeTrigger
+  - Glasses
   layers:
   - Default
   - TransparentFX
