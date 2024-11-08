@@ -26,7 +26,7 @@ public class ShadowHealth : MonoBehaviour
             if (spawnOnEnemy != null)
             {
                 spawnOnEnemy.DefeatEnemy();
-                Destroy(gameObject);
+                gameObject.SetActive (false);
             }
 
           

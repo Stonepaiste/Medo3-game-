@@ -10,6 +10,7 @@ public class EndEnemies : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     private Transform player;
     private Renderer enemyRenderer;
+    private Collider enemyCollider;
 
     [SerializeField] private LightSwitch lightSwitch;
     [SerializeField] private PickUpAndDrop pickUpAndDrop;
@@ -18,9 +19,11 @@ public class EndEnemies : MonoBehaviour
 
     void Awake()
     {
-        player = GameObject.Find("Player 2").transform;
-        enemyRenderer = GetComponent<SkinnedMeshRenderer>();
+        player = GameObject.Find("Player").transform;
+        enemyRenderer = GetComponent<Renderer>();
         enemyRenderer.enabled = false;
+        enemyCollider = GetComponent<BoxCollider>();
+        enemyCollider.enabled = false;
         lonelyCanvas.SetActive(false);
     }
 
@@ -52,6 +55,7 @@ public class EndEnemies : MonoBehaviour
     public void ActivateEnemy()
     {
         isActive = true;
+        enemyCollider.enabled = true;
         enemyRenderer.enabled = true;
     }
 

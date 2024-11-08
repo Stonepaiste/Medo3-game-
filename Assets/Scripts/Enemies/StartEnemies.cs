@@ -8,10 +8,14 @@ public class StartEnemies : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     private Transform player;
     private Renderer enemyRenderer;
+    private Collider enemyCollider;
+
 
     void Awake()
     {
-        player = GameObject.Find("Player 2").transform;
+        player = GameObject.Find("Player").transform;
+        enemyCollider = GetComponent<BoxCollider>();
+        enemyCollider.enabled = false;
         enemyRenderer = GetComponent<Renderer>();
         enemyRenderer.enabled = false;  // Initially invisible       
     }
@@ -19,6 +23,7 @@ public class StartEnemies : MonoBehaviour
     public void ActivateEnemy()
     {
         isActive = true;
+        enemyCollider.enabled = true;
         enemyRenderer.enabled = true;  // Ensure visibility if activated externally
     }
     public void MoveTowardsPlayer()

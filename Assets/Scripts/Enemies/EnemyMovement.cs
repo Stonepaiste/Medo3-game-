@@ -7,10 +7,14 @@ public class EnemyMovement : MonoBehaviour
     private Transform player;
     private Renderer enemyRenderer;
     public Padlock padlock;
+    private Collider enemyCollider;
 
     void Awake()
     {
-        player = GameObject.Find("Player 2").transform;
+        player = GameObject.Find("Player").transform;
+        //gameObject.SetActive(false);
+        enemyCollider = GetComponent<BoxCollider>();
+        enemyCollider.enabled = false;
         enemyRenderer = GetComponent<Renderer>();
         enemyRenderer.enabled = false;  // Initially invisible
 
@@ -36,7 +40,7 @@ public class EnemyMovement : MonoBehaviour
         {
             Debug.Log("Activating enemy");
             isActive = true;
-            enemyRenderer.enabled = true;  // Make the enemy visible
+            ActivateEnemy();
         }
 
         if (isActive)
@@ -55,6 +59,7 @@ public class EnemyMovement : MonoBehaviour
     private void ActivateEnemy()
     {
         isActive = true;
+        enemyCollider.enabled = true;
         enemyRenderer.enabled = true;  // Ensure visibility if activated externally
     }
 }
