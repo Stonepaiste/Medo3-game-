@@ -10,16 +10,27 @@ public class Padlock : MonoBehaviour
     public int maxDigits = 4;
     public Door door;
     public bool enemycanspawn;
-    private bool hasActivatedEnemy = false; // New variable to track activation
+    private bool hasActivatedEnemy = false;
 
     private Color originalColor;
 
     private void Start()
     {
         enemycanspawn = false;
-        Cursor.visible = true;
+        //Cursor.visible = true;
         originalColor = displayText.color;
         UpdateDisplay();
+    }
+
+    private void Update()
+    {
+        for (int i = 0; i<=9; i++)
+        {
+            if(Input.GetKeyDown(i.ToString()))
+            {
+                AddDigit(i.ToString());
+            }
+        }
     }
 
     public void AddDigit(string digit)
