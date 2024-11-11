@@ -17,6 +17,7 @@ public class SpawnOnEnemy : MonoBehaviour
 
     private void SpawnObject()
     {
+        Debug.Log("Glasses spawned");
         // Instantiate the object at the enemy's position and rotation
         Instantiate(spawnObject, transform.position, transform.rotation);
         
