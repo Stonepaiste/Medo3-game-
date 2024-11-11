@@ -8,7 +8,7 @@ using TMPro;
 public class ItemPickup : MonoBehaviour
 {
     public string itemName;  // Name of the item (e.g., "book" or "glasses")
-    public bool isInteractable = false;
+    public bool isInteractable;
     public float rotationSpeed = 50;
     public Cinemachine.CinemachineVirtualCamera virtualCamera;
     public GameObject pushE;
