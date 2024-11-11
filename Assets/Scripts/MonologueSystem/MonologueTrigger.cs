@@ -37,6 +37,10 @@ public class MonologueTrigger : MonoBehaviour
             {
                 yield return new WaitForSeconds(monologue.monologueDisplaytime);
             }
+            else
+            {
+                //open choices panel
+            }
         }
         monologueCanvas.enabled = false;
     }
