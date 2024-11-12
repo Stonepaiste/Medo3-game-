@@ -7,24 +7,23 @@ public class StartEnemies : MonoBehaviour
     private bool isActive = false;
     [SerializeField] private float moveSpeed = 5f;
     private Transform player;
-    private Renderer enemyRenderer;
-    private Collider enemyCollider;
-
+    [SerializeField] private SkinnedMeshRenderer enemyRenderer;
+    [SerializeField] private BoxCollider enemyCollider;
 
     void Awake()
     {
         player = GameObject.Find("Player").transform;
         enemyCollider = GetComponent<BoxCollider>();
         enemyCollider.enabled = false;
-        enemyRenderer = GetComponent<Renderer>();
-        enemyRenderer.enabled = false;  // Initially invisible       
+        enemyRenderer = GetComponent<SkinnedMeshRenderer>();
+        enemyRenderer.enabled = false;    
     }
 
     public void ActivateEnemy()
     {
         isActive = true;
         enemyCollider.enabled = true;
-        enemyRenderer.enabled = true;  // Ensure visibility if activated externally
+        enemyRenderer.enabled = true;
     }
     public void MoveTowardsPlayer()
     {
@@ -32,7 +31,4 @@ public class StartEnemies : MonoBehaviour
         transform.LookAt(playerPosition);
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
     }
-
-   
-
 }
