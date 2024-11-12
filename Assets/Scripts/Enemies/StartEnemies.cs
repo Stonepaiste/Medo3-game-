@@ -7,15 +7,15 @@ public class StartEnemies : MonoBehaviour
     private bool isActive = false;
     [SerializeField] private float moveSpeed = 5f;
     private Transform player;
-    [SerializeField] private SkinnedMeshRenderer enemyRenderer;
-    [SerializeField] private BoxCollider enemyCollider;
+    private Renderer enemyRenderer;
+    private BoxCollider enemyCollider;
 
     void Awake()
     {
         player = GameObject.Find("Player").transform;
         enemyCollider = GetComponent<BoxCollider>();
         enemyCollider.enabled = false;
-        enemyRenderer = GetComponent<SkinnedMeshRenderer>();
+        enemyRenderer = GetComponent<Renderer>();
         enemyRenderer.enabled = false;    
     }
 
