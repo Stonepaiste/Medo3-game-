@@ -8,22 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Metal_painted
-    second: {fileID: 2100000, guid: bfcc919f470f1904e882f396dcb4088e, type: 2}
+    second: {fileID: 2100000, guid: 6ed3fc1b5fa905344b910566919b9419, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: aloominum
-    second: {fileID: 2100000, guid: eb9940cc8360c9c468fc9a6bffd4e4ef, type: 2}
+    second: {fileID: 2100000, guid: 5a2f1a425e2174a418a84bd5c1ce3f91, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: motorola
-    second: {fileID: 2100000, guid: 1e212ce53cf380e429fa522664718866, type: 2}
+    second: {fileID: 2100000, guid: 280dd5cf59bbbac4aa2312eda8491cc3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: rubber
-    second: {fileID: 2100000, guid: b629f2a4b01944840b258035510317c2, type: 2}
+    second: {fileID: 2100000, guid: 3f088467b5d9bab448c167c3d60e4b98, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
