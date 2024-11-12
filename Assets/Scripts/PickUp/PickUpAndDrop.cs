@@ -8,8 +8,8 @@ public class PickUpAndDrop : MonoBehaviour
     public GameObject camera;
     public TextMeshProUGUI pickUpText;
     public TextMeshProUGUI interactText;
-    public Transform teleportDestination; // Set this to the new position in the Inspector
-    public ScreenFade screenFade; // Reference to the ScreenFade script
+    //public Transform teleportDestination; // Set this to the new position in the Inspector
+    //public ScreenFade screenFade; // Reference to the ScreenFade script
     float maxPickupDistance = 5;
     GameObject itemCurrentlyHolding;
     GameObject itemInRange; // Store the item in the trigger range
@@ -80,10 +80,10 @@ public class PickUpAndDrop : MonoBehaviour
 
             // Start teleport coroutine after picking up the object
             StopAllCoroutines(); // Stop any active coroutines to prevent overlap
-            StartCoroutine(TeleportWithFade());
+            //StartCoroutine(TeleportWithFade());
         }
 
-        IEnumerator TeleportWithFade()
+        /*IEnumerator TeleportWithFade()
         {
             yield return new WaitForSeconds(2f); // Wait for 2 seconds
             yield return StartCoroutine (screenFade.FadeOut()); // Start fade-out effect
@@ -92,7 +92,7 @@ public class PickUpAndDrop : MonoBehaviour
             transform.position = teleportDestination.position;
 
             yield return StartCoroutine(screenFade.FadeIn()); // Fade back in after teleporting
-        }
+        }*/
 
 
     }

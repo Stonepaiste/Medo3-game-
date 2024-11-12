@@ -82,11 +82,11 @@ public class ItemPickup : MonoBehaviour
         // Determine which message to display based on the item name
         if (itemName == "Book")
         {
-            paperText.text = "This is the book of knowledge.";
+            paperText.text = "30/06\nDear diary\nIm sitting alone in my room after a long day. It was my grandmoms funeral. I cant stop smiling when i think about the moments when we used to go to the lake house and pick flowers for the kitchen. She was the only person who understood me. I miss her everyday and I feel so lost without her";
         }
         else if (itemName == "Glasses")
         {
-            paperText.text = "These are the glasses of insight.";
+            paperText.text = "Today was the worst. At lunch, they kept staring and laughing, whispering like I couldn’t tell it was about me. In the hall after, one of them shoved me, and my glasses flew off. I barely had time to pick them up before someone stepped on them. They just laughed, calling me a nerd. I don't have any friends and I'm always by myself. I wish I had someone to talk to";
         }
 
         // Start typing out the message
