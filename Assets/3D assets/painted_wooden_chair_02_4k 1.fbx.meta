@@ -3,7 +3,27 @@ guid: 26d9535c6fd07e04d9cb6103fe0bec38
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: painted_wooden_chair_02
+    second: {fileID: 2100000, guid: 1912835ed8473e044959d87d6831eb80, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: painted_wooden_chair_02_diff_4k
+    second: {fileID: 2800000, guid: 93726cfe4c7364546a1fa154e982ad81, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: painted_wooden_chair_02_nor_gl_4k
+    second: {fileID: 2800000, guid: ead43f4f8ee4d394791ddc6c9d0155bb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: painted_wooden_chair_02_rough_4k
+    second: {fileID: 2800000, guid: 8a473f5f531d07e4ba2f15ba370be50b, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

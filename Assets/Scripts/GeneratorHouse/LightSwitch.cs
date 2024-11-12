@@ -15,10 +15,10 @@ public class LightSwitch : MonoBehaviour
 
     void Start()
     {
-        if (pressEText != null)
-        {
-            pressEText.enabled = false;
-        }
+        //if (pressEText != null)
+        //{
+          //  pressEText.enabled = false;
+        //}
 
         handleUpRotation = handle.localEulerAngles.x;
     }
