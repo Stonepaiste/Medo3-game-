@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{c5729977-fc55-4201-a027-743296d69c10}">
+		<property name="assetPath">
+			<value>Nature environment sounds/Sounds of Nature Water/_Poster.png</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{89717de6-1731-4747-b3d4-695c637c78f2}</destination>
+		</relationship>
+	</object>
+</objects>
