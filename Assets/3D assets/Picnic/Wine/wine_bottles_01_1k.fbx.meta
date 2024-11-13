@@ -1,0 +1,209 @@
+fileFormatVersion: 2
+guid: 068ac8efcdc926a4191d683c29056e9c
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_ftero_vinea_01
+    second: {fileID: 2100000, guid: d255e6a2d78e6974dbfb6f7f0379d55e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_ftero_vinea_02
+    second: {fileID: 2100000, guid: 7cf618b23cdabf64d9f780f9b3c4dc54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_glass_green
+    second: {fileID: 2100000, guid: 6402c7367c7b35c4a9484fdb9026e4a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_glass_orange
+    second: {fileID: 2100000, guid: a03ed7888cdc43747b6d08cd8ea29e67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_seal_cork
+    second: {fileID: 2100000, guid: 06969eabd36defe4c856dc92e3001bf1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_wine_red
+    second: {fileID: 2100000, guid: c489c672736f3e0499de033d03894da1, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_alpha_1k
+    second: {fileID: 2800000, guid: 9a0e8b8e059d9544e9d5817a85b9bc3f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_diff_1k
+    second: {fileID: 2800000, guid: f04caef4de62b544f872f873529ce336, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_label_ftero_vinea_01_alpha_1k
+    second: {fileID: 2800000, guid: 15ac32f83d316854b81f0be69e5fa287, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_label_ftero_vinea_01_diff_1k
+    second: {fileID: 2800000, guid: 5b43cca819de1fb4d9f00102478e1834, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_label_ftero_vinea_01_metal_1k
+    second: {fileID: 2800000, guid: e4d4495e323d23d4fad33d650b94ed29, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_label_ftero_vinea_01_rough_1k
+    second: {fileID: 2800000, guid: 8a656d8860f9756488405ea6e1036071, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_label_ftero_vinea_02_alpha_1k
+    second: {fileID: 2800000, guid: 080d53ad00c4a59408f6330f93b71976, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_label_ftero_vinea_02_diff_1k
+    second: {fileID: 2800000, guid: 0595ca4e01cd3204b874481435b31daa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_label_ftero_vinea_02_metal_1k
+    second: {fileID: 2800000, guid: aaede0cfa4d6fb74a9a4486af5e25ecd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_label_ftero_vinea_02_rough_1k
+    second: {fileID: 2800000, guid: 5bb775335ddf10542a058cad2361572d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_metal_1k
+    second: {fileID: 2800000, guid: 2f14cc0620f66ab4fb17c466d2e77230, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_nor_gl_1k
+    second: {fileID: 2800000, guid: 71e22254143dea54294af60debaa0777, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_paper_nor_gl_1k
+    second: {fileID: 2800000, guid: 914c81cf21b719747bbf1d119451eda2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wine_bottles_01_rough_1k
+    second: {fileID: 2800000, guid: 926a74434835bd047943ca96759e0153, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
