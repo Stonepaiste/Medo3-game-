@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.HableCurve;
 
 public class MonologueTrigger : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class MonologueTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             StartCoroutine(DisplayMonologue());
+            //Play Monologue Audio
+            GetComponent<Collider>().enabled = false; // Disable the collider after first collision
         }
     }
 
@@ -31,17 +34,19 @@ public class MonologueTrigger : MonoBehaviour
         monologueCanvas.enabled = true;
         foreach (var monologue in monologueObject.monologueSegments)
         {
-            //Debug.Log(monologueObject.monologueSegments[i]);
-            monologueText.text = monologue.monologueText;
+            monologueText.text = $"{monologue.narratorName}: {monologue.monologueText}";
             if (monologue.monologueChoices.Count == 0)
             {
                 yield return new WaitForSeconds(monologue.monologueDisplaytime);
+                monologueText.text = ""; // Clear the monologue text
+                yield return new WaitForSeconds(monologue.waitTimeBeforeNext);
             }
             else
             {
                 //open choices panel
             }
         }
+
         monologueCanvas.enabled = false;
     }
 }

@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: Radio1
   m_EditorClassIdentifier: 
   monologueSegments:
-  - monologueText: 
-    monologueDisplaytime: 0
+  - narratorName: Alex
+    monologueText: '"Right - Just a dream"'
+    monologueDisplaytime: 3
+    waitTimeBeforeNext: 8
     monologueChoices: []
-  - monologueText: 
-    monologueDisplaytime: 0
-    monologueChoices: []
-  - monologueText: 
-    monologueDisplaytime: 0
+  - narratorName: Radio
+    monologueText: "\u201CMissing person, mid 20\u2019s last seen 3 days ago leaving
+      a party wearing a yellow raincoat.\u201C"
+    monologueDisplaytime: 7
+    waitTimeBeforeNext: 0
     monologueChoices: []
   endMonologue: {fileID: 11400000, guid: a824f476a50152340a630c3ffd60c570, type: 2}

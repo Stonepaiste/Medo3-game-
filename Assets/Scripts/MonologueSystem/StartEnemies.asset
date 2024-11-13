@@ -14,12 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monologueSegments:
   - monologueText: Weak!
-    monologueDisplaytime: 2
+    monologueDisplaytime: 3
+    waitTimeBeforeNext: 1
     monologueChoices: []
   - monologueText: Remember!
-    monologueDisplaytime: 2
+    monologueDisplaytime: 3
+    waitTimeBeforeNext: 1
     monologueChoices: []
   - monologueText: Alone!
-    monologueDisplaytime: 2
+    monologueDisplaytime: 3
+    waitTimeBeforeNext: 1
     monologueChoices: []
   endMonologue: {fileID: 0}
