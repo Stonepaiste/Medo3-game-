@@ -16,7 +16,8 @@ public class OceanSoundPlayer : MonoBehaviour
         // Initialize and play the ocean sound
         _oceanEventInstance = RuntimeManager.CreateInstance(FmodEvents.Instance.Ocean);
         _oceanEventInstance.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
-      
+        
+        
         _oceanEventInstance.start();
     }
 

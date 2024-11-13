@@ -8,6 +8,7 @@ using FMOD.Studio;
 public class FmodAudioManager : MonoBehaviour
 {
     private EventInstance _oceanEventInstance;
+    private EventInstance _forestEventInstance;
     private List<EventInstance> _eventInstances;
 
     //Creating a singleton pattern for the FmodAudioManager so that we can access
@@ -40,7 +41,8 @@ public class FmodAudioManager : MonoBehaviour
     void Start()
     {
         InitializeOceanSound();
-        
+    //    InitializeForestSound();
+
     }
     
     private void InitializeOceanSound()
@@ -49,6 +51,14 @@ public class FmodAudioManager : MonoBehaviour
         _oceanEventInstance.start();
         _eventInstances.Add(_oceanEventInstance);
     }
+
+    //private void InitializeForestSound()
+    //{
+      //  _forestEventInstance = RuntimeManager.CreateInstance(FmodEvents.Instance.ForestSound);
+        //_forestEventInstance.start();
+        //_eventInstances.Add(_forestEventInstance);
+        
+    //}
     
     
     //This method is used to play a sound once at a specific position in the world.

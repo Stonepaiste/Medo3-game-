@@ -207,10 +207,10 @@
 	<object class="MixerBusFader" id="{03919003-0cc5-4c51-9030-664323fa2c6c}" />
 	<object class="SFXReverbEffect" id="{e7a6013f-ee07-473c-aad3-692e1c558a93}">
 		<property name="wetLevel">
-			<value>-46</value>
+			<value>-76</value>
 		</property>
 		<property name="dryLevel">
-			<value>-26</value>
+			<value>-33</value>
 		</property>
 	</object>
 </objects>

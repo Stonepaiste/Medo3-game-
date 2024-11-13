@@ -133,14 +133,21 @@ public class PlayerInputHandler : MonoBehaviour
   
     }
 
+    
     private void HandleFootsteps()
     {
         // Playing footsteps when the player is moving
         if (playerInput.actions["move"].ReadValue<Vector2>().magnitude > 0.1f)
         {
-            // Play footstep sound
+            // Determine the current footstep sound based on the area
+            EventInstance currentFootsteps = isInside ? FootstepsForest : FootstepsWood;
+            EventInstance otherFootsteps = isInside ? FootstepsWood : FootstepsForest;
+
+            // Stop the other footstep sound to prevent overlap
+            otherFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+
+            // Play the current footstep sound if it's not already playing
             PLAYBACK_STATE playbackstate;
-            EventInstance currentFootsteps = isInside ? FootstepsWood : FootstepsForest;
             currentFootsteps.getPlaybackState(out playbackstate);
             if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
             {
@@ -150,6 +157,7 @@ public class PlayerInputHandler : MonoBehaviour
         }
         else
         {
+            // Stop both footstep sounds when the player is not moving
             FootstepsForest.stop(STOP_MODE.ALLOWFADEOUT);
             FootstepsWood.stop(STOP_MODE.ALLOWFADEOUT);
             footstepsplaying = false;

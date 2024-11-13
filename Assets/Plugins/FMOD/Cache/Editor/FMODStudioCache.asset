@@ -27,6 +27,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 600
+--- !u!114 &-3544477908026267255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Forest Night A
+  m_EditorClassIdentifier: 
+  Path: event:/Forest Night A
+  Guid:
+    Data1: -1902533018
+    Data2: 1334322621
+    Data3: 1717798828
+    Data4: 658843453
+  Banks:
+  - {fileID: -1281682042033071742}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 598073
+--- !u!114 &-3510869094033078717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Forest Night A 2
+  m_EditorClassIdentifier: 
+  Path: event:/Forest Night A 2
+  Guid:
+    Data1: 143330284
+    Data2: 1088288585
+    Data3: -694407763
+    Data4: 847173237
+  Banks:
+  - {fileID: -1281682042033071742}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 400
+  Length: 598073
 --- !u!114 &-2788661855590096564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +123,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638670983584584675
+  lastModified: 638671098555485180
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -89,10 +143,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Environment.bank
   Name: Environment
   StudioPath: bank:/Environment
-  lastModified: 638670162304063193
+  lastModified: 638671109476782372
   FileSizes:
   - Name: Desktop
-    Value: 9402688
+    Value: 9404160
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -112,16 +166,17 @@ MonoBehaviour:
   - {fileID: -1675079813931114079}
   - {fileID: 2817169411028457779}
   EditorEvents:
-  - {fileID: 8391805352786342244}
   - {fileID: 1774113909932138852}
   - {fileID: -2788661855590096564}
   - {fileID: -7988511685499663754}
+  - {fileID: -3510869094033078717}
+  - {fileID: -3544477908026267255}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1675079813931114079}
   StringsBanks:
   - {fileID: 964061904444538214}
-  cacheTime: 638670983588140696
+  cacheTime: 638671109476782372
   cacheVersion: 131620
 --- !u!114 &964061904444538214
 MonoBehaviour:
@@ -138,10 +193,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638670983584591170
+  lastModified: 638671098555490800
   FileSizes:
   - Name: Desktop
-    Value: 998
+    Value: 1042
   Exists: 1
 --- !u!114 &1774113909932138852
 MonoBehaviour:
@@ -165,7 +220,7 @@ MonoBehaviour:
   - {fileID: -1281682042033071742}
   IsStream: 1
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -185,35 +240,8 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638670983588140696
+  lastModified: 638671080492294949
   FileSizes:
   - Name: Desktop
     Value: 118784
   Exists: 1
---- !u!114 &8391805352786342244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Forest Night A
-  m_EditorClassIdentifier: 
-  Path: event:/Forest Night A
-  Guid:
-    Data1: -812720337
-    Data2: 1100657004
-    Data3: 398223293
-    Data4: -12948928
-  Banks:
-  - {fileID: -1281682042033071742}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0

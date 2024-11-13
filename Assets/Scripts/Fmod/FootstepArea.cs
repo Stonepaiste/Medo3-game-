@@ -10,7 +10,20 @@ public class FootstepArea : MonoBehaviour
 
     private void Start()
     {
-        isInside = true;
+        // Check if the player is already inside the collider at the start
+        Collider[] colliders = Physics.OverlapBox(transform.position, transform.localScale / 2, Quaternion.identity);
+        foreach (Collider collider in colliders)
+        {
+            if (collider.CompareTag("Player"))
+            {
+                PlayerInputHandler player = collider.GetComponent<PlayerInputHandler>();
+                if (player != null)
+                {
+                    player.SetFootstepArea(isInside);
+                    Debug.Log("Player started inside the area, footstep area set to: " + isInside);
+                }
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,6 +38,7 @@ public class FootstepArea : MonoBehaviour
                 Debug.Log("Footstep area set to: " + isInside);
             }
         }
+        
     }
 
     private void OnTriggerExit(Collider other)
