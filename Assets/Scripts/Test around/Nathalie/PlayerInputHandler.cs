@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.PlasticSCM.Editor.WebApi;
@@ -47,7 +48,8 @@ public class PlayerInputHandler : MonoBehaviour
     Transform cameraTransform;
     
     //Audio 
-    private EventInstance FootstepsForest;
+  private EventInstance FootstepsForest;
+  public bool footstepsplaying; 
 
 
     private void Awake()
@@ -83,6 +85,13 @@ public class PlayerInputHandler : MonoBehaviour
 
         OnMove();
         OnRun();
+        HandleFootsteps();
+      
+    }
+
+    private void FixedUpdate()
+    {
+        //HandleFootsteps();
     }
 
     private void NewMethod()
@@ -125,18 +134,22 @@ public class PlayerInputHandler : MonoBehaviour
     {
        
         // Playing footsteps when the player is moving
-        if (movePlayer.magnitude > 0 && groundedPlayer)
+        if (playerInput.actions["move"].ReadValue<Vector2>().magnitude > 0.1f)
         {
             // Play footstep sound
-            if (!FootstepsForest.isValid())
+            PLAYBACK_STATE playbackstate;
+            FootstepsForest.getPlaybackState(out playbackstate);
+            if(playbackstate.Equals(PLAYBACK_STATE.STOPPED))
             {
-                FootstepsForest = FmodAudioManager.Instance.CreateEventInstance(FmodEvents.Instance.FootstepsForest);
+                FootstepsForest.start();
+                footstepsplaying = true;
+
             }
-            FootstepsForest.start();
         }
         else
         {
-            FootstepsForest.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            FootstepsForest.stop(STOP_MODE.ALLOWFADEOUT);
+            footstepsplaying = false;
         }
     }
 
