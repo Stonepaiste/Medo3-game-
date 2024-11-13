@@ -49,7 +49,9 @@ public class PlayerInputHandler : MonoBehaviour
     
     //Audio 
   private EventInstance FootstepsForest;
-  public bool footstepsplaying; 
+  private EventInstance FootstepsWood;
+  public bool footstepsplaying;
+  public bool isInside;
 
 
     private void Awake()
@@ -71,6 +73,7 @@ public class PlayerInputHandler : MonoBehaviour
         
         // initializing the footsteps instance
         FootstepsForest=FmodAudioManager.Instance.CreateEventInstance(FmodEvents.Instance.FootstepsForest);
+        FootstepsWood = FmodAudioManager.Instance.CreateEventInstance((FmodEvents.Instance.FootstepsWood));
     }
 
     private void Update()
@@ -132,29 +135,29 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void HandleFootsteps()
     {
-       
         // Playing footsteps when the player is moving
         if (playerInput.actions["move"].ReadValue<Vector2>().magnitude > 0.1f)
         {
             // Play footstep sound
             PLAYBACK_STATE playbackstate;
-            FootstepsForest.getPlaybackState(out playbackstate);
-            if(playbackstate.Equals(PLAYBACK_STATE.STOPPED))
+            EventInstance currentFootsteps = isInside ? FootstepsWood : FootstepsForest;
+            currentFootsteps.getPlaybackState(out playbackstate);
+            if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
             {
-                FootstepsForest.start();
+                currentFootsteps.start();
                 footstepsplaying = true;
-
             }
         }
         else
         {
             FootstepsForest.stop(STOP_MODE.ALLOWFADEOUT);
+            FootstepsWood.stop(STOP_MODE.ALLOWFADEOUT);
             footstepsplaying = false;
         }
     }
 
-    private void UpdateSound()
+    public void SetFootstepArea(bool inside)
     {
-        // Implement additional sound logic if needed
+        isInside = inside;
     }
 }

@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7988511685499663754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Footsteps Wood
+  m_EditorClassIdentifier: 
+  Path: event:/Footsteps Wood
+  Guid:
+    Data1: 1887467308
+    Data2: 1145362882
+    Data3: -730057843
+    Data4: -400746668
+  Banks:
+  - {fileID: 2817169411028457779}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 600
 --- !u!114 &-2788661855590096564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,7 +69,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638670162203792949
+  lastModified: 638670983584584675
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -88,12 +115,13 @@ MonoBehaviour:
   - {fileID: 8391805352786342244}
   - {fileID: 1774113909932138852}
   - {fileID: -2788661855590096564}
+  - {fileID: -7988511685499663754}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1675079813931114079}
   StringsBanks:
   - {fileID: 964061904444538214}
-  cacheTime: 638670924329391691
+  cacheTime: 638670983588140696
   cacheVersion: 131620
 --- !u!114 &964061904444538214
 MonoBehaviour:
@@ -110,10 +138,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638670162203799733
+  lastModified: 638670983584591170
   FileSizes:
   - Name: Desktop
-    Value: 950
+    Value: 998
   Exists: 1
 --- !u!114 &1774113909932138852
 MonoBehaviour:
@@ -157,10 +185,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638670924329391691
+  lastModified: 638670983588140696
   FileSizes:
   - Name: Desktop
-    Value: 39296
+    Value: 118784
   Exists: 1
 --- !u!114 &8391805352786342244
 MonoBehaviour:

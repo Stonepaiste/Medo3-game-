@@ -18,6 +18,7 @@ TagManager:
   - Interact
   - FadeTrigger
   - Glasses
+  - Woodenfloor
   layers:
   - Default
   - TransparentFX
