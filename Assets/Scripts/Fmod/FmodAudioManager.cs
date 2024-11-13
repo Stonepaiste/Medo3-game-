@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMOD.Studio;
 using FMODUnity;
+using FMOD.Studio;
 
 public class FmodAudioManager : MonoBehaviour
 {
@@ -55,6 +56,12 @@ public class FmodAudioManager : MonoBehaviour
     {
         RuntimeManager.PlayOneShot(sound, worldPos);
         
+    }
+
+    public EventInstance CreateEventInstance(EventReference eventReference)
+    {
+        EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
+        return eventInstance;
     }
     void OnDestroy()
     {

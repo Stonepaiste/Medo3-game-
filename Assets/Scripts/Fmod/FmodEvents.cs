@@ -12,6 +12,9 @@ public class FmodEvents : MonoBehaviour
     [field: Header("Ocean sound")]
     [field: SerializeField] public EventReference Ocean { get; private set; }
     
+    [field: Header("Footstep sounds")]
+    [field: SerializeField] public EventReference FootstepsForest { get; private set; }
+    
     //We then create a public static instance of the FmodEvents script so that we can access it from anywhere in the game.
     public static FmodEvents Instance { get; private set; }
    
