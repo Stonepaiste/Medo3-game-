@@ -21,6 +21,9 @@ public class FmodEvents : MonoBehaviour
     [field: Header("ForestSound")]
     [field: SerializeField] public EventReference ForestSound { get; private set; }
     
+    [field: Header("Treewind")]
+    [field: SerializeField] public EventReference Treewind { get; private set; }
+    
     //We then create a public static instance of the FmodEvents script so that we can access it from anywhere in the game.
     public static FmodEvents Instance { get; private set; }
    

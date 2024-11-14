@@ -123,7 +123,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638671098555485180
+  lastModified: 638671803858220541
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -143,10 +143,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Environment.bank
   Name: Environment
   StudioPath: bank:/Environment
-  lastModified: 638671109476782372
+  lastModified: 638671820143290234
   FileSizes:
   - Name: Desktop
-    Value: 9404160
+    Value: 9872608
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -171,12 +171,13 @@ MonoBehaviour:
   - {fileID: -7988511685499663754}
   - {fileID: -3510869094033078717}
   - {fileID: -3544477908026267255}
+  - {fileID: 8433668519359461119}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1675079813931114079}
   StringsBanks:
   - {fileID: 964061904444538214}
-  cacheTime: 638671109476782372
+  cacheTime: 638671820143290234
   cacheVersion: 131620
 --- !u!114 &964061904444538214
 MonoBehaviour:
@@ -193,10 +194,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638671098555490800
+  lastModified: 638671803858225076
   FileSizes:
   - Name: Desktop
-    Value: 1042
+    Value: 1084
   Exists: 1
 --- !u!114 &1774113909932138852
 MonoBehaviour:
@@ -245,3 +246,30 @@ MonoBehaviour:
   - Name: Desktop
     Value: 118784
   Exists: 1
+--- !u!114 &8433668519359461119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tree wind 2
+  m_EditorClassIdentifier: 
+  Path: event:/Tree wind 2
+  Guid:
+    Data1: -682785005
+    Data2: 1226982476
+    Data3: -1470511953
+    Data4: 419709252
+  Banks:
+  - {fileID: -1281682042033071742}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 33281
