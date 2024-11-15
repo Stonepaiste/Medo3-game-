@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 600
+--- !u!114 &-5649532208303283590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Flashligt1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Flashligt1
+  Guid:
+    Data1: 1007147937
+    Data2: 1134982395
+    Data3: -1376628805
+    Data4: 184336632
+  Banks:
+  - {fileID: 2817169411028457779}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3544477908026267255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +150,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638672724991001005
+  lastModified: 638672786296749254
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -221,12 +248,14 @@ MonoBehaviour:
   - {fileID: -3544477908026267255}
   - {fileID: 8433668519359461119}
   - {fileID: -113700586169380471}
+  - {fileID: 6959292528071843781}
+  - {fileID: -5649532208303283590}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1675079813931114079}
   StringsBanks:
   - {fileID: 964061904444538214}
-  cacheTime: 638672738700372746
+  cacheTime: 638672792400518884
   cacheVersion: 131620
 --- !u!114 &964061904444538214
 MonoBehaviour:
@@ -243,10 +272,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638672724991007491
+  lastModified: 638672786296755326
   FileSizes:
   - Name: Desktop
-    Value: 1170
+    Value: 1262
   Exists: 1
 --- !u!114 &1774113909932138852
 MonoBehaviour:
@@ -290,11 +319,38 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638671080492294949
+  lastModified: 638672792400518884
   FileSizes:
   - Name: Desktop
-    Value: 118784
+    Value: 125408
   Exists: 1
+--- !u!114 &6959292528071843781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/FlashligtOff1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/FlashligtOff1
+  Guid:
+    Data1: -261564860
+    Data2: 1191150292
+    Data3: -572683111
+    Data4: -1807618527
+  Banks:
+  - {fileID: 2817169411028457779}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &8433668519359461119
 MonoBehaviour:
   m_ObjectHideFlags: 0

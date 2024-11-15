@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{a05034f5-dfa0-4235-904c-aaa9fba05e90}">
+		<property name="assetPath">
+			<value>SFX/FryingSflashligt.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.8823541666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{89717de6-1731-4747-b3d4-695c637c78f2}</destination>
+		</relationship>
+	</object>
+</objects>
