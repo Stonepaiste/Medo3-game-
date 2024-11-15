@@ -20,7 +20,7 @@ public class PadlockInteraction : MonoBehaviour
             padlockCanvas.SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && padlockCanvas.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Q) && padlockCanvas.activeSelf)
         {
             padlockCanvas.SetActive(false);
         }

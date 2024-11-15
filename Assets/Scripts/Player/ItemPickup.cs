@@ -40,7 +40,7 @@ public class ItemPickup : MonoBehaviour
     void Update()
     {
         HandleItemInteraction();
-        DisableCanvasWithEscape();
+        DisableCanvasWithQ();
 
         if (isRotating)
         {
@@ -116,9 +116,9 @@ public class ItemPickup : MonoBehaviour
         }
     }
 
-    private void DisableCanvasWithEscape()
+    private void DisableCanvasWithQ()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             isRotating = false;
             TurnOffVirtualCamera();
