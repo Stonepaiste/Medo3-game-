@@ -190,7 +190,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638672738700372746
+  lastModified: 638672816100749044
   FileSizes:
   - Name: Desktop
     Value: 4335168
@@ -255,7 +255,7 @@ MonoBehaviour:
   - {fileID: -1675079813931114079}
   StringsBanks:
   - {fileID: 964061904444538214}
-  cacheTime: 638672792400518884
+  cacheTime: 638672816100749044
   cacheVersion: 131620
 --- !u!114 &964061904444538214
 MonoBehaviour:

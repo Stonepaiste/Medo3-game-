@@ -6,7 +6,7 @@
 [LOG] OutputCoreAudio::init                    : Maximum hardware read size: 512 samples, Software buffer size: 512 samples, Number of software buffers: 4.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x32aa9cc08 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0x2d14e5008 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,62 +18,6 @@
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] SoundI::release                          : Forest Night A (0x10d4a2558)
-[LOG] SoundI::release                          :     Forest Night A (0x3795bbdb8)
-[LOG] SoundI::release                          :     Forest Night A (0x379538238)
-[LOG] SoundI::release                          : Ocean 2 (0x3885dcfd8)
-[LOG] SoundI::release                          :     Ocean 2 (0x38859cd38)
-[LOG] SoundI::release                          :     Ocean 2 (0x3885d1818)
-[LOG] SoundI::release                          : Ocean 2 (0x3885eeaa8)
-[LOG] SoundI::release                          :     Ocean 2 (0x2c5bd0308)
-[LOG] SoundI::release                          :     Ocean 2 (0x2c5bd0518)
-[LOG] SoundI::release                          : Gametheme (0x10d4a28a8)
-[LOG] SoundI::release                          :     Gametheme (0x3795232f8)
-[LOG] SoundI::release                          :     Gametheme (0x37951b4e8)
-[LOG] SoundI::release                          :  (0x376bd0578)
-[LOG] SoundI::release                          :     FlashligtOff1 (0x376b156a8)
-[LOG] SoundI::release                          :  (0x35e6e2698)
-[LOG] SoundI::release                          :     Flashligt1 (0x35e635af8)
-[LOG] SoundI::release                          :  (0x35e6f1e88)
-[LOG] SoundI::release                          :     Footsteps skov 2-Footsteps skov (0x35e69d6d8)
-[LOG] SoundI::release                          :  (0x3885fd058)
-[LOG] SoundI::release                          :     Footsteps skov 3-Footsteps skov (0x3885c5278)
-[LOG] SoundI::release                          :  (0x35e6e2138)
-[LOG] SoundI::release                          :     Footsteps skov 4-Footsteps skov (0x35e629748)
-[LOG] SoundI::release                          :  (0x35e6e1878)
-[LOG] SoundI::release                          :     Footsteps skov 5-Footsteps skov (0x35e6f9ac8)
-[LOG] SoundI::release                          :  (0x2c5bcf6f8)
-[LOG] SoundI::release                          :     Footsteps skov 6-Footsteps skov (0x2c5bcf868)
-[LOG] SoundI::release                          :  (0x3885e97d8)
-[LOG] SoundI::release                          :     Footstep woodden floor 1-walking-on-a-wooden-floor-14743 (0x3885bbed8)
-[LOG] SoundI::release                          :  (0x35e6e4108)
-[LOG] SoundI::release                          :     Footstep woodden floor 10-walking-on-a-wooden-floor-14743 (0x35e639db8)
-[LOG] SoundI::release                          :  (0x376bb3a38)
-[LOG] SoundI::release                          :     Footstep woodden floor 2-walking-on-a-wooden-floor-14743 (0x376be6538)
-[LOG] SoundI::release                          :  (0x35e6fa948)
-[LOG] SoundI::release                          :     Footstep woodden floor 3-walking-on-a-wooden-floor-14743 (0x35e661408)
-[LOG] SoundI::release                          :  (0x35e6ec758)
-[LOG] SoundI::release                          :     Footstep woodden floor 4-walking-on-a-wooden-floor-14743 (0x35e6404d8)
-[LOG] SoundI::release                          :  (0x35e6f7f78)
-[LOG] SoundI::release                          :     Footstep woodden floor 5-walking-on-a-wooden-floor-14743 (0x35e691238)
-[LOG] SoundI::release                          :  (0x376bbf478)
-[LOG] SoundI::release                          :     Footstep woodden floor 6-walking-on-a-wooden-floor-14743 (0x376b7d7b8)
-[LOG] SoundI::release                          :  (0x35e6ed968)
-[LOG] SoundI::release                          :     Footstep woodden floor 7-walking-on-a-wooden-floor-14743 (0x35e6c14b8)
-[LOG] SoundI::release                          :  (0x3885fa7b8)
-[LOG] SoundI::release                          :     Footstep woodden floor 8-walking-on-a-wooden-floor-14743 (0x3885ed158)
-[LOG] SoundI::release                          :  (0x3885fabb8)
-[LOG] SoundI::release                          :     Footstep woodden floor 9-walking-on-a-wooden-floor-14743 (0x3885e47c8)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
