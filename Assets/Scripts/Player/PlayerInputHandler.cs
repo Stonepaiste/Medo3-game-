@@ -65,10 +65,8 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
+        LockAndHideCursor();
 
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = false;
         cameraTransform = Camera.main.transform;
         
         // initializing the footsteps instance
@@ -78,6 +76,15 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Update()
     {
+        if (Cursor.lockState != CursorLockMode.Locked || Cursor.visible)
+        {
+            LockAndHideCursor();
+        }
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            LockAndHideCursor();
+        }
+
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
@@ -90,6 +97,20 @@ public class PlayerInputHandler : MonoBehaviour
         OnRun();
         HandleFootsteps();
       
+    }
+
+    private void LockAndHideCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked; // Lock the cursor to the center of the screen
+        Cursor.visible = false;                  // Make the cursor invisible
+    }
+
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        if (hasFocus)
+        {
+            LockAndHideCursor();
+        }
     }
 
     private void FixedUpdate()
