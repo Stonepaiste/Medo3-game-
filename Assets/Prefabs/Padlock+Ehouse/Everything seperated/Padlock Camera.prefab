@@ -261,8 +261,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8232321950850832652}
   - component: {fileID: 8167643021090106270}
-  - component: {fileID: 3916495195728823647}
   - component: {fileID: 8246883976982367811}
+  - component: {fileID: 7785561085404224991}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -336,14 +336,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &3916495195728823647
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2366798858384220931}
-  m_Enabled: 1
 --- !u!114 &8246883976982367811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,6 +380,20 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &7785561085404224991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2366798858384220931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &3024070651720661663
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   padlockCanvas: {fileID: 0}
   mainCamera: {fileID: 0}
-  playerInpuController: {fileID: 0}
+  playerInputHandler: {fileID: 0}
 --- !u!1 &6055143204290215077
 GameObject:
   m_ObjectHideFlags: 0
