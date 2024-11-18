@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
 
 public class Flashlight : MonoBehaviour
 {
@@ -13,12 +15,17 @@ public class Flashlight : MonoBehaviour
     [SerializeField] float sphereRadius = 0.1f; // Adjust the radius as needed
     private bool FlashlightOn = false;
     public Transform LightPoint;
+    private EventInstance _flashlightOn;
+    private EventInstance _flashlightOff;
+    
 
 
     void Start()
     {
         //Turning on the flashlight at start
         lightSource.SetActive(false);
+        _flashlightOn = RuntimeManager.CreateInstance(FmodEvents.Instance.FlashlightOn);
+        _flashlightOff = RuntimeManager.CreateInstance(FmodEvents.Instance.FlashlightOff);
 
     }
 
@@ -31,12 +38,15 @@ public class Flashlight : MonoBehaviour
             {
                 lightSource.gameObject.SetActive(true);
                 FlashlightOn = true;
+                _flashlightOn.start();
+                
                
             }
             else
             {
                 lightSource.gameObject.SetActive(false);
                 FlashlightOn = false;
+                _flashlightOff.start();
             }
         }
 

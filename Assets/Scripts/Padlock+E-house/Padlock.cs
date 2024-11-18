@@ -17,7 +17,6 @@ public class Padlock : MonoBehaviour
     private void Start()
     {
         enemycanspawn = false;
-        //Cursor.visible = true;
         originalColor = displayText.color;
         UpdateDisplay();
     }

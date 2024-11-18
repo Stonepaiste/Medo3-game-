@@ -5,18 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public GameObject pauseMenu; // The main pause menu panel
+    public GameObject settingsPanel; // The settings panel
+    public GameObject popUpPanel; // The controls panel
+  
 
-    public GameObject pauseMenu;
     public bool isPaused;
+
     void Start()
     {
         pauseMenu.SetActive(false);
+        settingsPanel.SetActive(false);
+        popUpPanel.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Locked; // Lock the cursor at the start of the game
+        Cursor.visible = false; // Hide the cursor at the start of the game
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
             {
@@ -26,33 +34,51 @@ public class PauseMenu : MonoBehaviour
             {
                 PauseGame();
             }
-
         }
-        // Check for "R" key to resume if the game is paused
-        if (isPaused && Input.GetKeyDown(KeyCode.R))
-        {
-            ResumeGame();
-        }
-
-        if (isPaused && Input.GetKeyDown(KeyCode.M))
-        {
-            GoToMainMenu();
-        }
-
     }
-    
+
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+
+        Cursor.lockState = CursorLockMode.None; // Unlock the cursor
+        Cursor.visible = true; // Show the cursor
     }
 
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
+        settingsPanel.SetActive(false);
+        popUpPanel.SetActive(false);
+
         Time.timeScale = 1f;
         isPaused = false;
+
+        Cursor.lockState = CursorLockMode.Locked; // Lock the cursor
+        Cursor.visible = false; // Hide the cursor
+    }
+
+    public void ShowSettingsPanel()
+    {
+        pauseMenu.SetActive(false);
+        settingsPanel.SetActive(true);
+        popUpPanel.SetActive(false);
+    }
+
+    public void ShowControlsPanel()
+    {
+        pauseMenu.SetActive(false);
+        settingsPanel.SetActive(false);
+        popUpPanel.SetActive(true);
+    }
+
+    public void BackToPauseMenu()
+    {
+        pauseMenu.SetActive(true);
+        settingsPanel.SetActive(false);
+        popUpPanel.SetActive(false);
     }
 
     public void GoToMainMenu()
@@ -66,4 +92,10 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void TestButtonClick()
+    {
+        Debug.Log("Button clicked!");
+    }
+
 }
+

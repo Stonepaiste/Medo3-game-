@@ -4889,6 +4889,34 @@ MonoBehaviour:
       Data3: -728575573
       Data4: -861536553
     Path: event:/Ocean2
+  <FootstepsForest>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <FootstepsWood>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <ForestSound>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <Treewind>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!4 &769725398
 Transform:
   m_ObjectHideFlags: 0
@@ -13257,6 +13285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 0}
+  spawnOffset: {x: 0, y: 1, z: 0}
 --- !u!4 &1308870166 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2975340171071356701, guid: e7d30bcd305dd3b46a45000a2538d796,
@@ -18425,6 +18454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 1131814661}
+  spawnOffset: {x: 0, y: 1, z: 0}
 --- !u!4 &1946905183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4434957440208108381, guid: 399e230287799e34b8bc76db8f9d2288,
@@ -20947,6 +20977,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PaperGlassesCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 982967209770721729, guid: d625ff79b92854c449743020b11e37b6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3208081805972483514, guid: d625ff79b92854c449743020b11e37b6,
         type: 3}
