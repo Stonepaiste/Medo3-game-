@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu; // The main pause menu panel
     public GameObject settingsPanel; // The settings panel
     public GameObject popUpPanel; // The controls panel
-    public GameObject mainMenu;
+  
 
     public bool isPaused;
 

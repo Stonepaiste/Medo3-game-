@@ -5674,6 +5674,34 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
+  <Treewind>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <Music>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <FlashlightOn>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <FlashlightOff>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!4 &769725398
 Transform:
   m_ObjectHideFlags: 0
@@ -5807,7 +5835,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1332022270873335436, guid: 7696f51787cf942668f0b8d6de206e68, type: 3}
+    - {fileID: 6547133390870630892, guid: 7696f51787cf942668f0b8d6de206e68, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
