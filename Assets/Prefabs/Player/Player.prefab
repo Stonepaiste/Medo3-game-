@@ -415,6 +415,8 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 10
   gravityValue: -9.81
+  footstepsplaying: 0
+  isInside: 0
 --- !u!143 &184960808804278281
 CharacterController:
   m_ObjectHideFlags: 0
@@ -865,7 +867,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9164018842259712775}
   - component: {fileID: 993451867634102}
-  - component: {fileID: 2234994452290646824}
   - component: {fileID: 9215287386539521806}
   - component: {fileID: 1456510975640942942}
   - component: {fileID: 1709066774473784786}
@@ -944,14 +945,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &2234994452290646824
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6909664285385738211}
-  m_Enabled: 1
 --- !u!114 &9215287386539521806
 MonoBehaviour:
   m_ObjectHideFlags: 0

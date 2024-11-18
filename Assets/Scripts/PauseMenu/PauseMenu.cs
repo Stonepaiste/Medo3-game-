@@ -7,7 +7,8 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu; // The main pause menu panel
     public GameObject settingsPanel; // The settings panel
-    public GameObject controlsPanel; // The controls panel
+    public GameObject popUpPanel; // The controls panel
+  
 
     public bool isPaused;
 
@@ -15,7 +16,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         settingsPanel.SetActive(false);
-        controlsPanel.SetActive(false);
+        popUpPanel.SetActive(false);
 
         Cursor.lockState = CursorLockMode.Locked; // Lock the cursor at the start of the game
         Cursor.visible = false; // Hide the cursor at the start of the game
@@ -50,7 +51,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         settingsPanel.SetActive(false);
-        controlsPanel.SetActive(false);
+        popUpPanel.SetActive(false);
 
         Time.timeScale = 1f;
         isPaused = false;
@@ -63,21 +64,21 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         settingsPanel.SetActive(true);
-        controlsPanel.SetActive(false);
+        popUpPanel.SetActive(false);
     }
 
     public void ShowControlsPanel()
     {
         pauseMenu.SetActive(false);
         settingsPanel.SetActive(false);
-        controlsPanel.SetActive(true);
+        popUpPanel.SetActive(true);
     }
 
     public void BackToPauseMenu()
     {
         pauseMenu.SetActive(true);
         settingsPanel.SetActive(false);
-        controlsPanel.SetActive(false);
+        popUpPanel.SetActive(false);
     }
 
     public void GoToMainMenu()
@@ -90,5 +91,11 @@ public class PauseMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void TestButtonClick()
+    {
+        Debug.Log("Button clicked!");
+    }
+
 }
 
