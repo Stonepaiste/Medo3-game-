@@ -81,6 +81,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1800
+--- !u!114 &-6771728539374176587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Thunder and Rain Muted B
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Thunder and Rain Muted B
+  Guid:
+    Data1: 1980940700
+    Data2: 1186887919
+    Data3: -330715996
+    Data4: 983270552
+  Banks:
+  - {fileID: -1281682042033071742}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 407248
 --- !u!114 &-5649532208303283590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +150,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank
   Name: Dialogue
   StudioPath: bank:/Dialogue
-  lastModified: 638676151922516076
+  lastModified: 638676192123429683
   FileSizes:
   - Name: Desktop
     Value: 2503136
@@ -278,7 +305,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638665908544932323
+  lastModified: 638676192235343824
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -298,10 +325,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Environment.bank
   Name: Environment
   StudioPath: bank:/Environment
-  lastModified: 638676171929337461
+  lastModified: 638676202961826527
   FileSizes:
   - Name: Desktop
-    Value: 15090144
+    Value: 15090304
   Exists: 1
 --- !u!114 &-1242540832277916130
 MonoBehaviour:
@@ -345,7 +372,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638675274952426529
+  lastModified: 638676192289615322
   FileSizes:
   - Name: Desktop
     Value: 4335168
@@ -417,13 +444,13 @@ MonoBehaviour:
   - {fileID: 1381834443108594042}
   - {fileID: -1242540832277916130}
   - {fileID: 3230038774382558880}
-  - {fileID: 1850551369274258364}
+  - {fileID: -6771728539374176587}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1675079813931114079}
   StringsBanks:
   - {fileID: 964061904444538214}
-  cacheTime: 638676171929493283
+  cacheTime: 638676202961826527
   cacheVersion: 131620
 --- !u!114 &964061904444538214
 MonoBehaviour:
@@ -440,7 +467,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638676171929493283
+  lastModified: 638676192235349909
   FileSizes:
   - Name: Desktop
     Value: 1954
@@ -499,33 +526,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 123428
---- !u!114 &1850551369274258364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Thunder and Rain Muted B
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Thunder and Rain Muted B
-  Guid:
-    Data1: 1980940700
-    Data2: 1186887919
-    Data3: -330715996
-    Data4: 983270552
-  Banks:
-  - {fileID: -1281682042033071742}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 407248
 --- !u!114 &2595887203352731216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,7 +568,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638674525506511376
+  lastModified: 638676192290885960
   FileSizes:
   - Name: Desktop
     Value: 125408

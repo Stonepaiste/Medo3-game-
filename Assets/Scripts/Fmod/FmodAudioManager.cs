@@ -40,25 +40,19 @@ public class FmodAudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InitializeOceanSound();
-    //    InitializeForestSound();
+      //  InitializeOceanSound();
+   
 
     }
     
     private void InitializeOceanSound()
     {
-        _oceanEventInstance = RuntimeManager.CreateInstance(FmodEvents.Instance.Ocean);
-        _oceanEventInstance.start();
-        _eventInstances.Add(_oceanEventInstance);
+        //_oceanEventInstance = RuntimeManager.CreateInstance(FmodEvents.Instance.Ocean);
+        ///_oceanEventInstance.start();
+        //_eventInstances.Add(_oceanEventInstance);
     }
 
-    //private void InitializeForestSound()
-    //{
-      //  _forestEventInstance = RuntimeManager.CreateInstance(FmodEvents.Instance.ForestSound);
-        //_forestEventInstance.start();
-        //_eventInstances.Add(_forestEventInstance);
-        
-    //}
+    
     
     
     //This method is used to play a sound once at a specific position in the world.
