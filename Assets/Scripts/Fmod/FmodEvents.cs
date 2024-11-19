@@ -35,7 +35,15 @@ public class FmodEvents : MonoBehaviour
 
 	[field: Header("RainThunder")]
 	[field: SerializeField] public EventReference RainThunder { get; private set; }
+	
+	[field: Header("PadlockButtons")]
+	[field: SerializeField] public EventReference PadlockButtons { get; private set; }
+
+	[field: Header("PadlockCorrect")]
+	[field: SerializeField] public EventReference PadlockCorrect { get; private set; }
     
+	[field: Header("PadlockIncorrect")]
+	[field: SerializeField] public EventReference PadlockIncorrect { get; private set; }
     //All dialogue are played through FMOD eventEmitter in SOUNDDIALOGUE COMPONENT USING TIMELINE
     
     //We then create a public static instance of the FmodEvents script so that we can access it from anywhere in the game.

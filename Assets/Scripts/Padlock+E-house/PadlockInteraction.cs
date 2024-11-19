@@ -5,6 +5,8 @@ public class PadlockInteraction : MonoBehaviour
     public GameObject padlockCanvas;
     public Camera mainCamera;
     public PlayerInputHandler playerInputHandler;
+    
+    
     private bool isInRange = false; // Track if the player is within the trigger zone
 
     private void Start()

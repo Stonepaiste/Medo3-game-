@@ -108,6 +108,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 407248
+--- !u!114 &-6174571458502305428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Padlock Buttons
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Padlock Buttons
+  Guid:
+    Data1: 929758827
+    Data2: 1133276256
+    Data3: -696655978
+    Data4: 1290668927
+  Banks:
+  - {fileID: 2817169411028457779}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5649532208303283590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +332,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638676192235343824
+  lastModified: 638676295311480179
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -445,13 +472,43 @@ MonoBehaviour:
   - {fileID: -1242540832277916130}
   - {fileID: 3230038774382558880}
   - {fileID: -6771728539374176587}
+  - {fileID: 373807602916526788}
+  - {fileID: 3803582061125797906}
+  - {fileID: -6174571458502305428}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1675079813931114079}
   StringsBanks:
   - {fileID: 964061904444538214}
-  cacheTime: 638676202961826527
+  cacheTime: 638676299596335030
   cacheVersion: 131620
+--- !u!114 &373807602916526788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Padlock sounds RIGHT
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Padlock sounds RIGHT
+  Guid:
+    Data1: -1855134250
+    Data2: 1207816376
+    Data3: 1949721741
+    Data4: -753982119
+  Banks:
+  - {fileID: 2817169411028457779}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &964061904444538214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,10 +524,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638676192235349909
+  lastModified: 638676295311487116
   FileSizes:
   - Name: Desktop
-    Value: 1954
+    Value: 2104
   Exists: 1
 --- !u!114 &1381834443108594042
 MonoBehaviour:
@@ -568,10 +625,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638676192290885960
+  lastModified: 638676299596335030
   FileSizes:
   - Name: Desktop
-    Value: 125408
+    Value: 194464
   Exists: 1
 --- !u!114 &3213590395693210105
 MonoBehaviour:
@@ -627,6 +684,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 9176
+--- !u!114 &3803582061125797906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Padlock sounds WRONG
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Padlock sounds WRONG
+  Guid:
+    Data1: -1191882009
+    Data2: 1180786080
+    Data3: -1532020349
+    Data4: -423393000
+  Banks:
+  - {fileID: 2817169411028457779}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6959292528071843781
 MonoBehaviour:
   m_ObjectHideFlags: 0
