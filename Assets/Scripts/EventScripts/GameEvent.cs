@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class GameEvent : ScriptableObject
 {
-    [Header("Game Events")]
+    //The list of listeners (Game Events) which will be notified if it is raised
     private List<GameEventListener> listeners = new List<GameEventListener>();
 
 
