@@ -32,6 +32,9 @@ public class FmodEvents : MonoBehaviour
     
     [field: Header("FlashlightOff")]
     [field: SerializeField] public EventReference FlashlightOff { get; private set; }
+
+	[field: Header("RainThunder")]
+	[field: SerializeField] public EventReference RainThunder { get; private set; }
     
     //All dialogue are played through FMOD eventEmitter in SOUNDDIALOGUE COMPONENT USING TIMELINE
     
