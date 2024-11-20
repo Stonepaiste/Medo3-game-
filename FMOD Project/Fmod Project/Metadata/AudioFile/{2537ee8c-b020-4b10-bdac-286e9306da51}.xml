@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{2537ee8c-b020-4b10-bdac-286e9306da51}">
+		<property name="assetPath">
+			<value>Thunder/thunder-big-30291.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>16.056000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{89717de6-1731-4747-b3d4-695c637c78f2}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -332,7 +332,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638676295311480179
+  lastModified: 638677118678720053
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -352,10 +352,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Environment.bank
   Name: Environment
   StudioPath: bank:/Environment
-  lastModified: 638676202961826527
+  lastModified: 638677118678683756
   FileSizes:
   - Name: Desktop
-    Value: 15090304
+    Value: 15553376
   Exists: 1
 --- !u!114 &-1242540832277916130
 MonoBehaviour:
@@ -475,12 +475,13 @@ MonoBehaviour:
   - {fileID: 373807602916526788}
   - {fileID: 3803582061125797906}
   - {fileID: -6174571458502305428}
+  - {fileID: 1818833630571969928}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1675079813931114079}
   StringsBanks:
   - {fileID: 964061904444538214}
-  cacheTime: 638676299596335030
+  cacheTime: 638677118679203982
   cacheVersion: 131620
 --- !u!114 &373807602916526788
 MonoBehaviour:
@@ -524,10 +525,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638676295311487116
+  lastModified: 638677118678726718
   FileSizes:
   - Name: Desktop
-    Value: 2104
+    Value: 2152
   Exists: 1
 --- !u!114 &1381834443108594042
 MonoBehaviour:
@@ -583,6 +584,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 123428
+--- !u!114 &1818833630571969928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Thunder
+  m_EditorClassIdentifier: 
+  Path: event:/Thunder
+  Guid:
+    Data1: 1824488419
+    Data2: 1104831809
+    Data3: 1811173557
+    Data4: -314543307
+  Banks:
+  - {fileID: -1281682042033071742}
+  - {fileID: 2817169411028457779}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16056
 --- !u!114 &2595887203352731216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,10 +654,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638676299596335030
+  lastModified: 638677118679203982
   FileSizes:
   - Name: Desktop
-    Value: 194464
+    Value: 657504
   Exists: 1
 --- !u!114 &3213590395693210105
 MonoBehaviour:
