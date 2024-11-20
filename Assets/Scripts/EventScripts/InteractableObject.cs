@@ -11,15 +11,15 @@ public class InteractableObject : MonoBehaviour
     [Tooltip("Which object should be interacted with?")]
     [SerializeField] private GameObject interactableObject;
 
-    [Header("Text")]
+   /* [Header("Text")]
     [Tooltip("Which text should be shown when close to object")]
-    [SerializeField] private TextMeshProUGUI interactText;
+    [SerializeField] private TextMeshProUGUI interactText;*/
 
     [Header("Game Event")]
     [Tooltip("Which game event do we want our listener to respond to")]
     [SerializeField] private UnityEvent whatEvent;
 
-    private void OnTriggerEnter(Collider other)
+   /* private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
@@ -27,7 +27,7 @@ public class InteractableObject : MonoBehaviour
 
             Debug.Log("Interaction text is shown");
         }
-    }
+    }*/
     void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player" && Input.GetKeyDown(KeyCode.E))
