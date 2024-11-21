@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
+[DefaultExecutionOrder(1)]
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] Transform target;
+    [SerializeField] float radiusAroundTarget = 0.5f;
     [SerializeField] float chaseRange = 5f;
     [SerializeField] float turnSpeed = 5f;
 
@@ -13,13 +16,12 @@ public class EnemyAI : MonoBehaviour
     float distanceToTarget = Mathf.Infinity;
     bool isProvoked = false;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        EnemyHandler.Instance.Units.Add(this);
     }
 
-    // Update is called once per frame
     void Update()
     {
         distanceToTarget = Vector3.Distance(target.position, transform.position);
@@ -52,24 +54,19 @@ public class EnemyAI : MonoBehaviour
         FaceTarget();
         if (distanceToTarget >= navMeshAgent.stoppingDistance)
         {
-            ChaseTarget();
+            MoveTowardsTarget(target.position);
         }
         if (distanceToTarget <= navMeshAgent.stoppingDistance)
         {
-            AttackTarget();
+            //What happens when getting to the player? 
         }
     }
 
-    void ChaseTarget()
+    public void MoveTowardsTarget(Vector3 position)
     {
         //GetComponent<Animator>().SetBool("attack", false);
         //GetComponent<Animator>().SetTrigger("Move");
-        navMeshAgent.SetDestination(target.position);
-    }
-
-    void AttackTarget()
-    {
-        //GetComponent<Animator>().SetBool("attack", true);
+        navMeshAgent.SetDestination(position);
     }
 
     void FaceTarget()

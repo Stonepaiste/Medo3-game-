@@ -22,7 +22,7 @@ public class Flashlight : MonoBehaviour
 
     void Start()
     {
-        //Turning on the flashlight at start
+        //Turning off the flashlight at start
         lightSource.SetActive(false);
         _flashlightOn = RuntimeManager.CreateInstance(FmodEvents.Instance.FlashlightOn);
         _flashlightOff = RuntimeManager.CreateInstance(FmodEvents.Instance.FlashlightOff);
@@ -31,13 +31,13 @@ public class Flashlight : MonoBehaviour
 
     void Update()
     {
-        //if statement to turn on and off the flashlight, when space-key is pressed
+        //if statement to turn on and off the flashlight, when f is pressed
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (FlashlightOn == false)
+            if (FlashlightOn == true)
             {
                 lightSource.gameObject.SetActive(true);
-                FlashlightOn = true;
+                FlashlightOn = false;
                 _flashlightOn.start();
                 
                
@@ -74,7 +74,7 @@ public class Flashlight : MonoBehaviour
             //Burning shadowmonsters if raycast hits object with tag "Enemy"
             if (hit.transform.tag == "Enemy") 
             {
-                hit.transform.GetComponent<ShadowHealth>().TakeDamage(); //calling TakeDamage method from ShadowHealth script
+                hit.transform.GetComponent<EnemyHealth>().TakeDamage(); //calling TakeDamage method from ShadowHealth script
 
                 //Fire effect
                 fire.SetActive(true);
