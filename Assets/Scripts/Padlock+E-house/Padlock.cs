@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using FMOD.Studio;
+using FMODUnity;
 
 public class Padlock : MonoBehaviour
 {
@@ -13,12 +15,20 @@ public class Padlock : MonoBehaviour
     private bool hasActivatedEnemy = false;
 
     private Color originalColor;
+    
+    private EventInstance _padlockButtonsEventInstance;
+    private EventInstance _padlockCorrectEventInstance;
+    private EventInstance _padlockIncorrectEventInstance;
 
     private void Start()
     {
         enemycanspawn = false;
         originalColor = displayText.color;
         UpdateDisplay();
+        _padlockButtonsEventInstance = RuntimeManager.CreateInstance(FmodEvents.Instance.PadlockButtons);
+        _padlockCorrectEventInstance = RuntimeManager.CreateInstance(FmodEvents.Instance.PadlockCorrect);
+        _padlockIncorrectEventInstance = RuntimeManager.CreateInstance(FmodEvents.Instance.PadlockIncorrect);
+        
     }
 
     private void Update()
@@ -38,6 +48,10 @@ public class Padlock : MonoBehaviour
         {
             enteredCode += digit;
             UpdateDisplay();
+            
+         //play the padlock buttons sound
+            _padlockButtonsEventInstance.start();
+            
 
             if (enteredCode.Length == maxDigits)
             {
@@ -53,11 +67,15 @@ public class Padlock : MonoBehaviour
             Debug.Log("Correct Code Entered!");
             StartCoroutine(DisplayResult(Color.green));
             door.OpenDoor();
+           //play the padlock correct sound
+            _padlockCorrectEventInstance.start();
         }
         else
         {
             Debug.Log("Incorrect Code!");
             StartCoroutine(DisplayResult(Color.red));
+          //play the padlock incorrect sound
+            _padlockIncorrectEventInstance.start();
 
             // Activate enemy movement only on the first incorrect code entry
             if (!hasActivatedEnemy)

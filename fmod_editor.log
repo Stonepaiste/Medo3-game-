@@ -1,13 +1,13 @@
 [LOG] System::create                           : Header version = 2.02.24. Current version = 2.02.24.
-[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
+[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0x0.
 [LOG] SystemI::init                            : Initialize version=20224 (146338), maxchannels=256, flags=0x00020000
-[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
+[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD Core Audio Output'
+[LOG] OutputCoreAudio::init                    : Output running 2 channels at 44100Hz sample rate.
+[LOG] OutputCoreAudio::init                    : Maximum hardware read size: 512 samples, Software buffer size: 512 samples, Number of software buffers: 4.
+[LOG] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000019E656F8998 isAsync 0 updatePeriod 0.02
+[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncManager::init                       : manager 0x7fdd70a6c008 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -22,15 +22,274 @@
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x7fdd6f191c28, queue head = 0x7fdd4e8f6ec8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fdd6f191c28
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2491776
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 11360
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fdd6f1118a0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 4
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Just a dream', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fdd6f191c28
+[LOG] SoundI::release                          : Voiceover Just a dream (0x7fdd6f191c28)
+[LOG] SoundI::release                          :     Voiceover Just a dream (0x7fdd707463e8)
+[LOG] SoundI::release                          :     Voiceover Just a dream (0x7fdd4e748f98)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Environment.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x7fdd7079a6f8, queue head = 0x7fdd4e8f6ec8, queue count = 0
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x7fdd707e5718, queue head = 0x7fdd4e8f6ec8, queue count = 1
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fdd7079a6f8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Environment.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 15543968
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9408
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fdd64c48210
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Forest Night A', format=5, channels=2, frequency=48000, lengthbytes=7876832, lengthpcm=28707526, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.982330.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fdd7079a6f8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fdd707e5718
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4333504
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 1664
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fdd64c6e390
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Gametheme', format=5, channels=2, frequency=48000, lengthbytes=4330624, lengthpcm=16588800, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999847.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fdd707e5718
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x7fdd4efc0c48, queue head = 0x7fdd4e8f6ec8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fdd4efc0c48
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fdd4efc0c48
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Environment.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x7fdd4f518c48, queue head = 0x7fdd4e8f6ec8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fdd4f518c48
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Environment.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 15543968
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9408
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fdd4f518f10
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='thunder-124463', format=5, channels=2, frequency=48000, lengthbytes=132384, lengthpcm=531644, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.603149.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fdd4f518c48
+[LOG] SoundI::release                          : thunder-124463 (0x7fdd4f518c48)
+[LOG] SoundI::release                          :     thunder-124463 (0x7fdd4f409658)
+[LOG] SoundI::release                          :     thunder-124463 (0x7fdd4f4097e8)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Environment.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x7fdd4f0a61b8, queue head = 0x7fdd4e8f6ec8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fdd4f0a61b8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Environment.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 15543968
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9408
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fdd4f0d6e20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='thunder-big-30291', format=5, channels=2, frequency=48000, lengthbytes=144000, lengthpcm=770688, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.819916.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fdd4f0a61b8
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Environment.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x7fdd4efe2918, queue head = 0x7fdd4e8f6ec8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fdd4efe2918
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Environment.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 15543968
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9408
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fdd643408b0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='thunder-124463', format=5, channels=2, frequency=48000, lengthbytes=132384, lengthpcm=531644, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.603149.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fdd4efe2918
+[LOG] SoundI::release                          : thunder-big-30291 (0x7fdd4f0a61b8)
+[LOG] SoundI::release                          :     thunder-big-30291 (0x7fdd4ef28ef8)
+[LOG] SoundI::release                          :     thunder-big-30291 (0x7fdd4ef9df68)
+[LOG] SoundI::release                          : thunder-124463 (0x7fdd4efe2918)
+[LOG] SoundI::release                          :     thunder-124463 (0x7fdd7072d6a8)
+[LOG] SoundI::release                          :     thunder-124463 (0x7fdd707852f8)
+[LOG] SystemI::mixerSuspend                    : Suspending output.
+[LOG] SystemI::mixerResume                     : Resuming output.
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x7fdd70112d58, queue head = 0x7fdd4e8f6ec8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fdd70112d58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x7fdd4f410bc8, queue head = 0x7fdd4e8f6ec8, queue count = 0
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0x7fdd4efc0c48, queue head = 0x7fdd4e8f6ec8, queue count = 1
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0x7fdd65415ff8, queue head = 0x7fdd4e8f6ec8, queue count = 2
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fdd70112d58
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fdd4f410bc8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fdd4f410bc8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fdd4efc0c48
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fdd4efc0c48
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fdd65415ff8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fdd65415ff8
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Environment.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x7fdd4f862798, queue head = 0x7fdd4e8f6ec8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fdd4f862798
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Environment.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 15543968
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9408
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fdd4e6eba40
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='thunder-124463', format=5, channels=2, frequency=48000, lengthbytes=132384, lengthpcm=531644, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.603149.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fdd4f862798
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Environment.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x7fdd7076cad8, queue head = 0x7fdd4e8f6ec8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fdd7076cad8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Environment.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 15543968
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9408
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fdd60fc7640
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='thunder-big-30291', format=5, channels=2, frequency=48000, lengthbytes=144000, lengthpcm=770688, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.819916.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fdd7076cad8
+[LOG] SoundI::release                          : thunder-124463 (0x7fdd4f862798)
+[LOG] SoundI::release                          :     thunder-124463 (0x7fdd7075ef38)
+[LOG] SoundI::release                          :     thunder-124463 (0x7fdd707867d8)
+[LOG] SoundI::release                          : thunder-big-30291 (0x7fdd7076cad8)
+[LOG] SoundI::release                          :     thunder-big-30291 (0x7fdd60e14bf8)
+[LOG] SoundI::release                          :     thunder-big-30291 (0x7fdd4f75d8f8)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Environment.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x7fdd7076cad8, queue head = 0x7fdd4e8f6ec8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fdd7076cad8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Environment.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 15543968
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9408
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fdd60fc7640
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='thunder-124463', format=5, channels=2, frequency=48000, lengthbytes=132384, lengthpcm=531644, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.603149.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fdd7076cad8
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Environment.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x7fdd619b7068, queue head = 0x7fdd4e8f6ec8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fdd619b7068
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Environment.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 15543968
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9408
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fdd6f5c7cb0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='thunder-big-30291', format=5, channels=2, frequency=48000, lengthbytes=144000, lengthpcm=770688, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.819916.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fdd619b7068
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Environment.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x7fdd4e86aaa8, queue head = 0x7fdd4e8f6ec8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fdd4e86aaa8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Environment.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 15543968
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9408
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fdd4e86aa70
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Ocean 2', format=5, channels=2, frequency=48000, lengthbytes=1516928, lengthpcm=5924570, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.086395.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fdd4e86aaa8
+[LOG] SoundI::release                          : Ocean 2 (0x7fdd64fd1a38)
+[LOG] SoundI::release                          :     Ocean 2 (0x7fdd65490e18)
+[LOG] SoundI::release                          :     Ocean 2 (0x7fdd65415ff8)
+[LOG] SoundI::release                          : thunder-124463 (0x7fdd7076cad8)
+[LOG] SoundI::release                          :     thunder-124463 (0x7fdd672088a8)
+[LOG] SoundI::release                          :     thunder-124463 (0x7fdd67208a38)
+[LOG] SoundI::release                          : Forest Night A (0x7fdd7079a6f8)
+[LOG] SoundI::release                          :     Forest Night A (0x7fdd4ef419a8)
+[LOG] SoundI::release                          :     Forest Night A (0x7fdd4efc0c48)
+[LOG] SoundI::release                          : Thunder and Rain Muted B (0x7fdd64f7dfc8)
+[LOG] SoundI::release                          :     Thunder and Rain Muted B (0x7fdd64ff6018)
+[LOG] SoundI::release                          :     Thunder and Rain Muted B (0x7fdd70112d58)
+[LOG] SoundI::release                          : Ocean 2 (0x7fdd4e86aaa8)
+[LOG] SoundI::release                          :     Ocean 2 (0x7fdd4efccaa8)
+[LOG] SoundI::release                          :     Ocean 2 (0x7fdd6e172bd8)
+[LOG] SoundI::release                          : thunder-big-30291 (0x7fdd619b7068)
+[LOG] SoundI::release                          :     thunder-big-30291 (0x7fdd6728a948)
+[LOG] SoundI::release                          :     thunder-big-30291 (0x7fdd672ff028)
+[LOG] SoundI::release                          :  (0x7fdd68e56818)
+[LOG] SoundI::release                          :     loud-thunder-192165 (0x7fdd4e8f1398)
+[LOG] SoundI::release                          : Gametheme (0x7fdd707e5718)
+[LOG] SoundI::release                          :     Gametheme (0x7fdd4f410a38)
+[LOG] SoundI::release                          :     Gametheme (0x7fdd4f410bc8)
+[LOG] SoundI::release                          :  (0x7fdd68e54198)
+[LOG] SoundI::release                          :     peals-of-thunder-191992 (0x7fdd6f3e45c8)
+[LOG] SoundI::release                          :  (0x7fdd62faff88)
+[LOG] SoundI::release                          :     Footstep woodden floor 1-walking-on-a-wooden-floor-14743 (0x7fdd654b0938)
+[LOG] SoundI::release                          :  (0x7fdd61b5ef48)
+[LOG] SoundI::release                          :     Footstep woodden floor 10-walking-on-a-wooden-floor-14743 (0x7fdd676e0b28)
+[LOG] SoundI::release                          :  (0x7fdd61b56c18)
+[LOG] SoundI::release                          :     Footstep woodden floor 2-walking-on-a-wooden-floor-14743 (0x7fdd6766b378)
+[LOG] SoundI::release                          :  (0x7fdd61bb2128)
+[LOG] SoundI::release                          :     Footstep woodden floor 3-walking-on-a-wooden-floor-14743 (0x7fdd676d33d8)
+[LOG] SoundI::release                          :  (0x7fdd61bce008)
+[LOG] SoundI::release                          :     Footstep woodden floor 4-walking-on-a-wooden-floor-14743 (0x7fdd6760c288)
+[LOG] SoundI::release                          :  (0x7fdd6df2bfb8)
+[LOG] SoundI::release                          :     Footstep woodden floor 5-walking-on-a-wooden-floor-14743 (0x7fdd64f7b708)
+[LOG] SoundI::release                          :  (0x7fdd61b71858)
+[LOG] SoundI::release                          :     Footstep woodden floor 6-walking-on-a-wooden-floor-14743 (0x7fdd676a54f8)
+[LOG] SoundI::release                          :  (0x7fdd6df97cb8)
+[LOG] SoundI::release                          :     Footstep woodden floor 7-walking-on-a-wooden-floor-14743 (0x7fdd4f568c38)
+[LOG] SoundI::release                          :  (0x7fdd61b90628)
+[LOG] SoundI::release                          :     Footstep woodden floor 8-walking-on-a-wooden-floor-14743 (0x7fdd58ffc388)
+[LOG] SoundI::release                          :  (0x7fdd6dfaf0f8)
+[LOG] SoundI::release                          :     Footstep woodden floor 9-walking-on-a-wooden-floor-14743 (0x7fdd7017bcd8)
+[LOG] SoundI::release                          :  (0x7fdd61bf7368)
+[LOG] SoundI::release                          :     FlashligtOff1 (0x7fdd65370ef8)
+[LOG] SoundI::release                          :  (0x7fdd61bdb6c8)
+[LOG] SoundI::release                          :     Flashligt1 (0x7fdd6531bb28)
+[LOG] SoundI::release                          :  (0x7fdd6df50f38)
+[LOG] SoundI::release                          :     Footsteps skov 2-Footsteps skov (0x7fdd64f12ae8)
+[LOG] SoundI::release                          :  (0x7fdd62d0c548)
+[LOG] SoundI::release                          :     Footsteps skov 3-Footsteps skov (0x7fdd4f54e9b8)
+[LOG] SoundI::release                          :  (0x7fdd61b0bb68)
+[LOG] SoundI::release                          :     Footsteps skov 4-Footsteps skov (0x7fdd4ed8df18)
+[LOG] SoundI::release                          :  (0x7fdd61b232d8)
+[LOG] SoundI::release                          :     Footsteps skov 5-Footsteps skov (0x7fdd64857b28)
+[LOG] SoundI::release                          :  (0x7fdd61bf4598)
+[LOG] SoundI::release                          :     Footsteps skov 6-Footsteps skov (0x7fdd58ffe518)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
+[ERR] assert                                   : assertion: 'gSystemInitCount == 0' failed

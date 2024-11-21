@@ -1540,9 +1540,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd9c82461140d74cbdff001525e06c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightSwitch: {fileID: 0}
-  pressE: {fileID: 0}
-  ClickSwitch:
+  interactableObject: {fileID: 0}
+  interactText: {fileID: 0}
+  whatEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &488200501
@@ -1637,7 +1637,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &503445750
 Animator:
   serializedVersion: 5
@@ -2630,9 +2630,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd9c82461140d74cbdff001525e06c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightSwitch: {fileID: 845518076}
-  pressE: {fileID: 1001229875}
-  ClickSwitch:
+  interactableObject: {fileID: 0}
+  interactText: {fileID: 0}
+  whatEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &886866748 stripped
