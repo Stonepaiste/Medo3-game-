@@ -47,6 +47,9 @@ public class FmodEvents : MonoBehaviour
 	
 	[field: Header("Thunder")]
 	[field: SerializeField] public EventReference Thunder { get; private set; }
+    
+    [field: Header("DoorEhouse")]
+    [field: SerializeField] public EventReference DoorEhouse { get; private set; }
 	
     //All dialogue are played through FMOD eventEmitter in SOUNDDIALOGUE COMPONENT USING TIMELINE
     

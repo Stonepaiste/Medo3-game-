@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using FMODUnity;
+using FMOD.Studio;
 
 public class Door : MonoBehaviour
 {
@@ -9,13 +11,17 @@ public class Door : MonoBehaviour
     public float openSpeed = 70f; // Speed of opening the door
 
     public Transform doorTransform; // Reference to the door itself
-
+    public EventInstance _doorOpenSound; // Reference to the FMOD event for the door opening sound
     public void OpenDoor()
     {
         if (!isOpen)
         {
             StartCoroutine(OpenDoorCoroutine());
             isOpen = true;
+            _doorOpenSound= RuntimeManager.CreateInstance(FmodEvents.Instance.DoorEhouse);
+            _doorOpenSound.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
+            _doorOpenSound.start();
+            
         }
     }
 
