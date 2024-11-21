@@ -1,4 +1,6 @@
 using Cinemachine;
+using FMOD.Studio;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -7,7 +9,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
-public class PlayerInpuController : MonoBehaviour
+public class PlayerInputController : MonoBehaviour
 {
     [Header("Movement Speed")]
     [Tooltip("How fast you want to walk.")]
@@ -38,6 +40,16 @@ public class PlayerInpuController : MonoBehaviour
     Vector2 movement;
     RaycastHit hit;
 
+    //Flashlight
+    bool flashlightToggleOnOff = false;
+
+    [SerializeField] GameObject lightSource;
+    [SerializeField] float sphereRadius = 0.1f; // Adjust the radius as needed
+    private bool FlashlightOn = false;
+    public Transform LightPoint;
+    private EventInstance _flashlightOn;
+    private EventInstance _flashlightOff;
+
     void Awake()
     {
         //Hides cursor when playing
@@ -55,6 +67,9 @@ public class PlayerInpuController : MonoBehaviour
 
         //sets the bool isRunning to false
         isRunning = false;
+
+        lightSource.SetActive(false);
+
     }
 
     private void Update()
@@ -88,6 +103,24 @@ public class PlayerInpuController : MonoBehaviour
         Vector2 look = value.Get<Vector2>().normalized;
         lookX = look.x;
         lookY = -look.y;
+    }
+
+    public void OnFlashlight()
+    {
+        flashlightToggleOnOff = !flashlightToggleOnOff;
+        if (flashlightToggleOnOff)
+        {
+            Flashlight();
+            lightSource.gameObject.SetActive(true);
+            _flashlightOn.start();
+            _flashlightOn = RuntimeManager.CreateInstance(FmodEvents.Instance.FlashlightOn);
+        }
+        else if (!flashlightToggleOnOff)
+        {
+            lightSource.gameObject.SetActive(false);
+            _flashlightOff.start();
+            _flashlightOff = RuntimeManager.CreateInstance(FmodEvents.Instance.FlashlightOff);
+        }
     }
 
     public void OnInteract(InputValue value)
@@ -136,9 +169,20 @@ public class PlayerInpuController : MonoBehaviour
         }
     }
 
-
-    private void OnDrawGizmosSelected()
+    void Flashlight()
     {
-        Gizmos.color = Color.red;
+        RaycastHit hit;
+
+        if (Physics.SphereCast(LightPoint.position, sphereRadius, transform.TransformDirection(Vector3.forward), out hit, 100))
+        {
+            //Debug.DrawLine(LightPoint.position, hit.point, Color.yellow);  //Debug line for raycast
+
+            //Burning shadowmonsters if raycast hits object with tag "Enemy"
+            if (hit.transform.tag == "Enemy")
+            {
+                hit.transform.GetComponent<EnemyHealth>().TakeDamage(); //calling TakeDamage method from ShadowHealth script
+                //AudioLibrary.PlaySound("Burn");
+            }
+        }
     }
 }

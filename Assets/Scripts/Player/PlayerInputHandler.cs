@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using FMOD.Studio;
+using FMODUnity;
 
 public class PlayerInputHandler : MonoBehaviour
 {
@@ -42,16 +43,25 @@ public class PlayerInputHandler : MonoBehaviour
     //Input Actions
     InputAction moveAction;
     InputAction runAction;
+    InputAction flashlightAction;
     InputAction interactAction;
   
    //Camera
     Transform cameraTransform;
-    
+
     //Audio 
-  private EventInstance FootstepsForest;
-  private EventInstance FootstepsWood;
-  public bool footstepsplaying;
-  public bool isInside;
+    private EventInstance _flashlightOn;
+    private EventInstance _flashlightOff;
+    private EventInstance FootstepsForest;
+    private EventInstance FootstepsWood;
+    public bool footstepsplaying;
+    public bool isInside;
+
+    //Flashlight
+    bool flashlightToggleOnOff = false;
+    [SerializeField] GameObject lightSource;
+    [SerializeField] float sphereRadius = 0.1f; // Adjust the radius as needed
+    public Transform LightPoint;
 
 
     private void Awake()
@@ -90,11 +100,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             playerVelocity.y = 0f;
         }
-
-        NewMethod();
-
-        OnMove();
-        OnRun();
+        Move();
         HandleFootsteps();
       
     }
@@ -113,12 +119,7 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }*/
 
-    private void FixedUpdate()
-    {
-        //HandleFootsteps();
-    }
-
-    private void NewMethod()
+    private void Move()
     {
         Vector2 movement = movePlayer;
         Vector3 move = new Vector3(movement.x, 0f, movement.y);
@@ -134,8 +135,6 @@ public class PlayerInputHandler : MonoBehaviour
     private void OnMove() 
     {
         movePlayer = moveAction.ReadValue<Vector2>().normalized;
- //     movePlayer = value.Get<Vector2>().normalized;
- 
     }
 
     private void OnRun()
@@ -154,7 +153,25 @@ public class PlayerInputHandler : MonoBehaviour
   
     }
 
-    
+    public void OnFlashlight()
+    {
+        flashlightToggleOnOff = flashlightAction.ReadValue<bool>();
+        Debug.Log("This works");
+        if (flashlightToggleOnOff)
+        {
+            Flashlight();
+            lightSource.gameObject.SetActive(true);
+            _flashlightOn.start();
+            _flashlightOn = RuntimeManager.CreateInstance(FmodEvents.Instance.FlashlightOn);
+        }
+        else if (!flashlightToggleOnOff)
+        {
+            lightSource.gameObject.SetActive(false);
+            _flashlightOff.start();
+            _flashlightOff = RuntimeManager.CreateInstance(FmodEvents.Instance.FlashlightOff);
+        }
+    }
+
     private void HandleFootsteps()
     {
         // Playing footsteps when the player is moving
@@ -165,7 +182,7 @@ public class PlayerInputHandler : MonoBehaviour
             EventInstance otherFootsteps = isInside ? FootstepsWood : FootstepsForest;
 
             // Stop the other footstep sound to prevent overlap
-            otherFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+            otherFootsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
             // Play the current footstep sound if it's not already playing
             PLAYBACK_STATE playbackstate;
@@ -179,13 +196,30 @@ public class PlayerInputHandler : MonoBehaviour
         else
         {
             // Stop both footstep sounds when the player is not moving
-            FootstepsForest.stop(STOP_MODE.ALLOWFADEOUT);
-            FootstepsWood.stop(STOP_MODE.ALLOWFADEOUT);
+            FootstepsForest.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            FootstepsWood.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             footstepsplaying = false;
         }
     }
 
-    public void SetFootstepArea(bool inside)
+    void Flashlight()
+    {
+        RaycastHit hit;
+
+        if (Physics.SphereCast(LightPoint.position, sphereRadius, transform.TransformDirection(Vector3.forward), out hit, 100))
+        {
+            //Debug.DrawLine(LightPoint.position, hit.point, Color.yellow);  //Debug line for raycast
+
+            //Burning shadowmonsters if raycast hits object with tag "Enemy"
+            if (hit.transform.tag == "Enemy")
+            {
+                hit.transform.GetComponent<EnemyHealth>().TakeDamage(); //calling TakeDamage method from ShadowHealth script
+                //AudioLibrary.PlaySound("Burn");
+            }
+        }
+    }
+
+        public void SetFootstepArea(bool inside)
     {
         isInside = inside;
     }
