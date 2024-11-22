@@ -15,6 +15,7 @@ public class LightningController : MonoBehaviour
     public GameObject thunderSoundlocation2;
     public GameObject thunderSoundlocation3;
     public GameObject thunderSoundlocation4;
+    public bool ThunderHasStruck = false;
     
     // public EventInstance lightningSound;
 
@@ -32,7 +33,7 @@ public class LightningController : MonoBehaviour
         Invoke("CallLightning", 3f); // Call lightning after 3 seconds
     }
 
-    void CallLightning()
+   public  void CallLightning()
     {
         StartCoroutine(LightningSequence());
         Invoke("CallThunder", 0.395f); // Call thunder sound with delay after lightning
@@ -75,21 +76,21 @@ public class LightningController : MonoBehaviour
 
         if (firstFlash != null && secondFlash != null)
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 2; i++)// Flash twice
             {
-                firstFlash.SetActive(true);
+                firstFlash.SetActive(true);// Turn on the first flash
                 yield return new WaitForSeconds(Random.Range(0.05f, 0.1f));
-                firstFlash.SetActive(false);
+                firstFlash.SetActive(false);// Turn off the first flash
                 yield return new WaitForSeconds(Random.Range(0.05f, 0.1f));
             }
 
-            yield return new WaitForSeconds(Random.Range(0.08f, 0.1f));
+            yield return new WaitForSeconds(Random.Range(0.08f, 0.1f));// Wait for random time between 0.08 and 0.1 seconds
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 2; i++)// Flash twice
             {
-                secondFlash.SetActive(true);
+                secondFlash.SetActive(true);// Turn on the second flash
                 yield return new WaitForSeconds(Random.Range(0.05f, 0.1f));
-                secondFlash.SetActive(false);
+                secondFlash.SetActive(false);// Turn off the second flash
                 yield return new WaitForSeconds(Random.Range(0.05f, 0.1f));
             }
             
@@ -141,10 +142,28 @@ public class LightningController : MonoBehaviour
         }
     }
 
-    void EndThunder()
+   public void ThunderStrikeLighthouse()
     {
-        // fmod sound here
+        if (ThunderHasStruck==false)
+        {
+            ThunderHasStruck = true;
+            ThunderStrikeMechanic();   
+            
+        }
+        
+      
     }
 
+    IEnumerator ThunderStrikeMechanic()
+    {
+            for (int i = 0; i < 2; i++)// Flash twice
+            {
+                lightningOne.SetActive(true);// Turn on the first flash
+                yield return new WaitForSeconds(Random.Range(0.05f, 0.1f));
+                lightningTwo.SetActive(false);// Turn off the first flash
+                yield return new WaitForSeconds(Random.Range(0.05f, 0.1f));
+            }     
+       
+    }
     // Update is called once per frame
 }

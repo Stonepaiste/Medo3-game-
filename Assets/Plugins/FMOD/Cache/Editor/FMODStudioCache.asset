@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8356300630488135038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Alex Where are you
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Alex Where are you
+  Guid:
+    Data1: -1940441817
+    Data2: 1301052486
+    Data3: -452968545
+    Data4: -1979984789
+  Banks:
+  - {fileID: -5566268638195901961}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3179
 --- !u!114 &-7988511685499663754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,10 +204,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank
   Name: Dialogue
   StudioPath: bank:/Dialogue
-  lastModified: 638676151922516076
+  lastModified: 638678756799705588
   FileSizes:
   - Name: Desktop
-    Value: 2503136
+    Value: 2543616
   Exists: 1
 --- !u!114 &-5121184136936702832
 MonoBehaviour:
@@ -332,7 +359,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638665908544932323
+  lastModified: 638678849894916367
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -352,7 +379,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Environment.bank
   Name: Environment
   StudioPath: bank:/Environment
-  lastModified: 638677159937561037
+  lastModified: 638677830018734109
   FileSizes:
   - Name: Desktop
     Value: 15553376
@@ -384,6 +411,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 18400
+--- !u!114 &-569741648212173909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ShutdownPower
+  m_EditorClassIdentifier: 
+  Path: event:/ShutdownPower
+  Guid:
+    Data1: -1832709247
+    Data2: 1194104430
+    Data3: -1900287356
+    Data4: 1553319364
+  Banks:
+  - {fileID: 2817169411028457779}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-169958108950408698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,7 +453,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638675274952426529
+  lastModified: 638677830019126847
   FileSizes:
   - Name: Desktop
     Value: 4335168
@@ -477,12 +531,15 @@ MonoBehaviour:
   - {fileID: -6174571458502305428}
   - {fileID: 1818833630571969928}
   - {fileID: 3634606749894337209}
+  - {fileID: -8356300630488135038}
+  - {fileID: 8248684616327094375}
+  - {fileID: -569741648212173909}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1675079813931114079}
   StringsBanks:
   - {fileID: 964061904444538214}
-  cacheTime: 638677892834616545
+  cacheTime: 638678849895693079
   cacheVersion: 131620
 --- !u!114 &373807602916526788
 MonoBehaviour:
@@ -526,10 +583,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638677892834595939
+  lastModified: 638678849894923043
   FileSizes:
   - Name: Desktop
-    Value: 2206
+    Value: 2364
   Exists: 1
 --- !u!114 &1381834443108594042
 MonoBehaviour:
@@ -655,10 +712,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638677892834616545
+  lastModified: 638678849895693079
   FileSizes:
   - Name: Desktop
-    Value: 631968
+    Value: 660480
   Exists: 1
 --- !u!114 &3213590395693210105
 MonoBehaviour:
@@ -795,6 +852,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8248684616327094375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Thunder_lights_out
+  m_EditorClassIdentifier: 
+  Path: event:/Thunder_lights_out
+  Guid:
+    Data1: -1744080045
+    Data2: 1308936216
+    Data3: -89214285
+    Data4: 23222246
+  Banks:
+  - {fileID: 2817169411028457779}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11075
 --- !u!114 &8427286067645196562
 MonoBehaviour:
   m_ObjectHideFlags: 0
