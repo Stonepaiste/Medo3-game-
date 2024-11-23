@@ -11,7 +11,7 @@ public class ThunderStrikeSignalReceiver : MonoBehaviour, INotificationReceiver
     {
         if (notification is SignalEmitter && lightningController.ThunderHasStruck == false)
         {
-            lightningController.CallLightning();
+            lightningController.ThunderStrikeLighthouse();
             
         }
     }
