@@ -67,14 +67,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BaseNoiseSize: 20
+    - _BaseNoiseStrength: 0.5
     - _CutOff_Height: 10
-    - _Glow_Width: 0.05
+    - _Glow_Width: 4
+    - _NoiseSize: 20
+    - _NoiseStrength: 0.5
     - _Noise_Scale: 80
     - _Noise_Strength: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0
     m_Colors:
-    - _BaseColor: {r: 0, g: 0, b: 0, a: 0}
+    - _BaseColor: {r: 0, g: 0, b: 0, a: 0.8509804}
     - _GlowColor: {r: 10.680628, g: 10.680628, b: 10.680628, a: 0}
   m_BuildTextureStacks: []
