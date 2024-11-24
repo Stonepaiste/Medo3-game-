@@ -204,7 +204,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank
   Name: Dialogue
   StudioPath: bank:/Dialogue
-  lastModified: 638679002349148685
+  lastModified: 638678756799705588
   FileSizes:
   - Name: Desktop
     Value: 2543616
@@ -359,7 +359,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638665908544932323
+  lastModified: 638680397898047271
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -379,7 +379,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Environment.bank
   Name: Environment
   StudioPath: bank:/Environment
-  lastModified: 638677159937561037
+  lastModified: 638677830018734109
   FileSizes:
   - Name: Desktop
     Value: 15553376
@@ -411,33 +411,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 18400
---- !u!114 &-569741648212173909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/ShutdownPower
-  m_EditorClassIdentifier: 
-  Path: event:/ShutdownPower
-  Guid:
-    Data1: -1832709247
-    Data2: 1194104430
-    Data3: -1900287356
-    Data4: 1553319364
-  Banks:
-  - {fileID: 2817169411028457779}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-169958108950408698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,7 +426,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638675274952426529
+  lastModified: 638677830019126847
   FileSizes:
   - Name: Desktop
     Value: 4335168
@@ -533,13 +506,13 @@ MonoBehaviour:
   - {fileID: 3634606749894337209}
   - {fileID: -8356300630488135038}
   - {fileID: 8248684616327094375}
-  - {fileID: -569741648212173909}
+  - {fileID: 4680107986567507438}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1675079813931114079}
   StringsBanks:
   - {fileID: 964061904444538214}
-  cacheTime: 638679002349465204
+  cacheTime: 638680397898304888
   cacheVersion: 131620
 --- !u!114 &373807602916526788
 MonoBehaviour:
@@ -583,10 +556,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638679002349264868
+  lastModified: 638680397898052187
   FileSizes:
   - Name: Desktop
-    Value: 2364
+    Value: 2352
   Exists: 1
 --- !u!114 &1381834443108594042
 MonoBehaviour:
@@ -712,10 +685,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638679002349465204
+  lastModified: 638680397898304888
   FileSizes:
   - Name: Desktop
-    Value: 660480
+    Value: 660672
   Exists: 1
 --- !u!114 &3213590395693210105
 MonoBehaviour:
@@ -816,6 +789,33 @@ MonoBehaviour:
     Data2: 1180786080
     Data3: -1532020349
     Data4: -423393000
+  Banks:
+  - {fileID: 2817169411028457779}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4680107986567507438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/ShutdownPower
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/ShutdownPower
+  Guid:
+    Data1: 389583470
+    Data2: 1178908254
+    Data3: -940195937
+    Data4: 1199975325
   Banks:
   - {fileID: 2817169411028457779}
   IsStream: 0
