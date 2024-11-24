@@ -1,12 +1,13 @@
 [LOG] System::create                           : Header version = 2.02.24. Current version = 2.02.24.
-[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0x0.
+[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
 [LOG] SystemI::init                            : Initialize version=20224 (146338), maxchannels=256, flags=0x00020000
-[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD Core Audio Output'
-[LOG] OutputCoreAudio::init                    : Output running 2 channels at 48000Hz sample rate.
-[LOG] OutputCoreAudio::init                    : Maximum hardware read size: 512 samples, Software buffer size: 512 samples, Number of software buffers: 4.
+[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
+[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x3c2ff8808 isAsync 0 updatePeriod 0.02
+[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncManager::init                       : manager 000001905314DAA8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -20,196 +21,1331 @@
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF55A098, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF55A098
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC4E20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] Thread::initThread                       :     Init FMOD file thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF55A098
+[LOG] SoundI::release                          : Voiceover Who is this (00000193EF55A098)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001944751DE68)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000192D7C78678)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF55A5A8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF55A5A8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC50A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF55A5A8
+[LOG] SoundI::release                          : Voiceover Who is this (00000193EF55A5A8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001944751D168)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000192D7C77E08)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF55AC68, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF55AC68
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC4F60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1283
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF55AC68
+[LOG] SoundI::release                          : Voiceover Who is this (00000193EF55AC68)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001944751D648)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000192D7C77E08)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF55A3F8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF55A3F8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC5460
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF55A3F8
+[LOG] SoundI::release                          : Voiceover Who is this (00000193EF55A3F8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001944751DE68)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000192D7C77E08)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF55A758, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF55A758
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC50A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF55A758
+[LOG] SoundI::release                          : Voiceover Who is this (00000193EF55A758)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001944751D988)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000192D7C77088)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF55A908, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF55A908
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC5460
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF55A908
+[LOG] SoundI::release                          : Voiceover Who is this (00000193EF55A908)
+[LOG] SoundI::release                          :     Voiceover Who is this (0000019253967AC8)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000192D824EF78)
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 2531328
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 12288
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x2f7aaa7f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000005E827FF588
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x3810e3b30
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x3810e3c00
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x3810e3c3c
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x3810e3d0c
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x13b1f1318
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE2F5C3CE0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE2F5C3CA0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE2F5C3DC0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE2F5C3E80
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001904C6B32F8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Alex Where are you', format=5, channels=2, frequency=48000, lengthbytes=39456, lengthpcm=169412, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[WRN] EventInstance::update                    : Event {8c573527-7c46-4d8c-9f3f-00e56bd4fb89} waited 110 milliseconds for sample data to load.  Preload sample data to avoid this delay.
 [LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Environment.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x30b7cf8b8, queue head = 0x30b7e3248, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x30b7cf8b8
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF3DD0B8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF3DD0B8
 [LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Environment.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 15543968
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9408
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x13de0eb20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC50A0
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 6
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 16
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='thunder-124463', format=5, channels=2, frequency=48000, lengthbytes=132384, lengthpcm=531644, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.603149.
-[LOG] Thread::initThread                       :     Init FMOD file thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x30b7cf8b8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF3DD0B8
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 641888
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 18784
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x2f7aaa7f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000005E827FF588
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x3810e3b30
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x3810e3c00
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x3810e3c3c
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x3810e3d0c
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x13b1f1318
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE2F5C3CE0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE2F5C3CA0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE2F5C3DC0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE2F5C3E80
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001904C6B1408
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='ShutdownPower', format=5, channels=2, frequency=48000, lengthbytes=26272, lengthpcm=101648, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
 [LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x2a04f60f8, queue head = 0x30b7e3248, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x2a04f60f8
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF3DC9F8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF3DC9F8
 [LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x2a04828b0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC51E0
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Wait what', format=5, channels=2, frequency=48000, lengthbytes=245280, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x2a04f60f8
-[LOG] SoundI::release                          : Voiceover Wait what (0x2a04f60f8)
-[LOG] SoundI::release                          :     Voiceover Wait what (0x3561da1a8)
-[LOG] SoundI::release                          :     Voiceover Wait what (0x35ac8a598)
-[LOG] SoundI::release                          : thunder-124463 (0x30b7cf8b8)
-[LOG] SoundI::release                          :     thunder-124463 (0x38e791678)
-[LOG] SoundI::release                          :     thunder-124463 (0x3c27e0ca8)
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF3DC9F8
+[LOG] SoundI::release                          : Voiceover Wait what (00000193EF3DC9F8)
+[LOG] SoundI::release                          :     Voiceover Wait what (0000019261D48CC8)
+[LOG] SoundI::release                          :     Voiceover Wait what (00000192D7BF6A98)
+[LOG] SoundI::release                          : thunder-124463 (00000193EF3DD0B8)
+[LOG] SoundI::release                          :     thunder-124463 (0000019262725968)
+[LOG] SoundI::release                          :     thunder-124463 (0000019413FB43D8)
 [LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Environment.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x12dfbd558, queue head = 0x30b7e3248, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x12dfbd558
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF3DD5C8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF3DD5C8
 [LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Environment.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 15543968
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9408
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x12df73160
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC4F60
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 2
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 3066
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='thunder-124463', format=5, channels=2, frequency=48000, lengthbytes=132384, lengthpcm=531644, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.603149.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x12dfbd558
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF3DD5C8
 [LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x35cc6ec78, queue head = 0x30b7e3248, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x35cc6ec78
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF55AAB8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF55AAB8
 [LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x35cc4fac0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC4E20
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 22
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Wait what', format=5, channels=2, frequency=48000, lengthbytes=245280, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x35cc6ec78
-[LOG] SoundI::release                          : Voiceover Wait what (0x35cc6ec78)
-[LOG] SoundI::release                          :     Voiceover Wait what (0x3b7ed8768)
-[LOG] SoundI::release                          :     Voiceover Wait what (0x3b7eeef98)
-[LOG] SoundI::release                          : thunder-124463 (0x12dfbd558)
-[LOG] SoundI::release                          :     thunder-124463 (0x3b7efd0c8)
-[LOG] SoundI::release                          :     thunder-124463 (0x3b7e56b78)
-[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Environment.bank : mode 02010082
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF55AAB8
+[LOG] SoundI::release                          : Voiceover Wait what (00000193EF55AAB8)
+[LOG] SoundI::release                          :     Voiceover Wait what (00000192627264C8)
+[LOG] SoundI::release                          :     Voiceover Wait what (00000192D7BF68E8)
+[LOG] SoundI::release                          : thunder-124463 (00000193EF3DD5C8)
+[LOG] SoundI::release                          :     thunder-124463 (0000019262725968)
+[LOG] SoundI::release                          :     thunder-124463 (00000192D7BF6738)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x378370288, queue head = 0x30b7e3248, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x378370288
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Environment.bank', mode=0x02010082
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF55AAB8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF55AAB8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 15543968
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9408
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x386a29120
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC50A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 8
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Just a dream', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF55AAB8
+[LOG] SoundI::release                          : Voiceover Just a dream (00000193EF55AAB8)
+[LOG] SoundI::release                          :     Voiceover Just a dream (000001944751D168)
+[LOG] SoundI::release                          :     Voiceover Just a dream (00000192D7C77FB8)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF55A758, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF55A758
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC51E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 10
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF55A758
+[LOG] SoundI::release                          : Voiceover Who is this (00000193EF55A758)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DAD78)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006C40D8)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF55A5A8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF55A5A8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC4E20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 18
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF55A5A8
+[LOG] SoundI::release                          : Voiceover Who is this (00000193EF55A5A8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DABD8)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006C7018)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF55A908, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF55A908
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC51E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 6
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF55A908
+[LOG] SoundI::release                          : Voiceover Who is this (00000193EF55A908)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001944751DE68)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000192D7C77FB8)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF55A3F8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF55A3F8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC5460
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 2
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF55A3F8
+[LOG] SoundI::release                          : Voiceover Who is this (00000193EF55A3F8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001944751DB28)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000192D7C77FB8)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF55A098, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF55A098
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC5460
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 18
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF55A098
+[LOG] SoundI::release                          : Voiceover Who is this (00000193EF55A098)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001944751D4A8)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000192D7C773E8)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF55AAB8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF55AAB8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC4E20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 6
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF55AAB8
+[LOG] SoundI::release                          : Voiceover Who is this (00000193EF55AAB8)
+[LOG] SoundI::release                          :     Voiceover Who is this (0000019447514F18)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000193C90DA838)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF55AC68, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF55AC68
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC51E0
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 4
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='thunder-124463', format=5, channels=2, frequency=48000, lengthbytes=132384, lengthpcm=531644, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.603149.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x378370288
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF55AC68
+[LOG] SoundI::release                          : Voiceover Who is this (00000193EF55AC68)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001944751D168)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000192D7C77E08)
 [LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x35edc05b8, queue head = 0x30b7e3248, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x35edc05b8
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF55A908, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF55A908
 [LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x35ed2c270
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC5460
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 16
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Wait what', format=5, channels=2, frequency=48000, lengthbytes=245280, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x35edc05b8
-[LOG] SoundI::release                          : Voiceover Wait what (0x35edc05b8)
-[LOG] SoundI::release                          :     Voiceover Wait what (0x358e211c8)
-[LOG] SoundI::release                          :     Voiceover Wait what (0x3783e2ff8)
-[LOG] SoundI::release                          : thunder-124463 (0x378370288)
-[LOG] SoundI::release                          :     thunder-124463 (0x35e1788c8)
-[LOG] SoundI::release                          :     thunder-124463 (0x35e17b1a8)
-[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Environment.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x17fe2b008, queue head = 0x30b7e3248, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x17fe2b008
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Environment.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 15543968
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9408
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x35ed2c270
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='thunder-124463', format=5, channels=2, frequency=48000, lengthbytes=132384, lengthpcm=531644, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.603149.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x17fe2b008
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF55A908
+[LOG] SoundI::release                          : Voiceover Who is this (00000193EF55A908)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001944751D648)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000192D7C76B78)
 [LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x378370288, queue head = 0x30b7e3248, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x378370288
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF55A758, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF55A758
 [LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x38e8ea900
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC50A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 18
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF55A758
+[LOG] SoundI::release                          : Voiceover Who is this (00000193EF55A758)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001944751DE68)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000192D7C773E8)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000193EF55AAB8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000193EF55AAB8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926EDC5460
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 16
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000193EF55AAB8
+[LOG] SoundI::release                          : Voiceover Who is this (00000193EF55AAB8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001944751D648)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000192D7C77748)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000019445E4A3F8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000019445E4A3F8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926F1B10D0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 13
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000019445E4A3F8
+[LOG] SoundI::release                          : Voiceover Who is this (0000019445E4A3F8)
+[LOG] SoundI::release                          :     Voiceover Who is this (0000019053E70558)
+[LOG] SoundI::release                          :     Voiceover Who is this (0000019446CBC318)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000019445E4AAB8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000019445E4AAB8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926F1B0F90
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 12
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Wait what', format=5, channels=2, frequency=48000, lengthbytes=245280, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x378370288
-[LOG] SoundI::release                          : Voiceover Wait what (0x378370288)
-[LOG] SoundI::release                          :     Voiceover Wait what (0x3664cd3f8)
-[LOG] SoundI::release                          :     Voiceover Wait what (0x3664dec88)
-[LOG] SoundI::release                          : thunder-124463 (0x17fe2b008)
-[LOG] SoundI::release                          :     thunder-124463 (0x38e8f1c68)
-[LOG] SoundI::release                          :     thunder-124463 (0x363e0bcb8)
-[LOG] SoundI::release                          :  (0x2a04d2448)
-[LOG] SoundI::release                          :     ShutdownPower (0x38e79d1c8)
-[LOG] SoundI::release                          :  (0x3b7e68da8)
-[LOG] SoundI::release                          :     Alex Where are you (0x37fbde8e8)
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000019445E4AAB8
+[LOG] SoundI::release                          : Voiceover Who is this (0000019445E4AAB8)
+[LOG] SoundI::release                          :     Voiceover Who is this (0000019053E70898)
+[LOG] SoundI::release                          :     Voiceover Who is this (0000019446CBC318)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000019445423998, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000019445423998
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001926F1B0F90
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 4
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000019445423998
+[LOG] SoundI::release                          : Voiceover Who is this (0000019445423998)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000192627264C8)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000192D7BF6738)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F5B8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F5B8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001940FB27E20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 749
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F5B8
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F5B8)
+[LOG] SoundI::release                          :     Voiceover Who is this (0000019053E703B8)
+[LOG] SoundI::release                          :     Voiceover Who is this (0000019446CBC318)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5DAB8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5DAB8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445E30840
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 4
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5DAB8
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5DAB8)
+[LOG] SoundI::release                          :     Voiceover Who is this (0000019253968968)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000192D82492A8)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F768, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F768
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445E30AC0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 1677
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F768
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F768)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001944751D988)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001904C99F3C8)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5E328, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5E328
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445E30FC0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 10
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5E328
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5E328)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DABD8)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B6F98)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5E178, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5E178
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001944528A5E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 000001940EB5E688, queue head = 000001941396CE68, queue count = 0
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5E178
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5E688
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001944528A0E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5E688
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5E688)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DA898)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B5648)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5EEF8, queue head = 000001941396CE68, queue count = 0
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5E178)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DAA38)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B48C8)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5EEF8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289AA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5EEF8
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5EEF8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DAD78)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B7658)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5E838, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5E838
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289BE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5E838
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5E838)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DB598)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B7148)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F5B8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F5B8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001944528A4A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F5B8
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F5B8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DABD8)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B8A98)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5E838, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5E838
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289FA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5E838
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5E838)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DAF18)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B5648)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5E688, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5E688
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001944528A220
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5E688
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5E688)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DABD8)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B4718)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5DC68, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5DC68
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001944528A220
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5DC68
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5DC68)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DA898)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B9308)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5DAB8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5DAB8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001944528A5E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5DAB8
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5DAB8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DAF18)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B48C8)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F5B8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F5B8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289AA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F5B8
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F5B8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DA898)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B4718)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F768, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F768
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289D20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F768
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F768)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DABD8)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B8A98)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F5B8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F5B8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289FA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F5B8
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F5B8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DABD8)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B4208)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5EEF8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5EEF8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289820
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5EEF8
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5EEF8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DA898)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B4A78)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5E838, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5E838
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001944528A360
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5E838
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5E838)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DAF18)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B5138)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5E178, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5E178
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289960
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5E178
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5E178)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DAD78)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006BA598)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5E688, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5E688
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289E60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5E688
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5E688)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DA898)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B3EA8)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5E178, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5E178
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289D20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5E178
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5E178)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DABD8)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B4058)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5E328, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5E328
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289BE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5E328
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5E178, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5E178
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001944528A4A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5E178
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5E178)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DAF18)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B4718)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F5B8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F5B8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001944528A0E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F5B8
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F5B8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DABD8)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B63C8)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F768, queue head = 000001941396CE68, queue count = 0
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5E328)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DAA38)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006BA598)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F768
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001944528A0E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F768
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F768)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DAD78)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B79B8)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5E328, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5E328
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289BE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5E328
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5E328)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DB598)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B6068)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F768, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F768
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289FA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F768
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F768)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DABD8)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B5648)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F5B8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F5B8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001944528A360
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F5B8
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F5B8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DAF18)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B5D08)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5E328, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5E328
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289FA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5E328
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5E328)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DA898)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B5648)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F5B8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F5B8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289AA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F5B8
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F5B8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DAF18)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B8A98)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F768, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F768
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289E60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F768
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F768)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DAF18)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006BA598)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F768, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F768
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001944528A0E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F768
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F768)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DA898)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B6F98)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F768, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F768
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289960
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F768
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F768)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DAA38)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B8A98)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5E178, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5E178
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289960
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5E178
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5E178)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DB598)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B4718)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5DAB8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5DAB8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001944528A0E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5DAB8
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F5B8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F5B8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289D20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F5B8
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F5B8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DA898)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B5EB8)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5E178, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5E178
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289820
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5E178
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5E178)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DA898)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B79B8)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F768, queue head = 000001941396CE68, queue count = 0
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5DAB8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DABD8)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B8A98)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F768
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001944528A220
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F768
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F768)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DA898)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B4F88)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5DAB8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5DAB8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289D20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5DAB8
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5DAB8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DB598)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B99C8)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F5B8, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F5B8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289FA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F5B8
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F768, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F768
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289AA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F768
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F768)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DA898)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B5648)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5E328, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5E328
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289D20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 433
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5E328
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5E328)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DA898)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B7D18)
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F5B8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DB598)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B6C38)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5E328, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5E328
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289FA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 16
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5E328
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5E328)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001922D8DB598)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194006B79B8)
+[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001940EB5F768, queue head = 000001941396CE68, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001940EB5F768
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000019445289BE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 8
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Who is this', format=5, channels=2, frequency=48000, lengthbytes=245504, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001940EB5F768
+[LOG] SoundI::release                          : Voiceover Who is this (000001940EB5F768)
+[LOG] SoundI::release                          :     Voiceover Who is this (00000194475777A8)
+[LOG] SoundI::release                          :     Voiceover Who is this (000001939520C8D8)
+[LOG] SoundI::release                          :  (000001926F112CE8)
+[LOG] SoundI::release                          :     ShutdownPower (0000019447514BD8)
+[LOG] SoundI::release                          :  (000001926F1125B8)
+[LOG] SoundI::release                          :     Alex Where are you (0000019447514898)
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
