@@ -19,12 +19,10 @@ public class EnemyHandler : MonoBehaviour
         }
     }
 
-    [SerializeField] GameObject EnemyPrefab = new GameObject();
-    [SerializeField] Transform Target;
-    [SerializeField] float RadiusAroundTarget = 0.5f;
+    GameObject EnemyPrefab = new GameObject();
+    Transform Target;
+    float RadiusAroundTarget = 0.5f;
     public List<EnemyAI> Units = new List<EnemyAI>();
-
-    [SerializeField] Vector3[] positions;
 
     private void Awake()
     {
@@ -41,14 +39,14 @@ public class EnemyHandler : MonoBehaviour
     {
         if (GUI.Button(new Rect(20, 20, 200, 50), "SpawnEnemies"))
         {
-            SpawnEnemy();
+            //SpawnEnemy();
         }
     }
 
-    public void SpawnEnemy()
+    /*public void SpawnEnemy()
     {
         Instantiate(EnemyPrefab, this.transform);
-    }
+    }*/
 
     private void MakeAgentsCircleTarget()
     {

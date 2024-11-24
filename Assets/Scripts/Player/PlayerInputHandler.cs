@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using FMOD.Studio;
 using FMODUnity;
+using UnityEngine.InputSystem.Controls;
 
 public class PlayerInputHandler : MonoBehaviour
 {
@@ -58,8 +59,8 @@ public class PlayerInputHandler : MonoBehaviour
     public bool isInside;
 
     //Flashlight
-    bool flashlightToggleOnOff = false;
-    [SerializeField] GameObject lightSource;
+    bool flashlightOnOff = false;
+    Light lightSource;
     [SerializeField] float sphereRadius = 0.1f; // Adjust the radius as needed
     public Transform LightPoint;
 
@@ -70,7 +71,10 @@ public class PlayerInputHandler : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions["move"];
         runAction = playerInput.actions["run"];
+        flashlightAction = playerInput.actions["flashlight"];
         interactAction = playerInput.actions["interact"];
+        lightSource = this.gameObject.GetComponentInChildren<Light>();
+        lightSource.enabled = false;
     }
 
     private void Start()
@@ -102,7 +106,7 @@ public class PlayerInputHandler : MonoBehaviour
         }
         Move();
         HandleFootsteps();
-      
+
     }
 
     private void LockAndHideCursor()
@@ -149,24 +153,29 @@ public class PlayerInputHandler : MonoBehaviour
         {
             currentSpeed *= walkSpeed;
         }
-   
-  
     }
 
-    public void OnFlashlight()
+    private void OnFlashlight()
     {
-        flashlightToggleOnOff = flashlightAction.ReadValue<bool>();
+        flashlightOnOff = !flashlightOnOff;
         Debug.Log("This works");
-        if (flashlightToggleOnOff)
+        HandleFlashlight(flashlightOnOff);
+    }
+
+    private void HandleFlashlight(bool flashlightOnOff)
+    {
+        if (flashlightOnOff)
         {
+            lightSource.enabled = true;
+            Debug.Log("Flashlight is on");
             Flashlight();
-            lightSource.gameObject.SetActive(true);
             _flashlightOn.start();
             _flashlightOn = RuntimeManager.CreateInstance(FmodEvents.Instance.FlashlightOn);
         }
-        else if (!flashlightToggleOnOff)
+        else if (!flashlightOnOff)
         {
-            lightSource.gameObject.SetActive(false);
+            lightSource.enabled = false;
+            Debug.Log("Flashlight is off");
             _flashlightOff.start();
             _flashlightOff = RuntimeManager.CreateInstance(FmodEvents.Instance.FlashlightOff);
         }
@@ -206,16 +215,13 @@ public class PlayerInputHandler : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.SphereCast(LightPoint.position, sphereRadius, transform.TransformDirection(Vector3.forward), out hit, 100))
+        //Burning shadowmonsters if raycast hits object with tag "Enemy"
+        if (Physics.SphereCast(LightPoint.position, sphereRadius, transform.TransformDirection(Vector3.forward), out hit, 100) && hit.transform.tag == "Enemy")
         {
-            //Debug.DrawLine(LightPoint.position, hit.point, Color.yellow);  //Debug line for raycast
+            hit.transform.GetComponent<EnemyHealth>().TakeDamage(); //calling TakeDamage method from ShadowHealth script
 
-            //Burning shadowmonsters if raycast hits object with tag "Enemy"
-            if (hit.transform.tag == "Enemy")
-            {
-                hit.transform.GetComponent<EnemyHealth>().TakeDamage(); //calling TakeDamage method from ShadowHealth script
-                //AudioLibrary.PlaySound("Burn");
-            }
+            //Debug.DrawLine(LightPoint.position, hit.point, Color.yellow);  //Debug line for raycast
+            //AudioLibrary.PlaySound("Burn");
         }
     }
 

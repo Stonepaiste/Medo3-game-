@@ -8,6 +8,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] Transform target;
+    [SerializeField] GameObject model;
     [SerializeField] float radiusAroundTarget = 0.5f;
     [SerializeField] float chaseRange = 5f;
     [SerializeField] float turnSpeed = 5f;
@@ -19,7 +20,8 @@ public class EnemyAI : MonoBehaviour
     void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        EnemyHandler.Instance.Units.Add(this);
+        //EnemyHandler.Instance.Units.Add(this);
+        model.SetActive(false);
     }
 
     void Update()
@@ -27,6 +29,7 @@ public class EnemyAI : MonoBehaviour
         distanceToTarget = Vector3.Distance(target.position, transform.position);
         if (isProvoked)
         {
+            model.SetActive(true);
             EngageTarget();
         }
         else if (distanceToTarget <= chaseRange)

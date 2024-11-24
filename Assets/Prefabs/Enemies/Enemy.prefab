@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5785173948286247176}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 9219919864870767256, guid: 4144de39ed0ff654592b7afb4fb29fbf, type: 3}
+  model: {fileID: 2489589330796792804}
   radiusAroundTarget: 0.5
   chaseRange: 8
   turnSpeed: 5
@@ -373,6 +374,12 @@ PrefabInstance:
 --- !u!4 &1501833475402512887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 578376449398627443, guid: 6dc4cf4496348884d8ee27743ae38562,
+    type: 3}
+  m_PrefabInstance: {fileID: 2076541810262631812}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2489589330796792804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562,
     type: 3}
   m_PrefabInstance: {fileID: 2076541810262631812}
   m_PrefabAsset: {fileID: 0}
