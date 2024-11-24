@@ -5,6 +5,7 @@ using UnityEngine.Timeline;
 public class ThunderStrikeSignalReceiver : MonoBehaviour, INotificationReceiver
 {
     public LightningController lightningController;
+    public GameObject TurnOffSceneTrigger;
    
 
     public void OnNotify(Playable origin, INotification notification, object context)
@@ -12,6 +13,7 @@ public class ThunderStrikeSignalReceiver : MonoBehaviour, INotificationReceiver
         if (notification is SignalEmitter && lightningController.ThunderHasStruck == false)
         {
             lightningController.ThunderStrikeLighthouse();
+            TurnOffSceneTrigger.SetActive(false);
             
         }
     }
