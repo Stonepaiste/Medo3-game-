@@ -50,6 +50,15 @@ public class FmodEvents : MonoBehaviour
     
     [field: Header("DoorEhouse")]
     [field: SerializeField] public EventReference DoorEhouse { get; private set; }
+    
+    [field: Header("Enemy1SoundWEAK")]
+    [field: SerializeField] public EventReference Enemy1SoundWEAK { get; private set; }
+    
+    [field: Header("Enemy1SoundREMEMBER")]
+    [field: SerializeField] public EventReference Enemy1SoundREMEMBER { get; private set; }
+    
+    [field: Header("EnemySoundALONE")]
+    [field: SerializeField] public EventReference EnemySoundALONE { get; private set; }
 	
     //All dialogue are played through FMOD eventEmitter in SOUNDDIALOGUE COMPONENT USING TIMELINE
     
