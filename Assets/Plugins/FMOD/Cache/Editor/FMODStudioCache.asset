@@ -204,10 +204,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank
   Name: Dialogue
   StudioPath: bank:/Dialogue
-  lastModified: 638678756799705588
+  lastModified: 638681458978474028
   FileSizes:
   - Name: Desktop
-    Value: 2543616
+    Value: 2584544
   Exists: 1
 --- !u!114 &-5121184136936702832
 MonoBehaviour:
@@ -317,6 +317,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 400
   Length: 598073
+--- !u!114 &-3412954454571965772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Enemy speak 1 Weak
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Enemy speak 1 Weak
+  Guid:
+    Data1: -906215408
+    Data2: 1341406135
+    Data3: 886601355
+    Data4: 1449297978
+  Banks:
+  - {fileID: -5566268638195901961}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2788661855590096564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,11 +386,38 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638680397898047271
+  lastModified: 638681458978534298
   FileSizes:
   - Name: Desktop
     Value: 1036
   Exists: 1
+--- !u!114 &-1319238790087187751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Enemy speak 1 Alone
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Enemy speak 1 Alone
+  Guid:
+    Data1: 51996038
+    Data2: 1115250842
+    Data3: 1050139835
+    Data4: 1148101925
+  Banks:
+  - {fileID: -5566268638195901961}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1281682042033071742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +465,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 18400
+--- !u!114 &-824574547743730005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Enemy speak 1 Remember
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Enemy speak 1 Remember
+  Guid:
+    Data1: -1041529568
+    Data2: 1288733573
+    Data3: -1613163596
+    Data4: -388616977
+  Banks:
+  - {fileID: -5566268638195901961}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-169958108950408698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,12 +588,15 @@ MonoBehaviour:
   - {fileID: -8356300630488135038}
   - {fileID: 8248684616327094375}
   - {fileID: 4680107986567507438}
+  - {fileID: -3412954454571965772}
+  - {fileID: -824574547743730005}
+  - {fileID: -1319238790087187751}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1675079813931114079}
   StringsBanks:
   - {fileID: 964061904444538214}
-  cacheTime: 638680460703244130
+  cacheTime: 638681458978540387
   cacheVersion: 131620
 --- !u!114 &373807602916526788
 MonoBehaviour:
@@ -556,10 +640,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638680397898052187
+  lastModified: 638681458978540387
   FileSizes:
   - Name: Desktop
-    Value: 2352
+    Value: 2488
   Exists: 1
 --- !u!114 &1381834443108594042
 MonoBehaviour:
