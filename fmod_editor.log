@@ -1,12 +1,13 @@
 [LOG] System::create                           : Header version = 2.02.24. Current version = 2.02.24.
-[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0x0.
+[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
 [LOG] SystemI::init                            : Initialize version=20224 (146338), maxchannels=256, flags=0x00020000
-[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD Core Audio Output'
-[LOG] OutputCoreAudio::init                    : Output running 2 channels at 48000Hz sample rate.
-[LOG] OutputCoreAudio::init                    : Maximum hardware read size: 512 samples, Software buffer size: 512 samples, Number of software buffers: 4.
+[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
+[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x3c519be08 isAsync 0 updatePeriod 0.02
+[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncManager::init                       : manager 00000253DC438188 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -21,81 +22,4 @@
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] SystemI::createSound                     : filename = FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3d83a4418, queue head = 0x12a622508, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3d83a4418
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2531328
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 12288
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x3d83a46e0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 6
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Voiceover Just a dream', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1085902, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3d83a4418
-[LOG] SoundI::release                          : Voiceover Just a dream (0x3d83a4418)
-[LOG] SoundI::release                          :     Voiceover Just a dream (0x3599b66c8)
-[LOG] SoundI::release                          :     Voiceover Just a dream (0x3599b6858)
-[LOG] SoundI::release                          : Thunder and Rain Muted B (0x2a3028658)
-[LOG] SoundI::release                          :     Thunder and Rain Muted B (0x38110db88)
-[LOG] SoundI::release                          :     Thunder and Rain Muted B (0x38110dd18)
-[LOG] SoundI::release                          : Ocean 2 (0x2a2eeff38)
-[LOG] SoundI::release                          :     Ocean 2 (0x35bb1bbc8)
-[LOG] SoundI::release                          :     Ocean 2 (0x35bb1bd58)
-[LOG] SoundI::release                          :  (0x35bb22a98)
-[LOG] SoundI::release                          :     loud-thunder-192165 (0x35bb1c458)
-[LOG] SoundI::release                          :  (0x38110a4f8)
-[LOG] SoundI::release                          :     peals-of-thunder-191992 (0x38110a668)
-[LOG] SoundI::release                          :  (0x12a6e65c8)
-[LOG] SoundI::release                          :     Footsteps skov 2-Footsteps skov (0x2a2ea91d8)
-[LOG] SoundI::release                          :  (0x2a2ea2c28)
-[LOG] SoundI::release                          :     Footsteps skov 3-Footsteps skov (0x16addbb58)
-[LOG] SoundI::release                          :  (0x38110e718)
-[LOG] SoundI::release                          :     Footsteps skov 4-Footsteps skov (0x381109b08)
-[LOG] SoundI::release                          :  (0x381109e28)
-[LOG] SoundI::release                          :     Footsteps skov 5-Footsteps skov (0x381109f98)
-[LOG] SoundI::release                          :  (0x12a6ece08)
-[LOG] SoundI::release                          :     Footsteps skov 6-Footsteps skov (0x2bf8af868)
-[LOG] SoundI::release                          :  (0x2a2ef2198)
-[LOG] SoundI::release                          :     Footstep woodden floor 1-walking-on-a-wooden-floor-14743 (0x16adaac08)
-[LOG] SoundI::release                          :  (0x16adfd168)
-[LOG] SoundI::release                          :     Footstep woodden floor 10-walking-on-a-wooden-floor-14743 (0x16adf6978)
-[LOG] SoundI::release                          :  (0x16adf5a28)
-[LOG] SoundI::release                          :     Footstep woodden floor 2-walking-on-a-wooden-floor-14743 (0x16ad1c028)
-[LOG] SoundI::release                          :  (0x37f88ee58)
-[LOG] SoundI::release                          :     Footstep woodden floor 3-walking-on-a-wooden-floor-14743 (0x390129608)
-[LOG] SoundI::release                          :  (0x16adfe7d8)
-[LOG] SoundI::release                          :     Footstep woodden floor 4-walking-on-a-wooden-floor-14743 (0x2a3004ca8)
-[LOG] SoundI::release                          :  (0x12a6b35c8)
-[LOG] SoundI::release                          :     Footstep woodden floor 5-walking-on-a-wooden-floor-14743 (0x2a302bb88)
-[LOG] SoundI::release                          :  (0x38110e288)
-[LOG] SoundI::release                          :     Footstep woodden floor 6-walking-on-a-wooden-floor-14743 (0x38110e3f8)
-[LOG] SoundI::release                          :  (0x38110d308)
-[LOG] SoundI::release                          :     Footstep woodden floor 7-walking-on-a-wooden-floor-14743 (0x38110d478)
-[LOG] SoundI::release                          :  (0x2a2effb98)
-[LOG] SoundI::release                          :     Footstep woodden floor 8-walking-on-a-wooden-floor-14743 (0x37f8ad598)
-[LOG] SoundI::release                          :  (0x35bb26e78)
-[LOG] SoundI::release                          :     Footstep woodden floor 9-walking-on-a-wooden-floor-14743 (0x35bb1c2c8)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] SystemI::close                           : Closed.
-[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
-[LOG] Thread::callback                         : FMOD file thread finished.
+[ERR] assert                                   : assertion: 'gSystemInitCount == 0' failed
