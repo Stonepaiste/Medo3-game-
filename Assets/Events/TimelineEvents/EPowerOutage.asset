@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48e938a5808df9d4aadcb6c9a066c5d3, type: 3}
-  m_Name: Timeline Trigger
+  m_Name: EPowerOutage
   m_EditorClassIdentifier: 
