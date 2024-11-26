@@ -12,7 +12,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float radiusAroundTarget = 0.5f;
     [SerializeField] float chaseRange = 5f;
     [SerializeField] float turnSpeed = 5f;
-    [SerializeField] private EnemySpeak enemyspeak; //Reference to the FmodEvents script.
+    private EnemySpeak enemyspeak; //Reference to the FmodEvents script.
     
     
 
@@ -22,8 +22,8 @@ public class EnemyAI : MonoBehaviour
 
     void Awake()
     {
+        enemyspeak = GetComponent<EnemySpeak>();
         navMeshAgent = GetComponent<NavMeshAgent>();
-        //EnemyHandler.Instance.Units.Add(this);
         model.SetActive(false);
     }
 
@@ -75,7 +75,6 @@ public class EnemyAI : MonoBehaviour
     public void MoveTowardsTarget(Vector3 position)
     {
         //GetComponent<Animator>().SetBool("attack", false);
-        //GetComponent<Animator>().SetTrigger("Move");
         navMeshAgent.SetDestination(position);
     }
 
