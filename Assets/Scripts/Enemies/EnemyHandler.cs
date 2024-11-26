@@ -6,47 +6,11 @@ using UnityEngine.UIElements;
 [DefaultExecutionOrder(0)]
 public class EnemyHandler : MonoBehaviour
 {
-    private static EnemyHandler _instance;
-    public static EnemyHandler Instance
-    {
-        get
-        {
-            return _instance;
-        }
-        private set
-        {
-            _instance = value;
-        }
-    }
+    /*[SerializeField] GameObject EnemyPrefab;
 
-    GameObject EnemyPrefab = new GameObject();
     Transform Target;
     float RadiusAroundTarget = 0.5f;
     public List<EnemyAI> Units = new List<EnemyAI>();
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            return;
-        }
-
-        Destroy(gameObject);
-    }
-
-    private void OnGUI()
-    {
-        if (GUI.Button(new Rect(20, 20, 200, 50), "SpawnEnemies"))
-        {
-            //SpawnEnemy();
-        }
-    }
-
-    /*public void SpawnEnemy()
-    {
-        Instantiate(EnemyPrefab, this.transform);
-    }*/
 
     private void MakeAgentsCircleTarget()
     {
@@ -57,5 +21,5 @@ public class EnemyHandler : MonoBehaviour
                 Target.position.y,
                 Target.position.z + RadiusAroundTarget * Mathf.Sin(2 * Mathf.PI * i / Units.Count)));
         }
-    }
+    }*/
 }

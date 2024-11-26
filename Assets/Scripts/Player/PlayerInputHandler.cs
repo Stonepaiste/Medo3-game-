@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine.InputSystem.Controls;
+using Cinemachine;
+using UnityEditor.ShaderGraph.Internal;
 
 public class PlayerInputHandler : MonoBehaviour
 {
@@ -43,6 +45,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     //Input Actions
     InputAction moveAction;
+    InputAction lookAction;
     InputAction runAction;
     InputAction flashlightAction;
     InputAction interactAction;
@@ -61,8 +64,9 @@ public class PlayerInputHandler : MonoBehaviour
     //Flashlight
     bool flashlightOnOff = false;
     Light lightSource;
-    [SerializeField] float sphereRadius = 0.1f; // Adjust the radius as needed
-    public Transform LightPoint;
+    [SerializeField] float range = 100f; // Adjust the radius as needed
+    public Transform lightPoint;
+    CinemachineBrain PlayerPOVCamera;
 
 
     private void Awake()
@@ -70,10 +74,12 @@ public class PlayerInputHandler : MonoBehaviour
         controller = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions["move"];
+        lookAction = playerInput.actions["look"];
         runAction = playerInput.actions["run"];
         flashlightAction = playerInput.actions["flashlight"];
         interactAction = playerInput.actions["interact"];
         lightSource = this.gameObject.GetComponentInChildren<Light>();
+        PlayerPOVCamera = FindObjectOfType<CinemachineBrain>();
         lightSource.enabled = false;
     }
 
@@ -82,9 +88,8 @@ public class PlayerInputHandler : MonoBehaviour
         LockAndHideCursor();
 
         cameraTransform = Camera.main.transform;
-        
         // initializing the footsteps instance
-        FootstepsForest=FmodAudioManager.Instance.CreateEventInstance(FmodEvents.Instance.FootstepsForest);
+        FootstepsForest =FmodAudioManager.Instance.CreateEventInstance(FmodEvents.Instance.FootstepsForest);
         FootstepsWood = FmodAudioManager.Instance.CreateEventInstance((FmodEvents.Instance.FootstepsWood));
     }
 
@@ -106,6 +111,8 @@ public class PlayerInputHandler : MonoBehaviour
         }
         Move();
         HandleFootsteps();
+        Flashlight();
+        Look();
 
     }
 
@@ -131,7 +138,6 @@ public class PlayerInputHandler : MonoBehaviour
         move.y = 0f;
         move.Normalize();
         controller.Move(move * Time.deltaTime * walkSpeed);
-
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
@@ -139,6 +145,16 @@ public class PlayerInputHandler : MonoBehaviour
     private void OnMove() 
     {
         movePlayer = moveAction.ReadValue<Vector2>().normalized;
+    }
+
+    void OnLook()
+    {
+
+    }
+
+    void Look()
+    {
+        lightPoint.transform.rotation = PlayerPOVCamera.transform.rotation;
     }
 
     private void OnRun()
@@ -216,11 +232,11 @@ public class PlayerInputHandler : MonoBehaviour
         RaycastHit hit;
 
         //Burning shadowmonsters if raycast hits object with tag "Enemy"
-        if (Physics.SphereCast(LightPoint.position, sphereRadius, transform.TransformDirection(Vector3.forward), out hit, 100) && hit.transform.tag == "Enemy")
+        if (Physics.Raycast(lightPoint.position, lightPoint.transform.forward, out hit, range) && hit.transform.tag == "Enemy")
         {
-            hit.transform.GetComponent<EnemyHealth>().TakeDamage(); //calling TakeDamage method from ShadowHealth script
-
-            //Debug.DrawLine(LightPoint.position, hit.point, Color.yellow);  //Debug line for raycast
+            EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
+            target.TakeDamage();
+            Debug.DrawLine(lightPoint.position, hit.point, Color.yellow);  //Debug line for raycast
             //AudioLibrary.PlaySound("Burn");
         }
     }
