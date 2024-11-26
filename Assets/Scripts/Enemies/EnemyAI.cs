@@ -52,7 +52,6 @@ public class EnemyAI : MonoBehaviour
 
     public void OnDeath()
     {
-        GetComponent<Animator>().SetTrigger("dying");
         GetComponent<CapsuleCollider>().enabled = false;
         navMeshAgent.enabled = false;
         this.enabled = false;

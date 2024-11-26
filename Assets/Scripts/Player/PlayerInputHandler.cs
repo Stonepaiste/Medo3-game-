@@ -111,7 +111,7 @@ public class PlayerInputHandler : MonoBehaviour
         }
         Move();
         HandleFootsteps();
-        Flashlight();
+        HandleFlashlight(flashlightOnOff);
         Look();
 
     }
@@ -175,7 +175,6 @@ public class PlayerInputHandler : MonoBehaviour
     {
         flashlightOnOff = !flashlightOnOff;
         Debug.Log("This works");
-        HandleFlashlight(flashlightOnOff);
     }
 
     private void HandleFlashlight(bool flashlightOnOff)
