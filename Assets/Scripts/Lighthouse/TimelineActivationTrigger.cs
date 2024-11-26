@@ -6,11 +6,16 @@ public class TimelineActivationTrigger : MonoBehaviour
 {
     [SerializeField] private PlayableDirector playableDirector;
     [SerializeField] GameObject  TimelineActivationTriggerObject;
-
+    public LightningController LightningController;
     private void Start()
     {
         TimelineActivationTriggerObject.SetActive(false);
 
+    }
+    
+    private void Update()
+    {
+        TurnOffCollider();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -20,4 +25,15 @@ public class TimelineActivationTrigger : MonoBehaviour
             playableDirector.Play();
         }
     }
+    
+    public void TurnOffCollider()
+    {
+        if (LightningController.ThunderHasStruck)
+        {
+            TimelineActivationTriggerObject.SetActive(false);
+        }
+    }
 }
+
+
+
