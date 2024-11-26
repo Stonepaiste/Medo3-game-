@@ -132,10 +132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 7897708077454595647}
   messageText: {fileID: 8442546301938557772}
-  endCanvas: {fileID: 0}
-  endMessageText: {fileID: 0}
-  scrollingText: {fileID: 0}
-  scrollSpeed: 50
+  endCanvas: {fileID: 4993619004127097440, guid: e1c0f519441a64a14b975a0f3596b3f4,
+    type: 3}
 --- !u!223 &2189790386889033898
 Canvas:
   m_ObjectHideFlags: 0
