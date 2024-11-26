@@ -40,7 +40,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _CLEAR: 1
-    - _EyeOpenCLose: 0.37
+    - _EyeOpenCLose: 0
     m_Colors:
     - _BaseColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
