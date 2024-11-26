@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.Events;
 
 public class WordChecker : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class WordChecker : MonoBehaviour
     public TMP_Text endCanvasText;
 
     private string[] acceptedWords = { "lonely", "lonley", "lonly", "alone", "alnoe", "alnone", "allone", "loenly", "lonesome", "lone", "ensom", "alene", "ensomhed", "sad", "sadness", "sadnes", "desperate", "desprate", "desperatee", "despirate", "isolated", "isolatted", "isolted", "empty", "emty", "empti", "frusrated", "frustrued", "frusted", "frustarted", "helpless", "helples", "helppless", "unwanted", "exhausted", "anxious", "anxiety", "anxius", "anxios", "depression", "depressed", "deppressed", "excluded", "misunderstood", "misunderstod", "ignored", "forgotten", "forgoten", "rejected", "abandoned" };
+
+    [SerializeField] UnityEvent EndEvent;
 
     void Start()
     {
@@ -69,5 +72,10 @@ public class WordChecker : MonoBehaviour
         yield return new WaitForSeconds(10f);
 
         endCanvasText.text = "Thank you for playing!";
+    }
+
+    private void EndSceneAnimationEnd()
+    {
+        EndEvent.Invoke();
     }
 }
