@@ -1,27 +1,36 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 
 public class RadioEHouse : MonoBehaviour
 {
-    
     EventInstance _eHouseradioEventInstance;
-    // Start is called before the first frame update
+    [SerializeField] GameObject _textAlexAreYouOkay; // Assign this in the Inspector
+
     void Start()
     {
-        
+        if (_textAlexAreYouOkay != null)
+        {
+            _textAlexAreYouOkay.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("TextAlexAreYouOkay GameObject is not assigned.");
+        }
     }
-    
+
     public void PlayAndDestroyEhouseRadio()
     {
         PlayEhouseRadio();
+        if (_textAlexAreYouOkay != null)
+        {
+            _textAlexAreYouOkay.SetActive(true);
+        }
+        Invoke("DestroyTextAlexAreYouOkay",8f);
         Invoke("OnDestroy", 10f);
     }
-    
-    
+
     public void PlayEhouseRadio()
     {
         _eHouseradioEventInstance = RuntimeManager.CreateInstance(FmodEvents.Instance.AlexAreYouOkay);
@@ -34,10 +43,16 @@ public class RadioEHouse : MonoBehaviour
         _eHouseradioEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         _eHouseradioEventInstance.release();
     }
+    
+    public void DestroyTextAlexAreYouOkay()
+    {
+        if (_textAlexAreYouOkay != null)
+        {
+            _textAlexAreYouOkay.SetActive(false);
+        }
+    }
 
-    // Update is called once per frame
     void Update()
     {
-        
     }
 }
