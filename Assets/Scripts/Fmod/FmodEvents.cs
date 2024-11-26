@@ -62,6 +62,12 @@ public class FmodEvents : MonoBehaviour
     
     [field: Header("LightSwitch")]
     [field: SerializeField] public EventReference LightSwitch { get; private set; }
+    
+    [field: Header("BookMonologue")]
+    [field: SerializeField] public EventReference BookMonologue { get; private set; }
+    
+    [field: Header("GlassesMonologue")]
+    [field: SerializeField] public EventReference GlassesMonologue { get; private set; }
 	
     //All dialogue are played through FMOD eventEmitter in SOUNDDIALOGUE COMPONENT USING TIMELINE
     

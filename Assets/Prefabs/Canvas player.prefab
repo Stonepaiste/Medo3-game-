@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8016404732436890685}
   - component: {fileID: 6221437475806539229}
   m_Layer: 5
-  m_Name: press F to see
+  m_Name: press E to see
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press F to see
+  m_text: Press E to see
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 8014351652688512854}
   - component: {fileID: 3327291939139314873}
   m_Layer: 5
-  m_Name: Press Esc to leave
+  m_Name: Press Q to leave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
