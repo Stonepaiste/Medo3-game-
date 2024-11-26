@@ -1,5 +1,8 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
+using FMODUnity;
+using FMOD.Studio;
 
 public class LightSwitch : MonoBehaviour
 {
@@ -10,38 +13,45 @@ public class LightSwitch : MonoBehaviour
     private bool playerIsClose = false;
     private bool handleIsDown = false;
     public bool IsHandleDown => handleIsDown;
+    public FMOD.Studio.EventInstance _lightSwitchEventInstance;
+    
+    
 
     private float handleUpRotation = 0f;
 
     void Start()
     {
-        //if (pressEText != null)
-        //{
-          //  pressEText.enabled = false;
-        //}
-
         handleUpRotation = handle.localEulerAngles.x;
+        _lightSwitchEventInstance = RuntimeManager.CreateInstance(FmodEvents.Instance.LightSwitch);
     }
 
     void Update()
     {
-        if (playerIsClose && Input.GetKeyDown(KeyCode.E) && !handleIsDown)
+        if (playerIsClose && Input.GetKeyDown(KeyCode.E))
         {
-            handleIsDown = true;
+            StartCoroutine(HandleDownCoroutine());
+            _lightSwitchEventInstance.start();
         }
 
         Quaternion targetRotation;
 
-        if (handleIsDown)
+        if (handleIsDown==true) // Rotating the handle down.
         {
             targetRotation = Quaternion.Euler(handleDownRotation, handle.localEulerAngles.y, handle.localEulerAngles.z);
         }
-        else
+        else // Rotaing the handle up.
         {
             targetRotation = Quaternion.Euler(handleUpRotation, handle.localEulerAngles.y, handle.localEulerAngles.z);
         }
 
-        handle.localRotation = Quaternion.Lerp(handle.localRotation, targetRotation, Time.deltaTime * rotationSpeed);
+        handle.localRotation = Quaternion.Lerp(handle.localRotation, targetRotation, Time.deltaTime * rotationSpeed); // Rotate the handle
+    }
+
+    private IEnumerator HandleDownCoroutine()
+    {
+        handleIsDown = true;
+        yield return new WaitForSeconds(3.0f);
+        handleIsDown = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -56,7 +66,7 @@ public class LightSwitch : MonoBehaviour
             }
         }
     }
-    
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))

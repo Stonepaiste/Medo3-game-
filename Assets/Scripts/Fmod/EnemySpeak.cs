@@ -8,7 +8,7 @@ using FMOD.Studio;
 public class EnemySpeak : MonoBehaviour
 {
     
-    [SerializeField] private FmodEvents fmodEvents; //Reference to the FmodEvents script.
+    //[SerializeField] private FmodEvents fmodEvents; //Reference to the FmodEvents script.
     private EventInstance _enemyWEAK; //The event instance for the enemy sound.
     private EventInstance _enemyREMEMBER; //The event instance for the enemy sound.
     private EventInstance _enemyALONE; //The event instance for the enemy sound.
@@ -19,13 +19,13 @@ public class EnemySpeak : MonoBehaviour
     private void Start()
     {
         //Create the event instances for the enemy sounds.
-        _enemyWEAK = RuntimeManager.CreateInstance(fmodEvents.Enemy1SoundWEAK);
-        _enemyWEAK.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
+        _enemyWEAK = RuntimeManager.CreateInstance(FmodEvents.Instance.Enemy1SoundWEAK);
+        _enemyWEAK.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));//Set the 3D attributes of the sound to the position of the enemy.
         
-        _enemyREMEMBER = RuntimeManager.CreateInstance(fmodEvents.Enemy1SoundREMEMBER);
+        _enemyREMEMBER = RuntimeManager.CreateInstance(FmodEvents.Instance.Enemy1SoundREMEMBER);
         _enemyREMEMBER.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
         
-        _enemyALONE = RuntimeManager.CreateInstance(fmodEvents.EnemySoundALONE);
+        _enemyALONE = RuntimeManager.CreateInstance(FmodEvents.Instance.EnemySoundALONE);
         _enemyALONE.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
     }
     
@@ -51,6 +51,7 @@ public class EnemySpeak : MonoBehaviour
         }
         
     }
+    
     
     public void EnemyAlone()
     {

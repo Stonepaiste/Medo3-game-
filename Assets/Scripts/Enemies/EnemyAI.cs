@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float radiusAroundTarget = 0.5f;
     [SerializeField] float chaseRange = 5f;
     [SerializeField] float turnSpeed = 5f;
+    [SerializeField] private EnemySpeak enemyspeak; //Reference to the FmodEvents script.
     
     
 
@@ -33,6 +34,9 @@ public class EnemyAI : MonoBehaviour
         {
             model.SetActive(true);
             EngageTarget();
+            enemyspeak.EnemyWeak();
+            
+            
             
         }
         else if (distanceToTarget <= chaseRange)

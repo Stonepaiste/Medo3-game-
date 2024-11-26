@@ -59,6 +59,9 @@ public class FmodEvents : MonoBehaviour
     
     [field: Header("EnemySoundALONE")]
     [field: SerializeField] public EventReference EnemySoundALONE { get; private set; }
+    
+    [field: Header("LightSwitch")]
+    [field: SerializeField] public EventReference LightSwitch { get; private set; }
 	
     //All dialogue are played through FMOD eventEmitter in SOUNDDIALOGUE COMPONENT USING TIMELINE
     
