@@ -19,6 +19,8 @@ TagManager:
   - FadeTrigger
   - Glasses
   - Woodenfloor
+  - FlashlightMsgTrigger
+  - PadlockMsgTrigger
   layers:
   - Default
   - TransparentFX

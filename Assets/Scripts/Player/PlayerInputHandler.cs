@@ -91,6 +91,8 @@ public class PlayerInputHandler : MonoBehaviour
         // initializing the footsteps instance
         FootstepsForest =FmodAudioManager.Instance.CreateEventInstance(FmodEvents.Instance.FootstepsForest);
         FootstepsWood = FmodAudioManager.Instance.CreateEventInstance((FmodEvents.Instance.FootstepsWood));
+        _flashlightOn = RuntimeManager.CreateInstance(FmodEvents.Instance.FlashlightOn);
+        _flashlightOff = RuntimeManager.CreateInstance(FmodEvents.Instance.FlashlightOff);
     }
 
     private void Update()
@@ -175,6 +177,16 @@ public class PlayerInputHandler : MonoBehaviour
     {
         flashlightOnOff = !flashlightOnOff;
         Debug.Log("This works");
+        if(flashlightOnOff)
+        {
+            //Play the sound for flashlight on
+            _flashlightOn.start();
+        }
+        else
+        {
+            //Play the sound for flashlight off
+            _flashlightOff.start();
+        }
     }
 
     private void HandleFlashlight(bool flashlightOnOff)
@@ -184,15 +196,13 @@ public class PlayerInputHandler : MonoBehaviour
             lightSource.enabled = true;
             Debug.Log("Flashlight is on");
             Flashlight();
-            _flashlightOn.start();
-            _flashlightOn = RuntimeManager.CreateInstance(FmodEvents.Instance.FlashlightOn);
+           
         }
         else if (!flashlightOnOff)
         {
             lightSource.enabled = false;
             Debug.Log("Flashlight is off");
-            _flashlightOff.start();
-            _flashlightOff = RuntimeManager.CreateInstance(FmodEvents.Instance.FlashlightOff);
+            
         }
     }
 
