@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shadowHealth: 100
+  shadowMaterial: {fileID: 2100000, guid: 6ff2853b7ae263d49b39c36218469977, type: 2}
   Enemy: {fileID: 8138703985034232772}
 --- !u!114 &4729067479116450004
 MonoBehaviour:
