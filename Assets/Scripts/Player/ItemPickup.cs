@@ -4,6 +4,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using FMODUnity;
+using FMOD.Studio;
 
 public class ItemPickup : MonoBehaviour
 {
@@ -12,10 +14,12 @@ public class ItemPickup : MonoBehaviour
     public float rotationSpeed = 50;
     public Cinemachine.CinemachineVirtualCamera virtualCamera;
     public GameObject pushE;
-    public GameObject pushEsc;
+    public GameObject pushQ;
     public GameObject paperCanvas;  // Canvas for paper background and text
     public TextMeshProUGUI paperText;  // Text element for the message
     public bool isRotating = false;
+    public EventInstance _BookMonologue;
+    public EventInstance _GlassesMonologue;
 
     public float typingDelay = 0.05f;  // Delay between each letter appearing
     private bool isTyping = false;  // Flag to check if typing is ongoing
@@ -24,7 +28,7 @@ public class ItemPickup : MonoBehaviour
     {
         isInteractable = false;
         pushE.SetActive(false);
-        pushEsc.SetActive(false);
+        pushQ.SetActive(false);
 
         if (virtualCamera != null)
         {
@@ -35,6 +39,10 @@ public class ItemPickup : MonoBehaviour
         {
             paperCanvas.SetActive(false);
         }
+        
+        _BookMonologue = RuntimeManager.CreateInstance(FmodEvents.Instance.BookMonologue);
+        _GlassesMonologue = RuntimeManager.CreateInstance(FmodEvents.Instance.GlassesMonologue);
+        
     }
 
     void Update()
@@ -64,7 +72,7 @@ public class ItemPickup : MonoBehaviour
             isRotating = true;
             TurnOnVirtualCamera();
             pushE.SetActive(false);
-            pushEsc.SetActive(true);
+            pushQ.SetActive(true);
 
             if (paperCanvas != null)
             {
@@ -83,10 +91,12 @@ public class ItemPickup : MonoBehaviour
         if (itemName == "Book")
         {
             paperText.text = "Date: 30/06\nDear diary\nI’m sitting alone in my room after a long day. It was my grandmoms funeral. I already miss every moment with her. She was the one holding me together after the other kids bullied me. She was the only person who understood me. I really miss her and I feel so lost without her.";
+            _BookMonologue.start();
         }
         else if (itemName == "Glasses")
         {
             paperText.text = "Today was the worst. At lunch, they kept staring and laughing, whispering like I couldn’t tell it was about me. In the hall after, one of them shoved me, and my glasses flew off. I barely had time to pick them up before someone stepped on them. They just laughed, calling me a nerd. I don't have any friends and I'm always by myself. I wish I had someone to talk to.";
+            _GlassesMonologue.start();
         }
 
         // Start typing out the message
@@ -122,7 +132,9 @@ public class ItemPickup : MonoBehaviour
         {
             isRotating = false;
             TurnOffVirtualCamera();
-            pushEsc.SetActive(false);
+            pushQ.SetActive(false);
+            _GlassesMonologue.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            _BookMonologue.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
             if (paperCanvas != null)
             {
