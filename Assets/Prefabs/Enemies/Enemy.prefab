@@ -74,7 +74,7 @@ MonoBehaviour:
   target: {fileID: 0}
   model: {fileID: 2489589330796792804}
   radiusAroundTarget: 0.2
-  chaseRange: 2.23
+  chaseRange: 5
   turnSpeed: 5
 --- !u!114 &5785173948286247176
 MonoBehaviour:

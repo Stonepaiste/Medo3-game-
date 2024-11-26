@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 1755920550800485599}
   - component: {fileID: 3699890981991139213}
   - component: {fileID: 7107772724779764932}
+  - component: {fileID: 1517855796108130966}
   - component: {fileID: 189841934495360845}
   - component: {fileID: 3477590063851722780}
   - component: {fileID: 711969997470415294}
@@ -217,6 +218,21 @@ CharacterController:
   m_SkinWidth: 0.03
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1517855796108130966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2453216966775292701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e50167c4d5424dbd8098e0b63386754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeImage: {fileID: 0}
+  fadeDuration: 1
+  targetPosition: {fileID: 0}
 --- !u!114 &189841934495360845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,8 +250,8 @@ MonoBehaviour:
   gravityValue: -9.81
   footstepsplaying: 0
   isInside: 0
-  sphereRadius: 0.1
-  lightPoint: {fileID: 0}
+  range: 100
+  lightPoint: {fileID: 1642815953405131237}
 --- !u!114 &3477590063851722780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,13 +610,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8763365798201328315}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.043619405, y: -0, z: -0, w: 0.9990483}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 534171845299731529}
-  m_LocalEulerAnglesHint: {x: -5, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &4814711140419048574
 Light:
   m_ObjectHideFlags: 0

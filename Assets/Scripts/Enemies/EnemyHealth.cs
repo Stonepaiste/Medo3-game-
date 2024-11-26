@@ -21,7 +21,7 @@ public class EnemyHealth : MonoBehaviour
     {
         Debug.Log("TakeDamage runs!");
         shadowHealth -= 1;
-        shadowMaterial.SetFloat("_CutOff_Height", shadowHealth / 10);
+        shadowMaterial.SetFloat("_CutOff_Height", shadowHealth/ 10);
     }
 
     private void Update()
