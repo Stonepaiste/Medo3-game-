@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using FMODUnity;
+using FMOD.Studio;
 
 public class InteractableObject : MonoBehaviour
 {
@@ -18,6 +20,8 @@ public class InteractableObject : MonoBehaviour
     [Header("Game Event")]
     [Tooltip("Which game event do we want our listener to respond to")]
     [SerializeField] private UnityEvent whatEvent;
+
+    private EventInstance _lightSwitchSound;
 
 
    /* private void OnTriggerEnter(Collider other)
@@ -35,6 +39,8 @@ public class InteractableObject : MonoBehaviour
         if (other.tag == "Player" && Input.GetKeyDown(KeyCode.E))
         {
             interactableObject.SetActive(true);
+            _lightSwitchSound = RuntimeManager.CreateInstance(FmodEvents.Instance.FlashlightOn);
+            _lightSwitchSound.start();
 
             whatEvent.Invoke();
 

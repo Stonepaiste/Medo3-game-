@@ -68,6 +68,15 @@ public class FmodEvents : MonoBehaviour
     
     [field: Header("GlassesMonologue")]
     [field: SerializeField] public EventReference GlassesMonologue { get; private set; }
+    
+    [field: Header("Enginefail")]
+    [field: SerializeField] public EventReference Enginefail { get; private set; }
+    
+    [field: Header("INeedFuel")]
+    [field: SerializeField] public EventReference INeedFuel { get; private set; }
+    
+    [field: Header("AlexAreYouOkay")]
+    [field: SerializeField] public EventReference AlexAreYouOkay { get; private set; }
 	
     //All dialogue are played through FMOD eventEmitter in SOUNDDIALOGUE COMPONENT USING TIMELINE
     

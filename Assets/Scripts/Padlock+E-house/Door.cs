@@ -12,6 +12,7 @@ public class Door : MonoBehaviour
 
     public Transform doorTransform; // Reference to the door itself
     public EventInstance _doorOpenSound; // Reference to the FMOD event for the door opening sound
+    RadioEHouse radioEHouse;
     public void OpenDoor()
     {
         if (!isOpen)
@@ -21,6 +22,8 @@ public class Door : MonoBehaviour
             _doorOpenSound= RuntimeManager.CreateInstance(FmodEvents.Instance.DoorEhouse);
             _doorOpenSound.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
             _doorOpenSound.start();
+            radioEHouse = FindObjectOfType<RadioEHouse>();
+            radioEHouse.PlayAndDestroyEhouseRadio();
             
         }
     }
