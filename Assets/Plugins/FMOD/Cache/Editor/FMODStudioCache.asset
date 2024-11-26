@@ -285,10 +285,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638682574277468413
+  lastModified: 638682622896029798
   FileSizes:
   - Name: Desktop
-    Value: 2668
+    Value: 2724
   Exists: 1
 --- !u!114 &-2563155020662824940
 MonoBehaviour:
@@ -479,6 +479,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1600
+--- !u!114 &-584383906637190692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Partybackground
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Partybackground
+  Guid:
+    Data1: -790511280
+    Data2: 1078034774
+    Data3: -997310831
+    Data4: -487333134
+  Banks:
+  - {fileID: 261915903957758797}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7941
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,12 +562,13 @@ MonoBehaviour:
   - {fileID: -2563155020662824940}
   - {fileID: 5863657154917302239}
   - {fileID: -2955931864552631742}
+  - {fileID: -584383906637190692}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3525072047243723712}
   StringsBanks:
   - {fileID: -2809586541640302641}
-  cacheTime: 638682574277468413
+  cacheTime: 638682622897540962
   cacheVersion: 131620
 --- !u!114 &261915903957758797
 MonoBehaviour:
@@ -557,10 +585,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638682522849217226
+  lastModified: 638682622897540962
   FileSizes:
   - Name: Desktop
-    Value: 677792
+    Value: 749984
   Exists: 1
 --- !u!114 &282549111889329352
 MonoBehaviour:
@@ -787,7 +815,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638682574277459759
+  lastModified: 638682622896023252
   FileSizes:
   - Name: Desktop
     Value: 1036
