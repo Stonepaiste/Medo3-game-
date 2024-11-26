@@ -6,20 +6,54 @@ using UnityEngine.UIElements;
 [DefaultExecutionOrder(0)]
 public class EnemyHandler : MonoBehaviour
 {
-    /*[SerializeField] GameObject EnemyPrefab;
+    EnemyHealth enemyHealth; 
+    [SerializeField] GameObject EnemyPrefab;
+    [SerializeField] GameObject[] memory;
+    [SerializeField] Vector3[] positions;
+    [SerializeField] Vector3 enemyLastPosition;
+    List<GameObject> Enemies;
+    int numberOfEnemiesDead = 0;
+    float timeToDie = 2f;
 
-    Transform Target;
-    float RadiusAroundTarget = 0.5f;
-    public List<EnemyAI> Units = new List<EnemyAI>();
-
-    private void MakeAgentsCircleTarget()
+    private void Awake()
     {
-        for (int i = 0; i < Units.Count; i++)
+        Enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+    }
+
+    private void Update()
+    {
+        EnemyDead();
+    }
+
+    void EnemyDead()
+    {
+        for (int i = 0; i < Enemies.Count; i++)
         {
-            Units[i].MoveTowardsTarget(new Vector3(
-                Target.position.x + RadiusAroundTarget * Mathf.Cos(2 * Mathf.PI * i / Units.Count),
-                Target.position.y,
-                Target.position.z + RadiusAroundTarget * Mathf.Sin(2 * Mathf.PI * i / Units.Count)));
+            if (Enemies[i].GetComponent<EnemyHealth>().shadowHealth <= 0)
+            {
+                numberOfEnemiesDead++;
+                enemyLastPosition = Enemies[i].transform.position;
+                Destroy(Enemies[i], timeToDie);
+            }
         }
-    }*/
+    }
+
+    public void SpawnMemories()
+    {
+        switch (numberOfEnemiesDead)
+        {
+            case 2:
+                positions[0] = enemyLastPosition;
+                Instantiate(memory[0], positions[0], Quaternion.identity, this.transform);
+                return;
+            case 4:
+                positions[1] = enemyLastPosition;
+                Instantiate(memory[1], positions[1], Quaternion.identity, this.transform);
+                return;
+            default:
+                return;
+        }
+    }
+
+    public int GetNumberOfEnemiesDead() { return numberOfEnemiesDead; }
 }

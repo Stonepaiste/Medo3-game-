@@ -328,7 +328,7 @@
                 {
                     "name": "",
                     "id": "0a56dfd4-4bc2-43af-9d8b-2d3ffd867715",
-                    "path": "<Gamepad>/rightStick/down",
+                    "path": "<Gamepad>/rightStickPress",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -354,6 +354,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
+                    "action": "Flashlight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d8f5a7f9-7113-475e-94e5-27462c38251b",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "Flashlight",
                     "isComposite": false,
                     "isPartOfComposite": false
