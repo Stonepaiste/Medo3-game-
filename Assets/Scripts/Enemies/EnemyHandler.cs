@@ -56,11 +56,11 @@ public class EnemyHandler : MonoBehaviour
     {
         switch (numberOfEnemiesDead)
         {
-            case 2:
+            case 3:
                 positions[0] = enemyLastPosition;
                 Instantiate(memory[0], positions[0], Quaternion.identity, this.transform);
                 return;
-            case 4:
+            case 6:
                 positions[1] = enemyLastPosition;
                 Instantiate(memory[1], positions[1], Quaternion.identity, this.transform);
                 return;
