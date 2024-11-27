@@ -25,6 +25,7 @@ public class EnemyAI : MonoBehaviour
         enemyspeak = GetComponent<EnemySpeak>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         model.SetActive(false);
+        target = FindObjectOfType<PlayerInputHandler>().transform;
     }
 
     void Update()

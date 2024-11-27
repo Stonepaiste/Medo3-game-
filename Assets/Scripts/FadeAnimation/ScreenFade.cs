@@ -8,6 +8,7 @@ public class ScreenFade : MonoBehaviour
     public float fadeDuration = 1f; // Duration of the fade
     public Transform targetPosition; // Set this in the Inspector to the new position
 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("FadeTrigger")) // Make sure the trigger object has the tag "FadeTrigger"
