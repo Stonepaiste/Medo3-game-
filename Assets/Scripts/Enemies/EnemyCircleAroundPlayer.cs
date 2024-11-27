@@ -11,7 +11,7 @@ public class EnemyCircleAroundPlayer : MonoBehaviour
     [SerializeField] int numberOfEnemies = 6;
     public Transform Target;
     public float RadiusAroundTarget = 0.5f;
-
+    
     private void Awake()
     {
         Target = FindObjectOfType<PlayerInputHandler>().transform;
