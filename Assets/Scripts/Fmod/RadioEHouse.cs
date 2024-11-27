@@ -22,11 +22,8 @@ public class RadioEHouse : MonoBehaviour
 
     public void PlayAndDestroyEhouseRadio()
     {
-        PlayEhouseRadio();
-        if (_textAlexAreYouOkay != null)
-        {
-            _textAlexAreYouOkay.SetActive(true);
-        }
+        Invoke("PlayEhouseRadio",2f);
+        Invoke ("StarttextAlexAreYouOkay", 2f);
         Invoke("DestroyTextAlexAreYouOkay",8f);
         Invoke("OnDestroy", 10f);
     }
@@ -49,6 +46,14 @@ public class RadioEHouse : MonoBehaviour
         if (_textAlexAreYouOkay != null)
         {
             _textAlexAreYouOkay.SetActive(false);
+        }
+    }
+    
+    public void StarttextAlexAreYouOkay()
+    {
+        if (_textAlexAreYouOkay != null)
+        {
+            _textAlexAreYouOkay.SetActive(true);
         }
     }
 

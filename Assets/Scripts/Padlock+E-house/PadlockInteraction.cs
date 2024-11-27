@@ -7,6 +7,7 @@ public class PadlockInteraction : MonoBehaviour
     public PlayerInputHandler playerInputHandler;
     
     
+    
     private bool isInRange = false; // Track if the player is within the trigger zone
 
     private void Start()
@@ -26,6 +27,7 @@ public class PadlockInteraction : MonoBehaviour
         {
             padlockCanvas.SetActive(false);
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)

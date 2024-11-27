@@ -10,10 +10,12 @@ public class EngineFailSound : MonoBehaviour
     EventInstance _engineFailEventInstance;
     private bool _isPlayerInTrigger = false;
     EventInstance _moreFuelEventInstance;
+    public bool monologueHasPlayed = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        monologueHasPlayed = false;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -61,8 +63,13 @@ public class EngineFailSound : MonoBehaviour
     
     void MoreFuelSoundPlay()
     {
-        _moreFuelEventInstance = RuntimeManager.CreateInstance(FmodEvents.Instance.INeedFuel);
-        _moreFuelEventInstance.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
-        _moreFuelEventInstance.start();
+        if (monologueHasPlayed==false)
+        {
+            _moreFuelEventInstance = RuntimeManager.CreateInstance(FmodEvents.Instance.INeedFuel);
+            _moreFuelEventInstance.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
+            _moreFuelEventInstance.start();
+            monologueHasPlayed = true;
+        }
+        
     }
 }
