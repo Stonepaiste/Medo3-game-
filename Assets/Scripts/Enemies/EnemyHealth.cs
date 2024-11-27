@@ -28,26 +28,29 @@ public class EnemyHealth : MonoBehaviour
         shadowHealth -= 1;
         cutOffHeight -= decreaseCutOffHeight;
         shadowMaterial.SetFloat("_CutOff_Height", cutOffHeight);
+        if (shadowHealth <= 0)
+        {
+            shadowHealth = 0;
+            enemyHandler.EnemyDead();
+        }
     }
-
-    private void Update()
+    /*private void Update()
     {
         if (shadowHealth <= 0)
         {
             shadowHealth = 0;
            enemyHandler.EnemyDead();
-            enemyHandler.SpawnMemories();
-            /*// Spawn the object right before destroying the enemy
+            // Spawn the object right before destroying the enemy
             if (spawnOnEnemy != null)
             {
                 spawnOnEnemy.DefeatEnemy();
                 gameObject.SetActive (false);
-            }*/
+            }
 
           
         }
 
       
-    }
+    }*/
 }
 

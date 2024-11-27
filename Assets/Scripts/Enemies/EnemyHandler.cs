@@ -39,6 +39,7 @@ public class EnemyHandler : MonoBehaviour
                 enemyLastPosition = Enemies[i].transform.position;
                 Destroy(Enemies[i], timeToDie);
                 Enemies.Remove(Enemies[i]);
+                SpawnMemories();
                 /*if (Enemies[i] == null)
                 {
                     Enemies.Remove(Enemies[i])
@@ -79,9 +80,9 @@ public class EnemyHandler : MonoBehaviour
     {
         for (int i = 0; i < EnemySpawnPositionsGHouse.Length; i++)
         {
-            Instantiate(EnemyPrefab, EnemySpawnPositionsEHouse[i].transform.position, Quaternion.identity,
+            GameObject enemy = Instantiate(EnemyPrefab, EnemySpawnPositionsEHouse[i].transform.position, Quaternion.identity,
                 EnemySpawnPositionsEHouse[i].transform);
-            Enemies.Add(EnemySpawnPositionsEHouse[i].GetComponentInChildren<GameObject>());
+            Enemies.Add(enemy);
         }
         Debug.Log(Enemies.Count);
     }
