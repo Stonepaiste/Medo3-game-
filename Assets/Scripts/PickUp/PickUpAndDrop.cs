@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using TMPro;
 
@@ -8,8 +9,11 @@ public class PickUpAndDrop : MonoBehaviour
     public GameObject camera;
     public TextMeshProUGUI pickUpText;
     public TextMeshProUGUI interactText;
-    //public Transform teleportDestination; // Set this to the new position in the Inspector
-    //public ScreenFade screenFade; // Reference to the ScreenFade script
+    public CinemachineBrain playerPOVCamera;
+
+    public Vector3 itemPositionOffset = new Vector3(0.2f, -1f, 0.8f); // Offset for item position
+    public Vector3 itemRotationOffset = new Vector3(0, -90, 0); // Offset for item rotation
+
     float maxPickupDistance = 5;
     GameObject itemCurrentlyHolding;
     GameObject itemInRange; // Store the item in the trigger range
@@ -27,7 +31,12 @@ public class PickUpAndDrop : MonoBehaviour
     {
         if (itemInRange != null && Input.GetKeyDown("e")) Pickup(); // Pick up the item in range
         if (canInteractToDisappear && Input.GetKeyDown("e")) MakeFuelCanDisappear(); // Press "I" to make can disappear
-        /*if (Input.GetKeyDown("q") && isHolding) Drop();*/
+
+        if (isHolding && itemCurrentlyHolding != null)
+        {
+            itemCurrentlyHolding.transform.position = playerPOVCamera.transform.position + playerPOVCamera.transform.TransformDirection(itemPositionOffset); // Update the item's position with offset
+            itemCurrentlyHolding.transform.rotation = playerPOVCamera.transform.rotation * Quaternion.Euler(itemRotationOffset); // Update the item's rotation with offset
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -43,8 +52,6 @@ public class PickUpAndDrop : MonoBehaviour
             interactText.gameObject.SetActive(true); // Show "Press I to drop" text
             canInteractToDisappear = true; // Allow player to press "I" to drop
         }
-
-
     }
 
     void OnTriggerExit(Collider other)
@@ -65,37 +72,19 @@ public class PickUpAndDrop : MonoBehaviour
     {
         if (itemInRange != null)
         {
-            /*if (isHolding) Drop();*/
             itemCurrentlyHolding = itemInRange; // Set the item currently holding
 
             foreach (var c in itemCurrentlyHolding.GetComponentsInChildren<Collider>()) if (c != null) c.enabled = false;
             foreach (var r in itemCurrentlyHolding.GetComponentsInChildren<Rigidbody>()) if (r != null) r.isKinematic = true;
 
             itemCurrentlyHolding.transform.parent = camera.transform;
-            itemCurrentlyHolding.transform.localPosition = new Vector3(0.2f, -1f, 0.8f); // Position in front of the camera
-            itemCurrentlyHolding.transform.localEulerAngles = new Vector3(0, -90, 0);
-
+            itemCurrentlyHolding.transform.localPosition = itemPositionOffset; // Position in front of the camera
+            itemCurrentlyHolding.transform.localEulerAngles = itemRotationOffset;
             pickUpText.gameObject.SetActive(false); // Hide the text after picking up
             isHolding = true;
-
-            // Start teleport coroutine after picking up the object
-            StopAllCoroutines(); // Stop any active coroutines to prevent overlap
-            //StartCoroutine(TeleportWithFade());
         }
-
-        /*IEnumerator TeleportWithFade()
-        {
-            yield return new WaitForSeconds(2f); // Wait for 2 seconds
-            yield return StartCoroutine (screenFade.FadeOut()); // Start fade-out effect
-
-            // Teleport player to the new position
-            transform.position = teleportDestination.position;
-
-            yield return StartCoroutine(screenFade.FadeIn()); // Fade back in after teleporting
-        }*/
-
-
     }
+
     void MakeFuelCanDisappear()
     {
         if (itemCurrentlyHolding != null)
@@ -109,28 +98,4 @@ public class PickUpAndDrop : MonoBehaviour
             FuelCanDropped = true;
         }
     }
-
-
 }
-    
-    /*void Drop()
-    {
-        if (itemCurrentlyHolding != null)
-        {
-            itemCurrentlyHolding.transform.parent = null;
-            foreach (var c in itemCurrentlyHolding.GetComponentsInChildren<Collider>()) if (c != null) c.enabled = true;
-            foreach (var r in itemCurrentlyHolding.GetComponentsInChildren<Rigidbody>()) if (r != null) r.isKinematic = false;
-
-            isHolding = false;
-
-            RaycastHit hitDown;
-            if (Physics.Raycast(transform.position, -Vector3.up, out hitDown))
-            {
-                itemCurrentlyHolding.transform.position = hitDown.point + new Vector3(transform.forward.x, 0, transform.forward.z);
-            }
-
-            itemCurrentlyHolding = null;
-        }
-    }
-}
-    */
