@@ -25,7 +25,7 @@ public class EnemyHandler : MonoBehaviour
         EnemyDead();
     }
 
-    void EnemyDead()
+    public void EnemyDead()
     {
         for (int i = 0; i < Enemies.Count; i++)
         {
