@@ -2117,7 +2117,7 @@ MonoBehaviour:
   m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
+  m_Parent: {fileID: 692773664574483755}
   m_Children: []
   m_Clips: []
   m_Markers:
@@ -2141,7 +2141,7 @@ MonoBehaviour:
   m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
+  m_Parent: {fileID: -3010318623301670031}
   m_Children: []
   m_Clips:
   - m_Version: 1
@@ -2217,6 +2217,22 @@ MonoBehaviour:
     m_Objects: []
   template:
     volume: 1
+--- !u!114 &-5804568834556573565
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 0
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: fb1c215832a75af4b8ea529471acc7d2, type: 2}
 --- !u!114 &-5092717678823951010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2251,7 +2267,7 @@ MonoBehaviour:
   m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
+  m_Parent: {fileID: -3010318623301670031}
   m_Children: []
   m_Clips:
   - m_Version: 1
@@ -2325,6 +2341,55 @@ MonoBehaviour:
     m_DisplayName: DEnd
   m_Markers:
     m_Objects: []
+--- !u!114 &-3010318623301670031
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fc6f5187a81dc47999eefade6f0935, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children:
+  - {fileID: -3054122209667194547}
+  - {fileID: -6047844677469491209}
+  m_Clips: []
+  m_Markers:
+    m_Objects: []
+--- !u!114 &-2182630084591340277
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46e36075dd1c124a8422c228e75e1fb, type: 3}
+  m_Name: Signal Track (1)
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 3333990084591339034}
+  m_Children: []
+  m_Clips: []
+  m_Markers:
+    m_Objects:
+    - {fileID: -5804568834556573565}
 --- !u!114 &-1881741235948250622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2363,15 +2428,39 @@ MonoBehaviour:
   m_Version: 0
   m_Tracks:
   - {fileID: 751425649433589334}
-  - {fileID: -6359225926685113872}
-  - {fileID: -6047844677469491209}
-  - {fileID: -3054122209667194547}
+  - {fileID: -3010318623301670031}
+  - {fileID: 3333990084591339034}
+  - {fileID: 692773664574483755}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
     m_ScenePreview: 1
   m_DurationMode: 0
   m_MarkerTrack: {fileID: 0}
+--- !u!114 &692773664574483755
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fc6f5187a81dc47999eefade6f0935, type: 3}
+  m_Name: EndCanvas
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children:
+  - {fileID: -6359225926685113872}
+  m_Clips: []
+  m_Markers:
+    m_Objects: []
 --- !u!114 &751425649433589334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2463,6 +2552,30 @@ MonoBehaviour:
     Path: event:/Dialogue/Voiceover i don't know what to do 1
   StopType: 0
   Parameters: []
+--- !u!114 &3333990084591339034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fc6f5187a81dc47999eefade6f0935, type: 3}
+  m_Name: Enemy
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children:
+  - {fileID: -2182630084591340277}
+  m_Clips: []
+  m_Markers:
+    m_Objects: []
 --- !u!114 &4036478431610490517
 MonoBehaviour:
   m_ObjectHideFlags: 1

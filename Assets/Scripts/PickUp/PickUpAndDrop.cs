@@ -5,13 +5,14 @@ using UnityEngine;
 using TMPro;
 using FMODUnity;
 using FMOD.Studio;
+using UnityEngine.Events;
 
 public class PickUpAndDrop : MonoBehaviour
 {
-    public GameObject camera;
-    public TextMeshProUGUI pickUpText;
-    public TextMeshProUGUI interactText;
-    public CinemachineBrain playerPOVCamera;
+    [SerializeField] GameObject camera;
+    //public TextMeshProUGUI pickUpText;
+    //public TextMeshProUGUI interactText;
+    [SerializeField] CinemachineBrain playerPOVCamera;
 
     public Vector3 itemPositionOffset = new Vector3(0.2f, -1f, 0.8f); // Offset for item position
     public Vector3 itemRotationOffset = new Vector3(0, -90, 0); // Offset for item rotation
@@ -23,11 +24,20 @@ public class PickUpAndDrop : MonoBehaviour
     bool canInteractToDisappear = false; // Track if player is in specific trigger zone
 
     public bool FuelCanDropped { get; private set; } = false;
+    
+    //---- OG DEN HER I TOP MATT
+    [Header("Game Event")]
+    [Tooltip("Which game event do we want our listener to respond to")]
+    [SerializeField] private UnityEvent whatEvent;
+    //----- OG DEN HER I TOP MATT
+
     //sound "what is up with this power"
     EventInstance  _whatisupwiththispower;
+
+
     void Start()
     {
-        pickUpText.gameObject.SetActive(false); // Hide the pickup text initially
+        //pickUpText.gameObject.SetActive(false); // Hide the pickup text initially
     }
 
     void Update()
@@ -48,11 +58,11 @@ public class PickUpAndDrop : MonoBehaviour
         {
             Debug.Log("Text Display");
             itemInRange = other.gameObject; // Store the reference of the item in range
-            pickUpText.gameObject.SetActive(true); // Show the text when near an item
+            //pickUpText.gameObject.SetActive(true); // Show the text when near an item
         }
         else if (isHolding && other.CompareTag("Interact")) // Specific collider check
         {
-            interactText.gameObject.SetActive(true); // Show "Press I to drop" text
+            //interactText.gameObject.SetActive(true); // Show "Press I to drop" text
             canInteractToDisappear = true; // Allow player to press "I" to drop
         }
     }
@@ -62,11 +72,11 @@ public class PickUpAndDrop : MonoBehaviour
         if (other.CompareTag("item") && !isHolding)
         {
             itemInRange = null; // Clear the reference when leaving the range
-            pickUpText.gameObject.SetActive(false); // Hide the text when out of range
+            //pickUpText.gameObject.SetActive(false); // Hide the text when out of range
         }
         else if (isHolding && other.CompareTag("Interact"))
         {
-            interactText.gameObject.SetActive(false); // Hide the interact text when exiting
+            //interactText.gameObject.SetActive(false); // Hide the interact text when exiting
             canInteractToDisappear = false; // Disable interaction when out of range
         }
     }
@@ -83,7 +93,7 @@ public class PickUpAndDrop : MonoBehaviour
             itemCurrentlyHolding.transform.parent = camera.transform;
             itemCurrentlyHolding.transform.localPosition = itemPositionOffset; // Position in front of the camera
             itemCurrentlyHolding.transform.localEulerAngles = itemRotationOffset;
-            pickUpText.gameObject.SetActive(false); // Hide the text after picking up
+            //pickUpText.gameObject.SetActive(false); // Hide the text after picking up
             isHolding = true;
         }
     }
@@ -95,12 +105,16 @@ public class PickUpAndDrop : MonoBehaviour
             Destroy(itemCurrentlyHolding); // Remove the fuel can
             itemCurrentlyHolding = null;
             isHolding = false;
-            interactText.gameObject.SetActive(false); // Hide interact text after dropping
+            //interactText.gameObject.SetActive(false); // Hide interact text after dropping
             canInteractToDisappear = false; // Reset interaction flag
             Invoke("WhatIsUpWithThisPowerSound",2f);
             FuelCanDropped = true;
+
+            whatEvent.Invoke(); //DEN HER MATT!!! Skal sættes ind dér hvor strømmen går igen
         }
     }
+
+
     
     void WhatIsUpWithThisPowerSound()
     {
