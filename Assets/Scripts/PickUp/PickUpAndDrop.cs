@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using TMPro;
+using FMODUnity;
+using FMOD.Studio;
 
 public class PickUpAndDrop : MonoBehaviour
 {
@@ -21,7 +23,8 @@ public class PickUpAndDrop : MonoBehaviour
     bool canInteractToDisappear = false; // Track if player is in specific trigger zone
 
     public bool FuelCanDropped { get; private set; } = false;
-
+    //sound "what is up with this power"
+    EventInstance  _whatisupwiththispower;
     void Start()
     {
         pickUpText.gameObject.SetActive(false); // Hide the pickup text initially
@@ -94,8 +97,15 @@ public class PickUpAndDrop : MonoBehaviour
             isHolding = false;
             interactText.gameObject.SetActive(false); // Hide interact text after dropping
             canInteractToDisappear = false; // Reset interaction flag
-
+            Invoke("WhatIsUpWithThisPowerSound",2f);
             FuelCanDropped = true;
         }
+    }
+    
+    void WhatIsUpWithThisPowerSound()
+    {
+        _whatisupwiththispower = RuntimeManager.CreateInstance(FmodEvents.Instance.WhatIsUpWithThisPower);
+        _whatisupwiththispower.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
+        _whatisupwiththispower.start();
     }
 }
