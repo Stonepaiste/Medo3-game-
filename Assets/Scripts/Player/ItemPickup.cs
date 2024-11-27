@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using FMODUnity;
 using FMOD.Studio;
+using System.Security.Cryptography.X509Certificates;
 
 public class ItemPickup : MonoBehaviour
 {
@@ -24,11 +25,18 @@ public class ItemPickup : MonoBehaviour
     public float typingDelay = 0.05f;  // Delay between each letter appearing
     private bool isTyping = false;  // Flag to check if typing is ongoing
 
+
+    private void Awake()
+    {
+        //pushE = GameObject.Find("press E to see");
+        pushQ = GameObject.Find("Press ESC to leave");
+    }
+
     void Start()
     {
         isInteractable = false;
-        pushE.SetActive(false);
-        pushQ.SetActive(false);
+        //pushE.SetActive(false);
+        //pushQ.SetActive(false);
 
         if (virtualCamera != null)
         {
@@ -60,7 +68,7 @@ public class ItemPickup : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            pushE.SetActive(true);
+            //pushE.SetActive(true);
             isInteractable = true;
         }
     }
@@ -71,8 +79,8 @@ public class ItemPickup : MonoBehaviour
         {
             isRotating = true;
             TurnOnVirtualCamera();
-            pushE.SetActive(false);
-            pushQ.SetActive(true);
+            //pushE.SetActive(false);
+            //pushQ.SetActive(true);
 
             if (paperCanvas != null)
             {
@@ -122,7 +130,7 @@ public class ItemPickup : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             isInteractable = false;
-            pushE.SetActive(false);
+            //pushE.SetActive(false);
         }
     }
 
@@ -132,7 +140,7 @@ public class ItemPickup : MonoBehaviour
         {
             isRotating = false;
             TurnOffVirtualCamera();
-            pushQ.SetActive(false);
+            //pushQ.SetActive(false);
             _GlassesMonologue.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             _BookMonologue.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
