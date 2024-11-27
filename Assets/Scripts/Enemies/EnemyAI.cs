@@ -85,6 +85,11 @@ public class EnemyAI : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
     }
 
+    public void MoveTo(Vector3 Position)
+    {
+        navMeshAgent.SetDestination(Position);
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
