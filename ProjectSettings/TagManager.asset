@@ -21,6 +21,7 @@ TagManager:
   - Woodenfloor
   - FlashlightMsgTrigger
   - PadlockMsgTrigger
+  - Water
   layers:
   - Default
   - TransparentFX
