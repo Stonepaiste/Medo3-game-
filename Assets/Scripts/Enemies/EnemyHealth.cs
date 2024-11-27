@@ -11,9 +11,11 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] Material shadowMaterial;
     float cutOffHeight;
     [SerializeField] float decreaseCutOffHeight = 0.1f;
+    EnemyHandler enemyHandler;
 
     private void Start()
     {
+        enemyHandler = FindObjectOfType<EnemyHandler>();
         cutOffHeight = 10;
         // Get the SpawnOnEnemy component attached to the same GameObject
         spawnOnEnemy = GetComponent<SpawnOnEnemy>();
@@ -33,12 +35,14 @@ public class EnemyHealth : MonoBehaviour
         if (shadowHealth <= 0)
         {
             shadowHealth = 0;
-           // Spawn the object right before destroying the enemy
+           enemyHandler.EnemyDead();
+            enemyHandler.SpawnMemories();
+            /*// Spawn the object right before destroying the enemy
             if (spawnOnEnemy != null)
             {
                 spawnOnEnemy.DefeatEnemy();
                 gameObject.SetActive (false);
-            }
+            }*/
 
           
         }

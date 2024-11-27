@@ -74,7 +74,7 @@ MonoBehaviour:
   target: {fileID: 0}
   model: {fileID: 2489589330796792804}
   radiusAroundTarget: 0.2
-  chaseRange: 5
+  chaseRange: 8
   turnSpeed: 5
 --- !u!114 &5785173948286247176
 MonoBehaviour:
@@ -91,7 +91,7 @@ MonoBehaviour:
   shadowHealth: 100
   Enemy: {fileID: 8138703985034232772}
   shadowMaterial: {fileID: 2100000, guid: 6ff2853b7ae263d49b39c36218469977, type: 2}
-  decreaseCutOffHeight: 0.1
+  decreaseCutOffHeight: 0.01
 --- !u!114 &4729067479116450004
 MonoBehaviour:
   m_ObjectHideFlags: 0

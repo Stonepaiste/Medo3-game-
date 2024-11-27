@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.UIElements;
 
 [DefaultExecutionOrder(0)]
@@ -8,6 +9,9 @@ public class EnemyHandler : MonoBehaviour
 {
     EnemyHealth enemyHealth; 
     [SerializeField] GameObject EnemyPrefab;
+    [SerializeField] GameObject[] EnemySpawnPositionsGHouse;
+    Vector3 position;
+    [SerializeField] GameObject[] EnemySpawnPositionsEHouse;
     [SerializeField] GameObject[] memory;
     [SerializeField] Vector3[] positions;
     [SerializeField] Vector3 enemyLastPosition;
@@ -17,12 +21,12 @@ public class EnemyHandler : MonoBehaviour
 
     private void Awake()
     {
-        Enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+        Enemies = new List<GameObject>();
     }
 
     private void Update()
     {
-        EnemyDead();
+
     }
 
     public void EnemyDead()
@@ -34,6 +38,11 @@ public class EnemyHandler : MonoBehaviour
                 numberOfEnemiesDead++;
                 enemyLastPosition = Enemies[i].transform.position;
                 Destroy(Enemies[i], timeToDie);
+                Enemies.Remove(Enemies[i]);
+                /*if (Enemies[i] == null)
+                {
+                    Enemies.Remove(Enemies[i])
+                }*/
             }
         }
     }
@@ -53,6 +62,28 @@ public class EnemyHandler : MonoBehaviour
             default:
                 return;
         }
+    }
+
+    public void SpawnEnemiesAtGHouse()
+    {
+        for (int i = 0;i < EnemySpawnPositionsGHouse.Length ;i++)
+        {
+            GameObject enemy = Instantiate(EnemyPrefab, EnemySpawnPositionsGHouse[i].transform.position, Quaternion.identity,
+                EnemySpawnPositionsGHouse[i].transform);
+            Enemies.Add(enemy);
+        }
+        Debug.Log(Enemies.Count);
+    }
+
+    public void SpawnEnemiesAtEHouse()
+    {
+        for (int i = 0; i < EnemySpawnPositionsGHouse.Length; i++)
+        {
+            Instantiate(EnemyPrefab, EnemySpawnPositionsEHouse[i].transform.position, Quaternion.identity,
+                EnemySpawnPositionsEHouse[i].transform);
+            Enemies.Add(EnemySpawnPositionsEHouse[i].GetComponentInChildren<GameObject>());
+        }
+        Debug.Log(Enemies.Count);
     }
 
     public int GetNumberOfEnemiesDead() { return numberOfEnemiesDead; }
