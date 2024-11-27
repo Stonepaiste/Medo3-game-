@@ -82,7 +82,7 @@ public class FmodEvents : MonoBehaviour
     
     [field: SerializeField] public EventReference WhatIsUpWithThisPower { get; private set; }
 	
-    //All dialogue are played through FMOD eventEmitter in SOUNDDIALOGUE COMPONENT USING TIMELINE
+    // All dialogue are played through FMOD eventEmitter in SOUNDDIALOGUE COMPONENT USING TIMELINE
     
     //We then create a public static instance of the FmodEvents script so that we can access it from anywhere in the game.
     public static FmodEvents Instance { get; private set; }
