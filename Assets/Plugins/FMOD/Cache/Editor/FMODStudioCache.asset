@@ -625,7 +625,7 @@ MonoBehaviour:
   - {fileID: 3525072047243723712}
   StringsBanks:
   - {fileID: -2809586541640302641}
-  cacheTime: 638683315171749370
+  cacheTime: 638683443475414543
   cacheVersion: 131620
 --- !u!114 &261915903957758797
 MonoBehaviour:
@@ -1236,10 +1236,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank
   Name: Dialogue
   StudioPath: bank:/Dialogue
-  lastModified: 638683315171669614
+  lastModified: 638683443475414543
   FileSizes:
   - Name: Desktop
-    Value: 2793408
+    Value: 2893216
   Exists: 1
 --- !u!114 &9081768503479383465
 MonoBehaviour:
