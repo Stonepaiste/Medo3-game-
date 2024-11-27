@@ -81,7 +81,9 @@ public class FmodEvents : MonoBehaviour
     [field: Header("What is up with this power")]
     
     [field: SerializeField] public EventReference WhatIsUpWithThisPower { get; private set; }
-	
+    
+    [field: Header("EnemiesSoundMulti")]
+		[field: SerializeField] public EventReference EnemiesSoundMulti { get; private set; }	
     // All dialogue are played through FMOD eventEmitter in SOUNDDIALOGUE COMPONENT USING TIMELINE
     
     //We then create a public static instance of the FmodEvents script so that we can access it from anywhere in the game.

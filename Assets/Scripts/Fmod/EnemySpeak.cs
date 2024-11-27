@@ -12,6 +12,7 @@ public class EnemySpeak : MonoBehaviour
     private EventInstance _enemyWEAK; //The event instance for the enemy sound.
     private EventInstance _enemyREMEMBER; //The event instance for the enemy sound.
     private EventInstance _enemyALONE; //The event instance for the enemy sound.
+    private EventInstance _enemymulti; 
     private bool weakHasPlayed = false; //Bool to check if the weak sound has played.
     private bool rememberHasPlayed = false; //Bool to check if the remember sound has played.
     private bool aloneHasPlayed = false; //Bool to check if the alone sound has played.
@@ -27,6 +28,10 @@ public class EnemySpeak : MonoBehaviour
         
         _enemyALONE = RuntimeManager.CreateInstance(FmodEvents.Instance.EnemySoundALONE);
         _enemyALONE.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
+        
+        _enemymulti = RuntimeManager.CreateInstance(FmodEvents.Instance.EnemiesSoundMulti);
+        _enemymulti.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
+        
     }
     
     // Start is called before the first frame update
@@ -35,33 +40,26 @@ public class EnemySpeak : MonoBehaviour
         if (weakHasPlayed == false && rememberHasPlayed == false && aloneHasPlayed == false)
         {
             //Start the enemy sound for the weak state.
-            _enemyWEAK.start();
-            weakHasPlayed = true;
+            //_enemyWEAK.start();
+            _enemymulti.start();
+            //weakHasPlayed = true;
         }
         
     }
     
     public void EnemyRemember()
     {
-        if (weakHasPlayed==true && rememberHasPlayed==false && aloneHasPlayed==false)
-        {
-            //Start the enemy sound for the remember state.
-            _enemyREMEMBER.start();
-            rememberHasPlayed = true;
-        }
         
+            _enemyREMEMBER.start();
     }
     
     
     public void EnemyAlone()
     {
-        if(weakHasPlayed==true && rememberHasPlayed==true && aloneHasPlayed==false)
-        {
-            //Start the enemy sound for the alone state.
+        
             _enemyALONE.start();
-            aloneHasPlayed = true;
-        }
-       
     }
+
     
 }
+

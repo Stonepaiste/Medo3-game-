@@ -26,6 +26,7 @@ public class EnemyAI : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         model.SetActive(false);
         target = FindObjectOfType<PlayerInputHandler>().transform;
+        
     }
 
     void Update()
@@ -35,7 +36,8 @@ public class EnemyAI : MonoBehaviour
         {
             model.SetActive(true);
             EngageTarget();
-            enemyspeak.EnemyWeak();
+            
+            
             
             
             
@@ -43,6 +45,7 @@ public class EnemyAI : MonoBehaviour
         else if (distanceToTarget <= chaseRange)
         {
             isProvoked = true;
+            enemyspeak.EnemyWeak();
         }
     }
 
@@ -76,6 +79,7 @@ public class EnemyAI : MonoBehaviour
     {
         //GetComponent<Animator>().SetBool("attack", false);
         navMeshAgent.SetDestination(position);
+        
     }
 
     void FaceTarget()

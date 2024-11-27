@@ -19,15 +19,18 @@ public class EnemyHandler : MonoBehaviour
     List<GameObject> Enemies;
     int numberOfEnemiesDead = 0;
     float timeToDie = 2f;
+  
+  
 
     private void Awake()
     {
         Enemies = new List<GameObject>();
+     
     }
 
     private void Update()
     {
-
+        
     }
 
     public void EnemyDead()
@@ -65,7 +68,10 @@ public class EnemyHandler : MonoBehaviour
                 return;
         }
     }
-
+    
+    
+    
+    
     public void SpawnEnemiesAtGHouse()
     {
         for (int i = 0;i < EnemySpawnPositionsGHouse.Length ;i++)
@@ -73,9 +79,11 @@ public class EnemyHandler : MonoBehaviour
             GameObject enemy = Instantiate(EnemyPrefab, EnemySpawnPositionsGHouse[i].transform.position, Quaternion.identity,
                 EnemySpawnPositionsGHouse[i].transform);
             Enemies.Add(enemy);
+            //enemySpeak.EnemyWeak();
         }
         Debug.Log(Enemies.Count);
-    }
+   }
+    
 
     public void SpawnEnemiesAtEHouse()
     {
