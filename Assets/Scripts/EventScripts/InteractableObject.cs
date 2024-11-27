@@ -21,6 +21,7 @@ public class InteractableObject : MonoBehaviour
     [Tooltip("Which game event do we want our listener to respond to")]
     [SerializeField] private UnityEvent whatEvent;
 
+
     private EventInstance _lightSwitchSound;
 
 
@@ -39,12 +40,14 @@ public class InteractableObject : MonoBehaviour
         if (other.tag == "Player" && Input.GetKeyDown(KeyCode.E))
         {
             interactableObject.SetActive(true);
+
+
             _lightSwitchSound = RuntimeManager.CreateInstance(FmodEvents.Instance.FlashlightOn);
             _lightSwitchSound.start();
 
             whatEvent.Invoke();
 
-            Debug.Log("Switch is clicked");
+            Debug.Log($"Interacted with {gameObject.name}");
         }
     }
 
