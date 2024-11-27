@@ -36,11 +36,6 @@ public class EnemyAI : MonoBehaviour
         {
             model.SetActive(true);
             EngageTarget();
-            
-            
-            
-            
-            
         }
         else if (distanceToTarget <= chaseRange)
         {
