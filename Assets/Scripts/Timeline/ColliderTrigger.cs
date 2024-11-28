@@ -12,15 +12,29 @@ public class ColliderTrigger : MonoBehaviour
 
     [Header("Game Event")]
     [Tooltip("Which game event do we want our listener to respond to")]
-    [SerializeField] private UnityEvent whatEvent;
+    [SerializeField] private UnityEvent enterEvent;
+
+    [Header("Game Event")]
+    [Tooltip("Which game event do we want our listener to respond to")]
+    [SerializeField] private UnityEvent exitEvent;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
-        {
-            whatEvent.Invoke();
+        if (other.CompareTag("Player"))
+            {
+                enterEvent.Invoke();
 
-            Debug.Log($"Collided with {gameObject.name}");
-        }
+                Debug.Log($"Collided with {gameObject.name}");
+            }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            {
+                exitEvent.Invoke();
+
+                Debug.Log($"Is no longer collided with {gameObject.name}");
+            }
     }
 }
