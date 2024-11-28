@@ -265,8 +265,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 8744967728131967712}
-  pickUpText: {fileID: 0}
-  interactText: {fileID: 0}
+  playerPOVCamera: {fileID: 0}
+  itemPositionOffset: {x: 0.2, y: -1, z: 0.8}
+  itemRotationOffset: {x: 0, y: -90, z: 0}
+  whatEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &711969997470415294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,7 +672,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
@@ -8,6 +9,11 @@ public class ScreenFade : MonoBehaviour
     public float fadeDuration = 1f; // Duration of the fade
     public Transform targetPosition; // Set this in the Inspector to the new position
 
+    private void Update()
+    {
+        
+        
+    }
 
     private void OnTriggerEnter(Collider other)
     {

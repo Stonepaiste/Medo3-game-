@@ -22,6 +22,7 @@ TagManager:
   - FlashlightMsgTrigger
   - PadlockMsgTrigger
   - Water
+  - MemoryCanvas
   layers:
   - Default
   - TransparentFX
@@ -33,8 +34,8 @@ TagManager:
   - Render Texture
   - holdLayer
   - Lighthouse
-  - 
-  - 
+  - BookCanvas
+  - GlassesCanvas
   - 
   - 
   - 
