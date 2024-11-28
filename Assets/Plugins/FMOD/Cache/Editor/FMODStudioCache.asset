@@ -162,6 +162,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 600
+--- !u!114 &-3406468343940070199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Alex Where are you 2
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Alex Where are you 2
+  Guid:
+    Data1: -447506358
+    Data2: 1082677023
+    Data3: -540169835
+    Data4: -1403752295
+  Banks:
+  - {fileID: 9002771474331498124}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2955931864552631742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,10 +339,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638683460321755851
+  lastModified: 638683724551255248
   FileSizes:
   - Name: Desktop
-    Value: 2952
+    Value: 2996
   Exists: 1
 --- !u!114 &-2563155020662824940
 MonoBehaviour:
@@ -532,7 +559,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 7941
+  Length: 8470
 --- !u!114 &-438482987721344988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,12 +648,13 @@ MonoBehaviour:
   - {fileID: -2867417513185451252}
   - {fileID: 2532818614152713944}
   - {fileID: 2705354222769564154}
+  - {fileID: -3406468343940070199}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3525072047243723712}
   StringsBanks:
   - {fileID: -2809586541640302641}
-  cacheTime: 638683460321755851
+  cacheTime: 638683743524260973
   cacheVersion: 131620
 --- !u!114 &261915903957758797
 MonoBehaviour:
@@ -643,10 +671,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638682622897540962
+  lastModified: 638683730065978584
   FileSizes:
   - Name: Desktop
-    Value: 749984
+    Value: 754368
   Exists: 1
 --- !u!114 &282549111889329352
 MonoBehaviour:
@@ -927,7 +955,7 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638683460321749400
+  lastModified: 638683724551247916
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -1264,10 +1292,10 @@ MonoBehaviour:
   Path: FMOD Project/Fmod Project/Build/Desktop/Dialogue.bank
   Name: Dialogue
   StudioPath: bank:/Dialogue
-  lastModified: 638683460321670173
+  lastModified: 638683743524260973
   FileSizes:
   - Name: Desktop
-    Value: 3375744
+    Value: 3376960
   Exists: 1
 --- !u!114 &9081768503479383465
 MonoBehaviour:
