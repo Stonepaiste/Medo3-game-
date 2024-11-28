@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using FMODUnity;
+using FMOD.Studio;
 
 public class EnemyCircleAroundPlayer : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class EnemyCircleAroundPlayer : MonoBehaviour
     [SerializeField] int numberOfEnemies = 6;
     public Transform Target;
     public float RadiusAroundTarget = 0.5f;
+    EventInstance _endenemymulti;
     
     private void Awake()
     {
@@ -36,8 +39,16 @@ public class EnemyCircleAroundPlayer : MonoBehaviour
             Vector3 position = new Vector3(Target.position.x + RadiusAroundTarget * Mathf.Cos(2 * Mathf.PI * i / enemyCircle.Count), Target.position.y, Target.position.z + RadiusAroundTarget * Mathf.Sin(2 * Mathf.PI * i / enemyCircle.Count)
     );
             Instantiate(enemyCircle[i], position, Quaternion.identity, this.transform);
+            PlayEnemyMulti();
 
 
         }
+    }
+    
+    public void PlayEnemyMulti()
+    {
+        _endenemymulti = RuntimeManager.CreateInstance(FmodEvents.Instance.EndEnemysMulti);
+        _endenemymulti.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
+        _endenemymulti.start();
     }
 }
