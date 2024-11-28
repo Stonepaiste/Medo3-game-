@@ -2,15 +2,12 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class WordChecker : MonoBehaviour
 {
     public TMP_InputField inputField;
     public TMP_Text messageText;
-
-    // End screen elements
-    public GameObject endCanvas;
-    public TMP_Text endCanvasText;
 
     private string[] acceptedWords = 
         {
@@ -37,7 +34,6 @@ public class WordChecker : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         inputField.onEndEdit.AddListener(CheckInput);
         messageText.gameObject.SetActive(false);
-        endCanvas.SetActive(false);
     }
 
     void Update()
@@ -58,8 +54,6 @@ public class WordChecker : MonoBehaviour
             messageText.gameObject.SetActive(false);
             inputField.gameObject.SetActive(false);
 
-            endCanvas.SetActive(true);
-
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
 
@@ -70,6 +64,11 @@ public class WordChecker : MonoBehaviour
             messageText.text = "Incorrect word, try again!";
             messageText.gameObject.SetActive(true);
         }
+    }
+
+    public void GoToEndScene()
+    {
+        SceneManager.LoadScene(2);
     }
 
    /* private IEnumerator ShowEndCanvasTextSequence()
