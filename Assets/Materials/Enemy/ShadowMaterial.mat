@@ -57,7 +57,7 @@ Material:
     m_Floats:
     - _BaseNoiseSize: 20
     - _BaseNoiseStrength: 0.5
-    - _CutOff_Height: 8.2299595
+    - _CutOff_Height: 3.7499776
     - _Glow_Width: 0.05
     - _Noise_Scale: 50
     - _Noise_Strength: 1

@@ -133,6 +133,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ec5dd297cd2fa47a0b82bb8f6ed0cbd1,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ec5dd297cd2fa47a0b82bb8f6ed0cbd1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ec5dd297cd2fa47a0b82bb8f6ed0cbd1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ec5dd297cd2fa47a0b82bb8f6ed0cbd1,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -840.2
       objectReference: {fileID: 0}
@@ -206,6 +221,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4683669308469848369, guid: ec5dd297cd2fa47a0b82bb8f6ed0cbd1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5986e71da0e396c42a57532febc4eced, type: 2}
     - target: {fileID: 919132149155446097, guid: ec5dd297cd2fa47a0b82bb8f6ed0cbd1,
         type: 3}
       propertyPath: m_Name
@@ -326,7 +346,7 @@ MonoBehaviour:
   rotationSpeed: 50
   virtualCamera: {fileID: 8300220874763866271}
   pushE: {fileID: 0}
-  pushEsc: {fileID: 0}
+  pushQ: {fileID: 0}
   paperCanvas: {fileID: 0}
   paperText: {fileID: 0}
   isRotating: 0
@@ -347,7 +367,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.0568857, y: 1.382869, z: 0.23965932}
