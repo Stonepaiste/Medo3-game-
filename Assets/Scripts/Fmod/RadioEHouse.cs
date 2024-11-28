@@ -6,6 +6,7 @@ using FMOD.Studio;
 public class RadioEHouse : MonoBehaviour
 {
     EventInstance _eHouseradioEventInstance;
+    EventInstance _somethingFamiliarEventInstance;
     [SerializeField] GameObject _textAlexAreYouOkay; // Assign this in the Inspector
 
     void Start()
@@ -25,20 +26,30 @@ public class RadioEHouse : MonoBehaviour
         Invoke("PlayEhouseRadio",2f);
         Invoke ("StarttextAlexAreYouOkay", 2f);
         Invoke("DestroyTextAlexAreYouOkay",8f);
-        Invoke("OnDestroy", 10f);
+        Invoke("PlaySomethingFamiliar",10f);
+        Invoke("OnDestroy", 15f);
     }
-
+//radiovoice audio
     public void PlayEhouseRadio()
     {
         _eHouseradioEventInstance = RuntimeManager.CreateInstance(FmodEvents.Instance.AlexAreYouOkay);
         _eHouseradioEventInstance.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
         _eHouseradioEventInstance.start();
     }
-
+//Somethinfamiliar audio
+    public void PlaySomethingFamiliar()
+    {
+        _somethingFamiliarEventInstance = RuntimeManager.CreateInstance(FmodEvents.Instance.SomethingAboutThatVoice);
+        _somethingFamiliarEventInstance.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
+        _somethingFamiliarEventInstance.start();
+    }
+    //Destroy audio
     public void OnDestroy()
     {
         _eHouseradioEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         _eHouseradioEventInstance.release();
+        _somethingFamiliarEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        _somethingFamiliarEventInstance.release();
     }
     
     public void DestroyTextAlexAreYouOkay()
