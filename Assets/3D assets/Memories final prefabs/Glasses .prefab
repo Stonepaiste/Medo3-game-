@@ -69,14 +69,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5045381251405806147}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.002675659, y: -0.7603436, z: 0.6458863, w: 0.06856711}
-  m_LocalPosition: {x: -1.36, y: 3.02, z: 0.51}
+  m_LocalRotation: {x: -0.6301457, y: -0.062753946, z: -0.050823063, w: -0.77226645}
+  m_LocalPosition: {x: 4, y: 8.17, z: 0.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4001232164418736771}
   m_Father: {fileID: 637758402867449814}
-  m_LocalEulerAnglesHint: {x: 79.059, y: -145.417, z: 29.217}
+  m_LocalEulerAnglesHint: {x: 75.218, y: -320.882, z: 38.143}
 --- !u!114 &4515226858339142675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +84,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5045381251405806147}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
@@ -149,17 +149,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 01e8f3825099014488fad26d9eedeaae,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -822.18
+      value: -689.41
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 01e8f3825099014488fad26d9eedeaae,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 31.8
+      value: 37.138
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 01e8f3825099014488fad26d9eedeaae,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1962.57
+      value: 1912.89
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 01e8f3825099014488fad26d9eedeaae,
         type: 3}
@@ -196,6 +196,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01e8f3825099014488fad26d9eedeaae,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8391222552659086748, guid: 01e8f3825099014488fad26d9eedeaae,
         type: 3}
       propertyPath: m_Name
@@ -204,17 +209,17 @@ PrefabInstance:
     - target: {fileID: -5477749408508380018, guid: 01e8f3825099014488fad26d9eedeaae,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0073238635
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: -5477749408508380018, guid: 01e8f3825099014488fad26d9eedeaae,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0220822
+      value: 0.030151024
       objectReference: {fileID: 0}
     - target: {fileID: -5477749408508380018, guid: 01e8f3825099014488fad26d9eedeaae,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.01158041
+      value: 0.015811887
       objectReference: {fileID: 0}
     - target: {fileID: -5477749408508380018, guid: 01e8f3825099014488fad26d9eedeaae,
         type: 3}
@@ -230,6 +235,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5477749408508380018, guid: 01e8f3825099014488fad26d9eedeaae,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4683669308469848369, guid: 01e8f3825099014488fad26d9eedeaae,
         type: 3}
@@ -290,8 +300,6 @@ MonoBehaviour:
   isInteractable: 0
   rotationSpeed: 50
   virtualCamera: {fileID: 4515226858339142675}
-  pushE: {fileID: 0}
-  pushQ: {fileID: 0}
   paperCanvas: {fileID: 0}
   paperText: {fileID: 0}
   isRotating: 0
@@ -315,8 +323,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 600.56274, y: 262.9779, z: 100}
-  m_Center: {x: -96.071465, y: -31.475264, z: -2.836365}
+  m_Size: {x: 1003.61176, y: 317.69604, z: 47.96787}
+  m_Center: {x: -38.484955, y: -34.19, z: 25.8}
 --- !u!65 &325663425449421744
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -336,8 +344,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 155.2374, y: 62.6596, z: 24.94271}
-  m_Center: {x: -78.5782, y: -29.813751, z: -2.8367338}
+  m_Size: {x: 268.4372, y: 76.41186, z: 24.94275}
+  m_Center: {x: -72.608185, y: -29.191942, z: -2.8367343}
 --- !u!54 &6952743941978919263
 Rigidbody:
   m_ObjectHideFlags: 0
