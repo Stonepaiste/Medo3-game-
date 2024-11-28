@@ -24,7 +24,7 @@ public class ItemPickup : MonoBehaviour
     bool book = false;
     bool glasses = true;
 
-    public float typingDelay = 0.05f;  // Delay between each letter appearing
+    [SerializeField] float typingDelay = 0.1f;  // Delay between each letter appearing
     private bool isTyping = false;  // Flag to check if typing is ongoing
 
     private void Awake()
