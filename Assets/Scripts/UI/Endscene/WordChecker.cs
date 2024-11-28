@@ -12,9 +12,24 @@ public class WordChecker : MonoBehaviour
     public GameObject endCanvas;
     public TMP_Text endCanvasText;
 
-    private string[] acceptedWords = { "lonely", "lonley", "lonly", "alone", "alnoe", "alnone", "allone", "loenly", "lonesome", "lone", "ensom", "alene", "ensomhed", "sad", "sadness", "sadnes", "desperate", "desprate", "desperatee", "despirate", "isolated", "isolatted", "isolted", "empty", "emty", "empti", "frusrated", "frustrued", "frusted", "frustarted", "helpless", "helples", "helppless", "unwanted", "exhausted", "anxious", "anxiety", "anxius", "anxios", "depression", "depressed", "deppressed", "excluded", "misunderstood", "misunderstod", "ignored", "forgotten", "forgoten", "rejected", "abandoned" };
-
-    [SerializeField] UnityEvent EndEvent;
+    private string[] acceptedWords = 
+        {
+            "lonely", "lonley", "lonly", 
+            "alone", "alnoe", "alnone", "allone", 
+            "loenly", "lonesome", "lone", "ensom", 
+            "alene", "ensomhed", "sad", "sadness", 
+            "sadnes", "desperate", "desprate", 
+            "desperatee", "despirate", "isolated", 
+            "isolatted", "isolted", "empty", "emty", 
+            "empti", "frusrated", "frustrued", "frusted", 
+            "frustarted", "helpless", "helples", 
+            "helppless", "unwanted", "exhausted", 
+            "anxious", "anxiety", "anxius", "anxios", 
+            "depression", "depressed", "deppressed", 
+            "excluded", "misunderstood", "misunderstod", 
+            "ignored", "forgotten", "forgoten", 
+            "rejected", "abandoned" 
+        };
 
     void Start()
     {
@@ -48,7 +63,7 @@ public class WordChecker : MonoBehaviour
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
 
-            StartCoroutine(ShowEndCanvasTextSequence());
+           // StartCoroutine(ShowEndCanvasTextSequence());
         }
         else
         {
@@ -57,7 +72,7 @@ public class WordChecker : MonoBehaviour
         }
     }
 
-    private IEnumerator ShowEndCanvasTextSequence()
+   /* private IEnumerator ShowEndCanvasTextSequence()
     {
         // Show the first text
         endCanvasText.text = "The theme of the game is loneliness. Loneliness is a deeply personal feeling that can give rise to other emotions as well. In Denmark, loneliness has been on the rise over the past decade, affecting more and more people. The Danish Parliament is already taking actions addressing the problem, but what can you do to help?";
@@ -72,10 +87,5 @@ public class WordChecker : MonoBehaviour
         yield return new WaitForSeconds(10f);
 
         endCanvasText.text = "Thank you for playing!";
-    }
-
-    private void EndSceneAnimationEnd()
-    {
-        EndEvent.Invoke();
-    }
+    }*/
 }

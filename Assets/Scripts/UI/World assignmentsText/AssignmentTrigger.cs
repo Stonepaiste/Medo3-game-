@@ -5,26 +5,27 @@ using System.Collections.Generic;
 public class AssignmentTrigger : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI assignmentText; // TextMeshPro text to display the assignment
-    [SerializeField] private string assignmentMessage; // The assignment message to display
+    //[SerializeField] private string assignmentMessage; // The assignment message to display
     private HashSet<string> playedMessages = new HashSet<string>(); // Set to track played messages
 
-    private void Start()
+   /* private void Start()
     {
         if (assignmentText != null)
         {
             assignmentText.gameObject.SetActive(false); // Ensure the text is hidden at the start
         }
-    }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !playedMessages.Contains(assignmentMessage)) // Ensure the player has the tag "Player" and message hasn't been played
+        //if (other.CompareTag("Player") && !playedMessages.Contains(assignmentMessage)) // Ensure the player has the tag "Player" and message hasn't been played
+        if (other.CompareTag("Player"))
         {
             if (assignmentText != null)
             {
-                assignmentText.text = assignmentMessage; // Set the assignment message
+                //assignmentText.text = assignmentMessage; // Set the assignment message
                 assignmentText.gameObject.SetActive(true); // Show the assignment text
-                MarkMessageAsPlayed(assignmentMessage); // Mark the message as played
+                //MarkMessageAsPlayed(assignmentMessage); // Mark the message as played
             }
         }
     }
@@ -40,8 +41,8 @@ public class AssignmentTrigger : MonoBehaviour
         }
     }
 
-    private void MarkMessageAsPlayed(string message)
+   /* private void MarkMessageAsPlayed(string message)
     {
         playedMessages.Add(message); // Add the message to the set of played messages
-    }
+    }*/
 }

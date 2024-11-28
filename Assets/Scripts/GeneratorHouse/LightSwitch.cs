@@ -6,17 +6,15 @@ using FMOD.Studio;
 
 public class LightSwitch : MonoBehaviour
 {
-    public Transform handle;
-    public float handleDownRotation = -45f;
-    public float rotationSpeed = 5f;
-    public TMP_Text pressEText;
+    [SerializeField] Transform handle;
+    [SerializeField] float handleDownRotation = -45f;
+    [SerializeField] float rotationSpeed = 5f;
+    //public TMP_Text pressEText;
     private bool playerIsClose = false;
     private bool handleIsDown = false;
     public bool IsHandleDown => handleIsDown;
-    public FMOD.Studio.EventInstance _lightSwitchEventInstance;
+    [SerializeField] FMOD.Studio.EventInstance _lightSwitchEventInstance;
     
-    
-
     private float handleUpRotation = 0f;
 
     void Start()
@@ -54,7 +52,7 @@ public class LightSwitch : MonoBehaviour
         handleIsDown = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+  /*  private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -79,5 +77,5 @@ public class LightSwitch : MonoBehaviour
                 Debug.Log("Press E text disabled");
             }
         }
-    }
+    }*/
 }
