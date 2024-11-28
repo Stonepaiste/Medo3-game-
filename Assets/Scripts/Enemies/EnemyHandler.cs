@@ -18,7 +18,8 @@ public class EnemyHandler : MonoBehaviour
     [SerializeField] Vector3 enemyLastPosition;
     List<GameObject> Enemies;
     int numberOfEnemiesDead = 0;
-    float timeToDie = 2f;
+    float timeToDie = 1f;
+    [SerializeField] float memoryYOffset = 2f;
   
   
 
@@ -58,10 +59,12 @@ public class EnemyHandler : MonoBehaviour
         {
             case 3:
                 positions[0] = enemyLastPosition;
+                positions[0].y += memoryYOffset;
                 Instantiate(memory[0], positions[0], Quaternion.identity, this.transform);
                 return;
             case 6:
                 positions[1] = enemyLastPosition;
+                positions[1].y += memoryYOffset; 
                 Instantiate(memory[1], positions[1], Quaternion.identity, this.transform);
                 return;
             default:
