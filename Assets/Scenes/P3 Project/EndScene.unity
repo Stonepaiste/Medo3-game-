@@ -319,7 +319,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "If you are experiencing loneliness yourself and need someone to talk to,
-    reach out for help at this number: \n\n<b>35 36 26 00</b>"
+    reach out for help at this number: \n\n<b><color=#fcd810>35 36 26 00</color></b>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b7546f1a4de1ce24895116ddea9afff3, type: 2}
   m_sharedMaterial: {fileID: -98090109412022962, guid: b7546f1a4de1ce24895116ddea9afff3,
@@ -680,11 +680,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " <b>The theme of the game is loneliness</b>.\n Loneliness is a deeply
-    personal feeling that can give rise to other emotions as well. In Denmark, loneliness
-    has been on the rise over the past decade, affecting more and more people. \n\nThe
-    Danish Parliament is already taking actions addressing the problem, <b>but what
-    can you do to help?</b>\n"
+  m_text: " <b>The theme of the game is <color=#fcd810>loneliness</color></b>.\n
+    Loneliness is a deeply personal feeling that can give rise to other emotions
+    as well. In Denmark, loneliness has been on the rise over the past decade, affecting
+    more and more people. \n\nThe Danish Parliament is already taking actions addressing
+    the problem, <b>but what can you do to help?</b>\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b7546f1a4de1ce24895116ddea9afff3, type: 2}
   m_sharedMaterial: {fileID: -98090109412022962, guid: b7546f1a4de1ce24895116ddea9afff3,
