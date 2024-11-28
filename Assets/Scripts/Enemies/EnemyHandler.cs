@@ -28,6 +28,7 @@ public class EnemyHandler : MonoBehaviour
 
     private void Awake()
     {
+        assignmentTrigger = FindObjectOfType<AssignmentTrigger>();
         Enemies = new List<GameObject>();
      
     }
@@ -64,12 +65,13 @@ public class EnemyHandler : MonoBehaviour
                 positions[0] = enemyLastPosition;
                 positions[0].y += memoryYOffset;
                 Instantiate(memory[0], positions[0], Quaternion.identity, this.transform);
+                assignmentTrigger.ShowAssignmentMessage("Pick up the glasses");
                 return;
             case 6:
                 positions[1] = enemyLastPosition;
                 positions[1].y += memoryYOffset; 
                 Instantiate(memory[1], positions[1], Quaternion.identity, this.transform);
-                //assignmentTrigger.ShowAssignmentMessage("Pick up the glasses");
+
                 return;
             default:
                 return;
