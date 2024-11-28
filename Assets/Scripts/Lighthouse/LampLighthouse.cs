@@ -12,7 +12,12 @@ public class LampLighthouse : MonoBehaviour
     [SerializeField] private GameObject LampInsideRoom2;
     [SerializeField] private GameObject LampInsideRoom3;
     [SerializeField] private GameObject LampInsideRoom4;
- //   [SerializeField] private GameObject LampInsideRoom5;
+    [SerializeField] private GameObject LampInsideRoom5;
+    [SerializeField] private GameObject LampInsideRoom6;
+    [SerializeField] private GameObject LampInsideRoom7;
+    [SerializeField] private GameObject LampInsideRoom8;
+    [SerializeField] private GameObject LampInsideRoom9;
+    //   [SerializeField] private GameObject LampInsideRoom5;
     [SerializeField] private GameObject LampGhouse;
     //public Transform lampPointN;
     //public Transform lampPointS;
@@ -38,6 +43,11 @@ public class LampLighthouse : MonoBehaviour
         LampInsideRoom2.SetActive(false);
         LampInsideRoom3.SetActive(false);
         LampInsideRoom4.SetActive(false);
+        LampInsideRoom5.SetActive(false);
+        LampInsideRoom6.SetActive(false);
+        LampInsideRoom7.SetActive(false);
+        LampInsideRoom8.SetActive(false);
+        LampInsideRoom9.SetActive(false);
         //LampInsideRoom5.SetActive(false);
         LampGhouse.SetActive(false);
         LampOn = false;

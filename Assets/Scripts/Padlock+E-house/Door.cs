@@ -13,11 +13,10 @@ public class Door : MonoBehaviour
     public Transform doorTransform; // Reference to the door itself
     public EventInstance _doorOpenSound; // Reference to the FMOD event for the door opening sound
     RadioEHouse radioEHouse;
-    EnemyHandler enemyHandler;
 
     private void Awake()
     {
-        enemyHandler = FindObjectOfType<EnemyHandler>();
+
     }
 
     public void OpenDoor()
@@ -31,7 +30,6 @@ public class Door : MonoBehaviour
             _doorOpenSound.start();
             radioEHouse = FindObjectOfType<RadioEHouse>();
             radioEHouse.PlayAndDestroyEhouseRadio();
-            enemyHandler.SpawnEnemiesAtEHouse();
             
         }
     }

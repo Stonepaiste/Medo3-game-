@@ -13,6 +13,7 @@ public class Padlock : MonoBehaviour
     public Door door;
     public bool enemycanspawn;
     private bool hasActivatedEnemy = false;
+    EnemyHandler enemyHandler;
 
     private Color originalColor;
     
@@ -22,6 +23,7 @@ public class Padlock : MonoBehaviour
 
     private void Start()
     {
+        enemyHandler = FindObjectOfType<EnemyHandler>();
         enemycanspawn = false;
         originalColor = displayText.color;
         UpdateDisplay();
@@ -80,6 +82,7 @@ public class Padlock : MonoBehaviour
             // Activate enemy movement only on the first incorrect code entry
             if (!hasActivatedEnemy)
             {
+                enemyHandler.SpawnEnemiesAtEHouse();
                 enemycanspawn = true;
                 hasActivatedEnemy = true; // Prevent future activation
             }
