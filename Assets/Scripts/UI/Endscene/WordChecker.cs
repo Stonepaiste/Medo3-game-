@@ -58,6 +58,8 @@ public class WordChecker : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
 
            // StartCoroutine(ShowEndCanvasTextSequence());
+
+            GoToEndScene();
         }
         else
         {
