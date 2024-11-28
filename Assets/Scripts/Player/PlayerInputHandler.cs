@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,7 +8,6 @@ using FMOD.Studio;
 using FMODUnity;
 using UnityEngine.InputSystem.Controls;
 using Cinemachine;
-using UnityEditor.ShaderGraph.Internal;
 
 public class PlayerInputHandler : MonoBehaviour
 {
