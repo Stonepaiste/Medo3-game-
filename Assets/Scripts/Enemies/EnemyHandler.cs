@@ -20,6 +20,9 @@ public class EnemyHandler : MonoBehaviour
     int numberOfEnemiesDead = 0;
     float timeToDie = 1f;
     [SerializeField] float memoryYOffset = 2f;
+    AssignmentTrigger assignmentTrigger;
+    [SerializeField] GameObject assignmentTriggerObject;
+   
   
   
 
@@ -66,6 +69,7 @@ public class EnemyHandler : MonoBehaviour
                 positions[1] = enemyLastPosition;
                 positions[1].y += memoryYOffset; 
                 Instantiate(memory[1], positions[1], Quaternion.identity, this.transform);
+                assignmentTrigger.ShowAssignmentMessage("Pick up the glasses");
                 return;
             default:
                 return;

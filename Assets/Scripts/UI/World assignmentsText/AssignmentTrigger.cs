@@ -6,6 +6,7 @@ public class AssignmentTrigger : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI assignmentText; // TextMeshPro text to display the assignment
     private HashSet<string> playedMessages = new HashSet<string>(); // Set to track played messages
+    [SerializeField] private string assignmentMessage; // The message to display
 
     private void Start()
     {
@@ -19,9 +20,9 @@ public class AssignmentTrigger : MonoBehaviour
     {
         if (assignmentText != null && !playedMessages.Contains(message))
         {
-            assignmentText.text = message; // Set the assignment message
+            assignmentText.text = assignmentMessage; // Set the assignment message
             assignmentText.gameObject.SetActive(true); // Show the assignment text
-            MarkMessageAsPlayed(message); // Mark the message as played
+            MarkMessageAsPlayed(assignmentMessage); // Mark the message as played
             Invoke("HideAssignmentMessage", 5f); // Hide the assignment message after 5 seconds
         }
     }
@@ -30,6 +31,13 @@ public class AssignmentTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if(assignmentText != null)
+            {
+                assignmentText.text = assignmentMessage; // Set the assignment message
+                ShowAssignmentMessage(assignmentMessage); // Show the assignment message when the player enters the trigger
+                MarkMessageAsPlayed(assignmentMessage); // Mark the message as played
+            }
+            
             // This part can be removed if you only want to show messages through scripts
         }
     }
